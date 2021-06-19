@@ -1,0 +1,55 @@
+{
+    "name": "PlayerControls",
+    "maps": [
+        {
+            "name": "Hand",
+            "id": "84ff85a2-2a12-46e8-a843-0877d2a2e93b",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "5f27bfdc-edcc-4288-b7e7-55fa40acbc68",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "1D Axis",
+                    "id": "e4cc3072-095e-4a47-b5e4-ee06e6f96b1b",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "c2e286c0-0412-44b2-a643-be3def76acd5",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "bc9dc645-909f-42d3-b05d-89e7da51954b",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
