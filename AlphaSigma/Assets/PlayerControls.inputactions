@@ -6,9 +6,17 @@
             "id": "84ff85a2-2a12-46e8-a843-0877d2a2e93b",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "Shift",
                     "type": "Button",
                     "id": "5f27bfdc-edcc-4288-b7e7-55fa40acbc68",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "PlayCard",
+                    "type": "Button",
+                    "id": "2b9078b7-ba53-46d6-baef-0d7fb0558c13",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -22,7 +30,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Shift",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -33,7 +41,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Shift",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -44,9 +52,20 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "Shift",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "d57dd48a-e800-4831-bf31-23a6b0c39df3",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayCard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

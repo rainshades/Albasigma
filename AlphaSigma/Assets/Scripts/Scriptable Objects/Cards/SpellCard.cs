@@ -11,5 +11,10 @@ namespace Albasigma.Cards
         //Desc, Sprite, damage/effects
         public Sprite Image;
         public int cost;
+
+        public void PlayCard()
+        {
+            Debug.Log("Play " + name); 
+        }
     }
 }

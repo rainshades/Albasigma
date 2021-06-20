@@ -31,14 +31,18 @@ namespace Albasigma.UI
 
         public void SetCard(SpellCard spell)
         {
-            gameObject.SetActive(true);
-            Spell = spell;
-            Cardimage.sprite = spell.Image;
-            CardCost.text = "" + spell.cost; 
 
-            if(spell == null)
+            if (spell == null)
             {
-                gameObject.SetActive(false); 
+                Spell = null; 
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                gameObject.SetActive(true);
+                Spell = spell;
+                Cardimage.sprite = spell.Image;
+                CardCost.text = "" + spell.cost;
             }
         }
     }

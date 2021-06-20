@@ -19,9 +19,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""id"": ""84ff85a2-2a12-46e8-a843-0877d2a2e93b"",
             ""actions"": [
                 {
-                    ""name"": ""New action"",
+                    ""name"": ""Shift"",
                     ""type"": ""Button"",
                     ""id"": ""5f27bfdc-edcc-4288-b7e7-55fa40acbc68"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""PlayCard"",
+                    ""type"": ""Button"",
+                    ""id"": ""2b9078b7-ba53-46d6-baef-0d7fb0558c13"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -35,7 +43,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Shift"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -46,7 +54,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Shift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -57,9 +65,20 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""New action"",
+                    ""action"": ""Shift"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d57dd48a-e800-4831-bf31-23a6b0c39df3"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayCard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -68,7 +87,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
 }");
         // Hand
         m_Hand = asset.FindActionMap("Hand", throwIfNotFound: true);
-        m_Hand_Newaction = m_Hand.FindAction("New action", throwIfNotFound: true);
+        m_Hand_Shift = m_Hand.FindAction("Shift", throwIfNotFound: true);
+        m_Hand_PlayCard = m_Hand.FindAction("PlayCard", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -118,12 +138,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     // Hand
     private readonly InputActionMap m_Hand;
     private IHandActions m_HandActionsCallbackInterface;
-    private readonly InputAction m_Hand_Newaction;
+    private readonly InputAction m_Hand_Shift;
+    private readonly InputAction m_Hand_PlayCard;
     public struct HandActions
     {
         private @PlayerControls m_Wrapper;
         public HandActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Newaction => m_Wrapper.m_Hand_Newaction;
+        public InputAction @Shift => m_Wrapper.m_Hand_Shift;
+        public InputAction @PlayCard => m_Wrapper.m_Hand_PlayCard;
         public InputActionMap Get() { return m_Wrapper.m_Hand; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -133,22 +155,29 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_HandActionsCallbackInterface != null)
             {
-                @Newaction.started -= m_Wrapper.m_HandActionsCallbackInterface.OnNewaction;
-                @Newaction.performed -= m_Wrapper.m_HandActionsCallbackInterface.OnNewaction;
-                @Newaction.canceled -= m_Wrapper.m_HandActionsCallbackInterface.OnNewaction;
+                @Shift.started -= m_Wrapper.m_HandActionsCallbackInterface.OnShift;
+                @Shift.performed -= m_Wrapper.m_HandActionsCallbackInterface.OnShift;
+                @Shift.canceled -= m_Wrapper.m_HandActionsCallbackInterface.OnShift;
+                @PlayCard.started -= m_Wrapper.m_HandActionsCallbackInterface.OnPlayCard;
+                @PlayCard.performed -= m_Wrapper.m_HandActionsCallbackInterface.OnPlayCard;
+                @PlayCard.canceled -= m_Wrapper.m_HandActionsCallbackInterface.OnPlayCard;
             }
             m_Wrapper.m_HandActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Newaction.started += instance.OnNewaction;
-                @Newaction.performed += instance.OnNewaction;
-                @Newaction.canceled += instance.OnNewaction;
+                @Shift.started += instance.OnShift;
+                @Shift.performed += instance.OnShift;
+                @Shift.canceled += instance.OnShift;
+                @PlayCard.started += instance.OnPlayCard;
+                @PlayCard.performed += instance.OnPlayCard;
+                @PlayCard.canceled += instance.OnPlayCard;
             }
         }
     }
     public HandActions @Hand => new HandActions(this);
     public interface IHandActions
     {
-        void OnNewaction(InputAction.CallbackContext context);
+        void OnShift(InputAction.CallbackContext context);
+        void OnPlayCard(InputAction.CallbackContext context);
     }
 }
