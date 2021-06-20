@@ -44,3 +44,11 @@ The following packages were added:
   com.unity.textmeshpro@3.0.1
   com.unity.timeline@1.4.4
   com.unity.ugui@1.0.0
+
+=== Sat Jun 19 19:39:02 2021
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.visualeffectgraph@7.3.1

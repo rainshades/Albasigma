@@ -9,6 +9,9 @@ namespace Albasigma.UI
     {
         public UICardObject Left, Right, Center;
 
+        public Transform SpellSommonPossition; 
+        //This will be part of the parent Player object later on
+
         PlayerControls inputs; 
 
         DeckOfCards Deck;
@@ -29,7 +32,7 @@ namespace Albasigma.UI
 
         private void PlayCard_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            Deck.spellsInHand[LeftCard].PlayCard();
+            Deck.spellsInHand[LeftCard].PlayCard(SpellSommonPossition);
             Deck.spellsInHand.RemoveAt(LeftCard);
 
             try

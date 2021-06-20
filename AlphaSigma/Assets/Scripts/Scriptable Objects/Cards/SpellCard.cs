@@ -12,9 +12,13 @@ namespace Albasigma.Cards
         public Sprite Image;
         public int cost;
 
-        public void PlayCard()
+        [SerializeField]
+        GameObject VisualEffectPrefab; 
+
+        public void PlayCard(Transform AttackLocation)
         {
-            Debug.Log("Play " + name); 
+            Debug.Log("Play " + name);
+            Instantiate(VisualEffectPrefab, AttackLocation); 
         }
     }
 }
