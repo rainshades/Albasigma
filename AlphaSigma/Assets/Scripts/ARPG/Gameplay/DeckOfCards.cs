@@ -11,10 +11,13 @@ namespace Albasigma.ARPG
         public AllyCard Ally_2;
 
         public List<SpellCard> spellsInHand;
-        public List<SpellCard> Deck;
+        public List<SpellCard> PlayerDeck;
+        public List<SpellCard> Deck; 
 
         public void Awake()
         {
+            Deck.AddRange(PlayerDeck);
+
             if(Ally_1 != null)
             {
                 Deck.AddRange(Ally_1.AllyDeck);

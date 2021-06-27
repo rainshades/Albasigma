@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Sample_2
   m_EditorClassIdentifier: 
   AllyDeck:
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
   AllyImage: {fileID: 21300000, guid: 8253664aa564c374aa1935adda39632c, type: 3}

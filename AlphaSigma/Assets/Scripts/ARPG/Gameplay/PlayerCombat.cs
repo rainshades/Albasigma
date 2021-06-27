@@ -5,15 +5,19 @@ using UnityEngine;
 
 namespace Albasigma.ARPG
 {
-    public class PlayerCombat : MonoBehaviour, CombatEntity
+    public class PlayerCombat : MonoBehaviour, ICombatEntity
     {
+        PlayerLevelSystem PlayerLevel = new PlayerLevelSystem(); 
+
         public Transform CardLockOn;
         public float LockOnRange;
         public LayerMask EnemyLayer; 
 
         public float Currenthealth, MaxHealth;
         public float CurrentDrive, MaxDrive;
-             
+
+        public float AttackDamage; 
+
         Collider[] EnemiesInRange;
 
         Vector3 ReturnPostion;
@@ -23,10 +27,20 @@ namespace Albasigma.ARPG
         public bool Blocking;
 
         public float AttackRange;
-        public Transform AttackPoint; 
+        public Transform AttackPoint;
+        
+        public static PlayerCombat Instance { get; set; }
+
+        public void GainExp(int EXP)
+        {
+            PlayerLevel.Experience += EXP; 
+        }
+
 
         private void Awake()
         {
+            Instance = this; 
+
             ReturnPostion = CardLockOn.localPosition;
             Controls = new PlayerControls();
 
@@ -46,10 +60,16 @@ namespace Albasigma.ARPG
 
             foreach(Collider col in colliders)
             {
-                Attack(5, col.gameObject); 
+                Attack(AttackDamage, col.gameObject); 
             }
 
         }
+
+        public void OnDeath()
+        {
+            //GameOver
+        }
+
 
         private void Update()
         {
@@ -74,14 +94,22 @@ namespace Albasigma.ARPG
         }
 
 
-        public void Attack(int damage, GameObject entity)
+        public void Attack(float damage, GameObject entity)
         {
+            entity.GetComponentInParent<ICombatEntity>().TakeDamage(damage); 
             Debug.Log("Does " + damage + " to " + entity.name); 
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(float damage)
         {
+            Currenthealth -= damage;
+
             Debug.Log("Took " + damage); 
+
+            if(Currenthealth <= 0)
+            {
+                OnDeath(); 
+            }
         }
 
         public void Block()
@@ -99,5 +127,6 @@ namespace Albasigma.ARPG
         {
             Controls.Disable();
         }
+
     }
 }
