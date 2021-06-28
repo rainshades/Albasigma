@@ -9,9 +9,10 @@ namespace Albasigma
     {
         public static GameManager Instance { get; set;  }
 
+        [SerializeField]
         Albasigma.UI.PlayerPuaseUI pauseUI; 
 
-        public bool Paused;
+        public bool Paused = false;
 
         PlayerControls pc; 
         private void Awake()
@@ -19,12 +20,11 @@ namespace Albasigma
             pc = new PlayerControls(); 
             Instance = this;
             pc.Player.Pause.performed += Pause_performed;
-            pauseUI = FindObjectOfType<Albasigma.UI.PlayerPuaseUI>(); 
         }
 
         private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            Paused = true;
+            Paused = !Paused;
             pauseUI.gameObject.SetActive(Paused); 
         }
 

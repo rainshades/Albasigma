@@ -67,7 +67,7 @@ namespace Albasigma.ARPG
 
         public void OnDeath()
         {
-            //GameOver
+            GameManager.Instance.GameOver(); 
         }
 
 
@@ -102,9 +102,12 @@ namespace Albasigma.ARPG
 
         public void TakeDamage(float damage)
         {
-            Currenthealth -= damage;
+            if (!Blocking)
+            {
+                Currenthealth -= damage;
 
-            Debug.Log("Took " + damage); 
+                Debug.Log("Took " + damage);
+            }
 
             if(Currenthealth <= 0)
             {

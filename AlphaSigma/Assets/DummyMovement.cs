@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI; 
 
 namespace Albasigma.ARPG
 {
@@ -20,7 +20,13 @@ namespace Albasigma.ARPG
         public float DetectionRange; 
         public LayerMask PlayerLayer;
         [SerializeField]
-        SpriteRenderer Detected; 
+        SpriteRenderer Detected;
+        NavMeshAgent agent;
+
+        private void Awake()
+        {
+            agent = GetComponent<NavMeshAgent>();
+        }
 
         private void FixedUpdate()
         {
@@ -49,7 +55,8 @@ namespace Albasigma.ARPG
         {
             Collider[] col = Physics.OverlapSphere(transform.position, DetectionRange, PlayerLayer);
             Target = col[0].gameObject;
-            Detected.gameObject.SetActive(true); 
+            Detected.gameObject.SetActive(true);
+            agent.SetDestination(Target.transform.position);
         }
 
         public void LoseDetection()

@@ -1,13 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Albasigma.ARPG
 {
     public class DummyCombat : MonoBehaviour, ICombatEntity
     {
-        public float Currenthealth, MaxHealth;
-        public int expPrize, drivePrize, moneyPrize; 
+        public float Currenthealth, MaxHealth, AttackRange;
+        public int expPrize, drivePrize, moneyPrize;
+        
+        public Transform AttackPoint;
+        LayerMask PlayerLayer;
+
+        private void Awake()
+        {
+            PlayerLayer = GetComponent<DummyMovement>().PlayerLayer;
+        }
 
         public void OnDeath()
         {
@@ -18,9 +27,22 @@ namespace Albasigma.ARPG
             Destroy(gameObject);
         }
 
+        private void Update()
+        {
+            if (Physics.CheckSphere(AttackPoint.position, AttackRange, PlayerLayer))
+            {
+                Debug.Log("Attack");  
+            }
+        }
+
         public void Attack(float damage, GameObject entity)
         {
 
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(AttackPoint.position, AttackRange); 
         }
 
         public void TakeDamage(float damage)

@@ -63,7 +63,7 @@ namespace Albasigma.ARPG
         private void FixedUpdate()
         {
             GravityCheck();
-            cc.Move(JumpForce * MovementSpeed * Time.deltaTime);
+            cc.Move(JumpForce * Time.deltaTime * 2.0f);
 
             cc.Move(MovementForce * MovementSpeed * Time.deltaTime);
         }
@@ -79,14 +79,17 @@ namespace Albasigma.ARPG
         [SerializeField]
         GameObject PlayerGFX;
 
-        public float jumpHeight; 
+        public float jumpHeight;
+        
+        Vector3 MovementAngle;
+
 
         private void Awake()
         {
             inputs = new PlayerControls();
 
             inputs.Player.Jump.started += Jump_performed;
-
+            inputs.Player.Jump.canceled += ctx => moveState = MoveState.Falling; 
             inputs.Player.Movement.started += Movement_performed;
             inputs.Player.Movement.performed += Movement_performed;
             inputs.Player.Movement.canceled += Movement_canceled;
@@ -95,15 +98,19 @@ namespace Albasigma.ARPG
         protected override void GravityCheck()
         {
             base.GravityCheck();
-            if(!grounded && MovementForce.y <= 0)
+            if(!grounded && JumpForce.y <= 0)
             {
                 JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * -1;
-                moveState = MoveState.Falling; 
             }
 
             if(moveState != MoveState.Jumping)
             {
                 JumpForce.y -= gravity * Time.deltaTime; 
+            }
+
+            if(grounded && moveState != MoveState.Running)
+            {
+                moveState = MoveState.Idle; 
             }
         }
 
@@ -115,23 +122,26 @@ namespace Albasigma.ARPG
 
         private void Jump_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if(grounded && moveState != MoveState.Jumping)
-                JumpForce.y = jumpHeight; 
-
+            if (grounded && moveState != MoveState.Jumping)
+            {
+                JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
+                moveState = MoveState.Jumping; 
+            }
         }
 
         private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            Vector3 MovementAngle = new Vector3(obj.ReadValue<Vector2>().x, 0 ,obj.ReadValue<Vector2>().y);
-
-            Vector3 NormalizedMovement = MovementAngle.normalized;
 
 
-            targetAngle = Mathf.Atan2(MovementForce.x, MovementForce.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            targetAngle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
             angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            PlayerGFX.transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            MovementForce = NormalizedMovement; 
+            MovementForce = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            MovementAngle = new Vector3(obj.ReadValue<Vector2>().x, 0, obj.ReadValue<Vector2>().y);
+            Vector3 NormalizedMovement = MovementAngle.normalized;
+            MovementAngle = NormalizedMovement; 
         }
 
         private void OnEnable()

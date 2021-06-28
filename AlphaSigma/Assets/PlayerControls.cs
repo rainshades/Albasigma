@@ -119,14 +119,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Camera"",
-                    ""type"": ""Button"",
-                    ""id"": ""163a2ac3-1fa1-4edd-999d-1388ba498e64"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""2cc93e20-58a2-4425-9810-9631c1e337bb"",
@@ -225,61 +217,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""2D Vector"",
-                    ""id"": ""6e2d5563-96a3-4dca-936a-32df558f4a6e"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""af80be61-136a-4b93-bd4a-da562924c9c2"",
-                    ""path"": ""<Gamepad>/rightStick/up"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""4fc6b93c-3ffd-48a1-ac23-673e5d03fca3"",
-                    ""path"": ""<Gamepad>/rightStick/down"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""8f4546aa-8b65-4b42-8338-2783d83b7d89"",
-                    ""path"": ""<Gamepad>/rightStick/left"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""8ab33695-c7ba-4825-9ff3-a712e5bb8d05"",
-                    ""path"": ""<Gamepad>/rightStick/right"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Camera"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""22166e87-f012-416b-83ee-7efbdb5c323a"",
                     ""path"": ""<Gamepad>/start"",
@@ -303,20 +240,33 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""MoveToBag"",
+                    ""type"": ""Button"",
+                    ""id"": ""83050b09-d837-483c-80d2-cf7647979034"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MoveToDeck"",
+                    ""type"": ""Button"",
+                    ""id"": ""9ff8d4e0-d6e7-4e4f-8515-fc4c469d8ea2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwitchMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""3cfd367b-6852-496f-be45-695783ac78e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""810bb548-125f-4bcb-8b14-9ae83b6cc1c0"",
-                    ""path"": """",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MenuMove"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": ""2D Vector"",
                     ""id"": ""3d72941f-df24-4c03-a62d-4899477cbc3c"",
@@ -371,6 +321,110 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""MenuMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7ac49964-e72a-443d-84df-ad72bbf1b84f"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveToBag"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ab44c89-58ee-4d13-986c-c170288b8aee"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveToDeck"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cd13a3f2-e9de-4927-896a-d5908f536254"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Camera"",
+            ""id"": ""b9c2a79f-f4e3-488c-ac8c-ba18a0756435"",
+            ""actions"": [
+                {
+                    ""name"": ""Camera"",
+                    ""type"": ""Button"",
+                    ""id"": ""08cc0ea6-8372-4d8a-8c4f-51b386fcee15"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""42c7fa1b-9e3f-4d98-a0f9-479be93bae00"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""73dc35fc-8e54-442b-8f14-cc0af6a71577"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""bb507ef9-253b-4c77-a37c-c95dc33ff6ce"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""e15f37c4-0261-4e0b-8c1e-58bdf31555a9"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a3e9b9c8-3565-491b-a8be-6048cf3bd2f0"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Camera"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -387,11 +441,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Block = m_Player.FindAction("Block", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
-        m_Player_Camera = m_Player.FindAction("Camera", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MenuMove = m_UI.FindAction("MenuMove", throwIfNotFound: true);
+        m_UI_MoveToBag = m_UI.FindAction("MoveToBag", throwIfNotFound: true);
+        m_UI_MoveToDeck = m_UI.FindAction("MoveToDeck", throwIfNotFound: true);
+        m_UI_SwitchMenu = m_UI.FindAction("SwitchMenu", throwIfNotFound: true);
+        // Camera
+        m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
+        m_Camera_Camera = m_Camera.FindAction("Camera", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -486,7 +545,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Block;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Movement;
-    private readonly InputAction m_Player_Camera;
     private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
@@ -496,7 +554,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Block => m_Wrapper.m_Player_Block;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
-        public InputAction @Camera => m_Wrapper.m_Player_Camera;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
@@ -519,9 +576,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Movement.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
                 @Movement.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
                 @Movement.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMovement;
-                @Camera.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
-                @Camera.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
-                @Camera.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnCamera;
                 @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
@@ -541,9 +595,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
-                @Camera.started += instance.OnCamera;
-                @Camera.performed += instance.OnCamera;
-                @Camera.canceled += instance.OnCamera;
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
@@ -556,11 +607,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_UI;
     private IUIActions m_UIActionsCallbackInterface;
     private readonly InputAction m_UI_MenuMove;
+    private readonly InputAction m_UI_MoveToBag;
+    private readonly InputAction m_UI_MoveToDeck;
+    private readonly InputAction m_UI_SwitchMenu;
     public struct UIActions
     {
         private @PlayerControls m_Wrapper;
         public UIActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @MenuMove => m_Wrapper.m_UI_MenuMove;
+        public InputAction @MoveToBag => m_Wrapper.m_UI_MoveToBag;
+        public InputAction @MoveToDeck => m_Wrapper.m_UI_MoveToDeck;
+        public InputAction @SwitchMenu => m_Wrapper.m_UI_SwitchMenu;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -573,6 +630,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MenuMove.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuMove;
                 @MenuMove.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuMove;
                 @MenuMove.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMenuMove;
+                @MoveToBag.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveToBag;
+                @MoveToBag.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveToBag;
+                @MoveToBag.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveToBag;
+                @MoveToDeck.started -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveToDeck;
+                @MoveToDeck.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveToDeck;
+                @MoveToDeck.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnMoveToDeck;
+                @SwitchMenu.started -= m_Wrapper.m_UIActionsCallbackInterface.OnSwitchMenu;
+                @SwitchMenu.performed -= m_Wrapper.m_UIActionsCallbackInterface.OnSwitchMenu;
+                @SwitchMenu.canceled -= m_Wrapper.m_UIActionsCallbackInterface.OnSwitchMenu;
             }
             m_Wrapper.m_UIActionsCallbackInterface = instance;
             if (instance != null)
@@ -580,10 +646,52 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @MenuMove.started += instance.OnMenuMove;
                 @MenuMove.performed += instance.OnMenuMove;
                 @MenuMove.canceled += instance.OnMenuMove;
+                @MoveToBag.started += instance.OnMoveToBag;
+                @MoveToBag.performed += instance.OnMoveToBag;
+                @MoveToBag.canceled += instance.OnMoveToBag;
+                @MoveToDeck.started += instance.OnMoveToDeck;
+                @MoveToDeck.performed += instance.OnMoveToDeck;
+                @MoveToDeck.canceled += instance.OnMoveToDeck;
+                @SwitchMenu.started += instance.OnSwitchMenu;
+                @SwitchMenu.performed += instance.OnSwitchMenu;
+                @SwitchMenu.canceled += instance.OnSwitchMenu;
             }
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Camera
+    private readonly InputActionMap m_Camera;
+    private ICameraActions m_CameraActionsCallbackInterface;
+    private readonly InputAction m_Camera_Camera;
+    public struct CameraActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CameraActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Camera => m_Wrapper.m_Camera_Camera;
+        public InputActionMap Get() { return m_Wrapper.m_Camera; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CameraActions set) { return set.Get(); }
+        public void SetCallbacks(ICameraActions instance)
+        {
+            if (m_Wrapper.m_CameraActionsCallbackInterface != null)
+            {
+                @Camera.started -= m_Wrapper.m_CameraActionsCallbackInterface.OnCamera;
+                @Camera.performed -= m_Wrapper.m_CameraActionsCallbackInterface.OnCamera;
+                @Camera.canceled -= m_Wrapper.m_CameraActionsCallbackInterface.OnCamera;
+            }
+            m_Wrapper.m_CameraActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Camera.started += instance.OnCamera;
+                @Camera.performed += instance.OnCamera;
+                @Camera.canceled += instance.OnCamera;
+            }
+        }
+    }
+    public CameraActions @Camera => new CameraActions(this);
     public interface IHandActions
     {
         void OnShift(InputAction.CallbackContext context);
@@ -595,11 +703,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnBlock(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
-        void OnCamera(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
         void OnMenuMove(InputAction.CallbackContext context);
+        void OnMoveToBag(InputAction.CallbackContext context);
+        void OnMoveToDeck(InputAction.CallbackContext context);
+        void OnSwitchMenu(InputAction.CallbackContext context);
+    }
+    public interface ICameraActions
+    {
+        void OnCamera(InputAction.CallbackContext context);
     }
 }
