@@ -6,7 +6,7 @@ using Albasigma.ARPG;
 
 namespace Albasigma.UI
 {
-    public class Hand : MonoBehaviour
+    public class HandUI : MonoBehaviour
     {
         public UICardObject Left, Right, Center;
 
@@ -31,18 +31,25 @@ namespace Albasigma.UI
             inputs.Hand.PlayCard.performed += PlayCard_performed;
         }
 
+        public void Reset()
+        {
+            LeftCard = 0;
+            CenterCard = 1;
+            RightCard = 2;
+        }
+
         private void PlayCard_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             PlayerCombat PC = FindObjectOfType<PlayerCombat>();
-            if (Deck.spellsInHand[LeftCard].cost <= PC.CurrentDrive)
+            if (Deck.DeckSO.spellsInHand[LeftCard].cost <= PC.CurrentDrive)
             {
-                PC.CurrentDrive -= Deck.spellsInHand[LeftCard].cost; 
-                Deck.spellsInHand[LeftCard].PlayCard(SpellSommonPossition);
-                Deck.spellsInHand.RemoveAt(LeftCard);
+                PC.CurrentDrive -= Deck.DeckSO.spellsInHand[LeftCard].cost; 
+                Deck.DeckSO.spellsInHand[LeftCard].PlayCard(SpellSommonPossition);
+                Deck.DeckSO.spellsInHand.RemoveAt(LeftCard);
 
                 try
                 {
-                    Left.SetCard(Deck.spellsInHand[LeftCard]);
+                    Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
                 }
                 catch
                 {
@@ -50,7 +57,7 @@ namespace Albasigma.UI
                 }
                 try
                 {
-                    Center.SetCard(Deck.spellsInHand[CenterCard]);
+                    Center.SetCard(Deck.DeckSO.spellsInHand[CenterCard]);
                 }
                 catch
                 {
@@ -59,16 +66,16 @@ namespace Albasigma.UI
 
                 try
                 {
-                    Right.SetCard(Deck.spellsInHand[RightCard]);
+                    Right.SetCard(Deck.DeckSO.spellsInHand[RightCard]);
                 }
                 catch
                 {
                     Right.SetCard(null);
                 }
 
-                if (Deck.spellsInHand.Count == 0)
+                if (Deck.DeckSO.spellsInHand.Count == 0)
                 {
-                    Deck.DrawHand();
+                    Deck.DeckSO.DrawHand();
                 }
 
             }
@@ -80,9 +87,9 @@ namespace Albasigma.UI
         private void Start()
         {
             //We assume deck must be over 3 (we'll assume it is for now but this is not safe code)
-            Left.SetCard(Deck.spellsInHand[LeftCard]);
-            Center.SetCard(Deck.spellsInHand[CenterCard]);
-            Right.SetCard(Deck.spellsInHand[RightCard]);
+            Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
+            Center.SetCard(Deck.DeckSO.spellsInHand[CenterCard]);
+            Right.SetCard(Deck.DeckSO.spellsInHand[RightCard]);
         }
 
         private void Shift_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -107,7 +114,7 @@ namespace Albasigma.UI
 
             try
             {
-                Left.SetCard(Deck.spellsInHand[LeftCard]);
+                Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
             }
             catch
             {
@@ -115,7 +122,7 @@ namespace Albasigma.UI
             }
             try
             {
-                Center.SetCard(Deck.spellsInHand[CenterCard]);
+                Center.SetCard(Deck.DeckSO.spellsInHand[CenterCard]);
             }
             catch
             {
@@ -124,7 +131,7 @@ namespace Albasigma.UI
 
             try
             {
-                Right.SetCard(Deck.spellsInHand[RightCard]);
+                Right.SetCard(Deck.DeckSO.spellsInHand[RightCard]);
             }
             catch
             {
@@ -141,17 +148,17 @@ namespace Albasigma.UI
             RightCard--;
 
             if (LeftCard >= 0)
-                Left.SetCard(Deck.spellsInHand[LeftCard]);
+                Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
             else
                 Left.SetCard(null); 
 
             if (CenterCard >= 0)
-                Center.SetCard(Deck.spellsInHand[CenterCard]);
+                Center.SetCard(Deck.DeckSO.spellsInHand[CenterCard]);
             else
                 Center.SetCard(null); 
 
             if (RightCard >= 0)
-                Right.SetCard(Deck.spellsInHand[RightCard]);
+                Right.SetCard(Deck.DeckSO.spellsInHand[RightCard]);
             else
                 Right.SetCard(null);
 

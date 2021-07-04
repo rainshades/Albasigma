@@ -7,10 +7,17 @@ using Albasigma.Cards;
 
 namespace Albasigma.UI
 {
+    public class CardInfoHolder : MonoBehaviour
+    {
+        public SpellCard Card; 
+    }
+
     public class CurrentDeckOfCardsUI : MonoBehaviour
     {
-        DeckOfCards Deck;
-        Bag PlayerBag;
+        [SerializeField]
+        Deck Deck;
+        [SerializeField]
+        BagObject PlayerBag;
 
         public Transform CardsInBagPanel; 
 
@@ -37,12 +44,11 @@ namespace Albasigma.UI
             pc.UI.MoveToDeck.performed += MoveToDeck_performed;
             pc.UI.SwitchMenu.performed += SwitchMenu_performed;
 
-            Deck = FindObjectOfType<DeckOfCards>();
-            PlayerBag = FindObjectOfType<Bag>(); 
+            PlayerBag = FindObjectOfType<BagObject>(); 
 
 
             CreateCardImages(Deck.PlayerDeck, transform, true);
-            CreateCardImages(PlayerBag.CardsInBag, CardsInBagPanel, false);
+            CreateCardImages(PlayerBag.bag.CardsInBag, CardsInBagPanel, false);
 
             SelectedCard = Cards[deckSelectedCardIndex];
 
@@ -54,13 +60,13 @@ namespace Albasigma.UI
             if (SelectedUI == transform)
             {
                 SelectedUI = CardsInBagPanel;
-                SelectedCard = Cards[bagSelectedCardIndex];
             }
             else
             {
                 SelectedUI = transform;
-                SelectedCard = Cards[deckSelectedCardIndex];
             }
+            SelectedCard = Cards[0];
+
         }
 
         private void MoveToDeck_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -80,6 +86,7 @@ namespace Albasigma.UI
                 GameObject Parent = new GameObject();
                 Parent.transform.parent = GrandParent;
                 Parent.AddComponent<Image>().sprite = card.Image;
+                Parent.AddComponent<CardInfoHolder>().Card = card; 
 
                 if(isInDeck)
                     Cards.Add(Parent);
@@ -176,11 +183,16 @@ namespace Albasigma.UI
         public void MoveCard(Transform newParent)
         {
             SelectedCard.transform.SetParent(newParent); 
+        }
 
-            /*
-            Cards.RemoveAt(deckSelectedCardIndex);
-            Destroy(SelectedCard);
-            SelectedCard = Cards[deckSelectedCardIndex]; */
+        public void SaveDeck() //Temp
+        {
+            Deck.PlayerDeck.Clear(); 
+            for(int i = 0; i < transform.childCount; i++)
+            {
+                Deck.PlayerDeck.Add(transform.GetChild(i).GetComponent<CardInfoHolder>().Card);
+            } // Removes cards from the deck and fills it with the children of the UI
+            //There is likely a faster more efficient way to edit the deck in real time than this
         }
 
         private void OnEnable()

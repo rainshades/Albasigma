@@ -22,7 +22,7 @@ namespace Albasigma.ARPG
         {
             PlayerCombat.Instance.GainExp(expPrize);
             PlayerCombat.Instance.CurrentDrive += drivePrize;
-            PlayerCombat.Instance.gameObject.GetComponent<Bag>().currency += moneyPrize; 
+            PlayerCombat.Instance.gameObject.GetComponent<BagObject>().bag.currency += moneyPrize; 
 
             Destroy(gameObject);
         }

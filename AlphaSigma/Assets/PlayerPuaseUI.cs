@@ -12,18 +12,18 @@ namespace Albasigma.UI
         [SerializeField]
         TextMeshProUGUI HealthText, DriveText, CurrencyText;
         PlayerCombat PC;
-        Bag Bag; 
+        BagObject Bag; 
         private void Awake()
         {
             PC = FindObjectOfType<PlayerCombat>();
-            Bag = FindObjectOfType<Bag>();
+            Bag = FindObjectOfType<BagObject>();
         }
 
         private void Update()
         {
             HealthText.text = PC.Currenthealth + "/" + PC.MaxHealth;
             DriveText.text = PC.CurrentDrive + "/" + PC.MaxDrive;
-            CurrencyText.text = Bag.currency + "" ; 
+            CurrencyText.text = Bag.bag.currency + "" ; 
         }
     }
 }

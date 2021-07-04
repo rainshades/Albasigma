@@ -16,7 +16,7 @@ namespace Albasigma.UI
         private void Awake()
         {
             Deck = FindObjectOfType<DeckOfCards>();
-            Ally_1.sprite = Deck.Ally_1.AllyImage; Ally_2.sprite = Deck.Ally_2.AllyImage; 
+            Ally_1.sprite = Deck.DeckSO.Ally_1.AllyImage; Ally_2.sprite = Deck.DeckSO.Ally_2.AllyImage; 
         }
     }
 }

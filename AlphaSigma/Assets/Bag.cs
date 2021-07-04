@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using Albasigma.Cards; 
+using Albasigma.Cards;
 
 namespace Albasigma.ARPG
 {
-    public class Bag : MonoBehaviour
+    [CreateAssetMenu(fileName = "Bag", menuName = "Player Bag")]
+    public class Bag : ScriptableObject
     {
         public int currency;
-        public List<SpellCard> CardsInBag = new List<SpellCard>(); 
+        public List<SpellCard> CardsInBag = new List<SpellCard>();
     }
 }

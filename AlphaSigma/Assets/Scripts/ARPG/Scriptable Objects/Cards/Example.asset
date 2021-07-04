@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Image: {fileID: 21300000, guid: 82708ac01918f7b4380d0607b09a4e81, type: 3}
   cost: 5
+  castTye: 1
   VisualEffectPrefab: {fileID: 7540271976614931964, guid: 8ff60bccbd7cc304280044e5137c35be, type: 3}

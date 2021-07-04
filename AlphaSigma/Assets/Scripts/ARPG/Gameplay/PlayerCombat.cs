@@ -60,8 +60,22 @@ namespace Albasigma.ARPG
 
             foreach(Collider col in colliders)
             {
-                Attack(AttackDamage, col.gameObject); 
+                if(col.tag == "Enemy")
+                    Attack(AttackDamage, col.gameObject);
+                if (col.tag == "Breakable")
+                    Destroy(col.gameObject); //Placeholder for the scripted destruction of said object
+
             }
+
+            try
+            {
+                GetComponent<PlayerInteractionController>().CurrentInteractable.Interact(); 
+            }
+            catch
+            {
+                // nothing to interact with
+            }
+
 
         }
 
