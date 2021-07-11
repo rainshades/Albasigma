@@ -52,3 +52,12 @@ Update Mode: mergeDefaultDependencies
 
 The following packages were added:
   com.unity.visualeffectgraph@7.3.1
+
+=== Sun Jul 11 08:54:26 2021
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.2d.sprite@1.0.0
+  com.unity.ext.nunit@1.0.0

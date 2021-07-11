@@ -11,6 +11,7 @@ namespace Albasigma.ARPG
     public class PlayerMovement : EntityMovement
     {
         public PlayerControls inputs;
+        public PlayerAnimationController AC; 
 
         [SerializeField]
         GameObject PlayerGFX;
@@ -26,7 +27,9 @@ namespace Albasigma.ARPG
         {
             inputs = new PlayerControls();
 
-            baseJumpHeight = jumpHeight; 
+            baseJumpHeight = jumpHeight;
+
+            AC = GetComponent<PlayerAnimationController>(); 
 
             inputs.Player.Jump.started += Jump_performed;
             inputs.Player.Jump.canceled += ctx => moveState = MoveState.Falling; 
@@ -38,12 +41,18 @@ namespace Albasigma.ARPG
         protected override void GravityCheck()
         {
             base.GravityCheck();
+
+            if(KnockbackCounter <= 0)
+            {
+                JumpForce.x = 0;
+                JumpForce.z = 0; 
+            }
             if(!grounded && JumpForce.y <= 0)
             {
                 JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * -1;
             }
 
-            if(moveState != MoveState.Jumping)
+            if(moveState != MoveState.Jumping && !grounded)
             {
                 JumpForce.y -= gravity * Time.deltaTime; 
             }
@@ -57,51 +66,78 @@ namespace Albasigma.ARPG
             {
                 gravity = baseGravity;
                 jumpcounter = 0;
-                jumpHeight = baseJumpHeight; 
+                jumpHeight = baseJumpHeight;
+                CurrentMovementSpeed = baseMovementSpeed; 
+            }
+
+            AC.isGrounded(grounded); 
+        }
+
+        protected override void KnockBack(Vector3 Direction)
+        {
+            base.KnockBack(Direction);
+            if (!GetComponent<PlayerCombat>().Blocking)
+            {
+                JumpForce = Direction * KnockbackForce * 4;
+                JumpForce.y = KnockbackForce * 1.5f;
             }
         }
 
 
         private void Movement_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            MovementForce = Vector3.zero; 
+            MovementForce = Vector3.zero;
+            AC.StopRunning(); 
         }
 
         private void Jump_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if ((grounded && moveState != MoveState.Jumping) || (!grounded && jumpcounter < 2 && moveState != MoveState.Jumping))
+            if (!GetComponent<PlayerCombat>().Blocking)
             {
-                jumpcounter++;
-                if (jumpcounter == 0)
+                if ((grounded && moveState != MoveState.Jumping) || (!grounded && jumpcounter < 2 && moveState != MoveState.Jumping))
                 {
-                    JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
-                    moveState = MoveState.Jumping;
-                }
-                else if(jumpcounter == 1)
-                {
-                    jumpHeight /= 2;
+                    jumpcounter++;
+                    if (jumpcounter == 0)
+                    {
+                        JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
+                        moveState = MoveState.Jumping;
+                    }
+                    else if (jumpcounter == 1)
+                    {
+                        jumpHeight /= 2;
 
-                    JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
-                    moveState = MoveState.Jumping;
-                } 
-                else if(jumpcounter == 2)
-                {
-                    gravity = 1.0f;
-                } 
+                        JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
+                        moveState = MoveState.Jumping;
+                    }
+                    else if (jumpcounter == 2)
+                    {
+                        gravity = 1.0f;
+                        CurrentMovementSpeed *= 1.5f; 
+                        AC.GlideTrigger();
+                    }
+                }
             }
         }
 
         private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            targetAngle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
-            angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            if (!GetComponent<PlayerCombat>().Blocking)
+            {
+                targetAngle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+                angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
-            MovementForce = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+                MovementForce = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
-            MovementAngle = new Vector3(obj.ReadValue<Vector2>().x, 0, obj.ReadValue<Vector2>().y);
-            Vector3 NormalizedMovement = MovementAngle.normalized;
-            MovementAngle = NormalizedMovement; 
+                MovementAngle = new Vector3(obj.ReadValue<Vector2>().x, 0, obj.ReadValue<Vector2>().y);
+                Vector3 NormalizedMovement = MovementAngle.normalized;
+                MovementAngle = NormalizedMovement;
+
+                if (!AC.isRunning)
+                {
+                    AC.StartRunning();
+                }
+            }
         }
 
         private void OnEnable()

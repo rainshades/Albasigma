@@ -6,8 +6,10 @@ namespace Albasigma.ARPG
     public class EntityMovement : MonoBehaviour
     {
         protected MoveState moveState;
-
-        public float MovementSpeed;
+        [HideInInspector]
+        public float CurrentMovementSpeed;
+        [SerializeField]
+        protected float baseMovementSpeed; 
         protected CharacterController cc;
         
         [SerializeField]
@@ -27,10 +29,15 @@ namespace Albasigma.ARPG
         protected float angle, targetAngle, turnSmoothVelocity;
         public float turnSmoothTime = 0.1f;
 
+        public float KnockbackForce;
+        public float KnockbackTimer;
+        protected float KnockbackCounter;
+
         protected Vector3 MovementForce = Vector3.zero;
 
         private void Start()
         {
+            CurrentMovementSpeed = baseMovementSpeed;
             baseGravity = gravity;
             cc = GetComponent<CharacterController>();
 
@@ -57,13 +64,31 @@ namespace Albasigma.ARPG
             Gizmos.DrawWireSphere(BottomPoint.transform.position, distanceGrounded);
         }
 
+        protected virtual void KnockBack(Vector3 Direction)
+        {
+            KnockbackCounter = KnockbackTimer;
+        }
+
+        public void KnockbackCalc(EntityMovement target, Vector3 direction)
+        {
+            target.KnockBack(direction);
+        }
+
 
         private void FixedUpdate()
         {
             GravityCheck();
+
             cc.Move(JumpForce * Time.deltaTime * 2.0f);
 
-            cc.Move(MovementForce * MovementSpeed * Time.deltaTime);
+            if (KnockbackCounter <= 0)
+            {
+                cc.Move(MovementForce * CurrentMovementSpeed * Time.deltaTime);
+            }
+            else
+            {
+                KnockbackCounter -= Time.deltaTime; 
+            }
         }
 
     }

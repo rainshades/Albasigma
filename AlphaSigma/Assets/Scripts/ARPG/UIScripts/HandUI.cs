@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
+using Albasigma.ARPG;
 using UnityEngine;
-using Albasigma.Cards;
-using Albasigma.ARPG; 
 
 namespace Albasigma.UI
 {
@@ -10,12 +7,14 @@ namespace Albasigma.UI
     {
         public UICardObject Left, Right, Center;
 
-        public Transform SpellSommonPossition; 
+        public Transform SpellSummonPosition; 
         //This will be part of the parent Player object later on
 
         PlayerControls inputs; 
 
         DeckOfCards Deck;
+
+        PlayerAnimationController PAC; 
 
         int LeftCard = 0;
         int CenterCard = 1;
@@ -23,7 +22,8 @@ namespace Albasigma.UI
 
         private void Awake()
         {
-            inputs = new PlayerControls(); 
+            inputs = new PlayerControls();
+            PAC = FindObjectOfType<PlayerAnimationController>(); 
             Deck = FindObjectOfType<DeckOfCards>();
             //Temporary Repalce with more perminent deck structure
 
@@ -44,7 +44,7 @@ namespace Albasigma.UI
             if (Deck.DeckSO.spellsInHand[LeftCard].cost <= PC.CurrentDrive)
             {
                 PC.CurrentDrive -= Deck.DeckSO.spellsInHand[LeftCard].cost; 
-                Deck.DeckSO.spellsInHand[LeftCard].PlayCard(SpellSommonPossition);
+                Deck.DeckSO.spellsInHand[LeftCard].PlayCard(SpellSummonPosition);
                 Deck.DeckSO.spellsInHand.RemoveAt(LeftCard);
 
                 try
@@ -72,6 +72,8 @@ namespace Albasigma.UI
                 {
                     Right.SetCard(null);
                 }
+
+                PAC.CastSpell(); 
 
                 if (Deck.DeckSO.spellsInHand.Count == 0)
                 {

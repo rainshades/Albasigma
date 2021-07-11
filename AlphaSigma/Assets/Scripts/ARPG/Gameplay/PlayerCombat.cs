@@ -7,6 +7,14 @@ namespace Albasigma.ARPG
 {
     public class PlayerCombat : MonoBehaviour, ICombatEntity
     {
+        [SerializeField]
+        float maxComboWindowTime;
+        float TimeLeftToContinueComboString = 0;
+
+        PlayerAnimationController AC; 
+
+        int combo; 
+
         PlayerLevelSystem PlayerLevel = new PlayerLevelSystem(); 
 
         public Transform CardLockOn;
@@ -36,17 +44,17 @@ namespace Albasigma.ARPG
             PlayerLevel.Experience += EXP; 
         }
 
-
         private void Awake()
         {
-            Instance = this; 
-
+            Instance = this;
+            AC = GetComponent<PlayerAnimationController>(); 
             ReturnPostion = CardLockOn.localPosition;
             Controls = new PlayerControls();
 
             Controls.Player.AttackInteract.performed += AttackInteract_performed;
             Controls.Player.Block.performed += Block_performed;
-            Controls.Player.Block.canceled += ctx => Blocking = false; 
+            Controls.Player.Block.canceled += ctx => Blocking = false;
+            Controls.Player.Block.canceled += ctx => AC.StopBlock();
         }
 
         private void Block_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -56,11 +64,17 @@ namespace Albasigma.ARPG
 
         private void AttackInteract_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
+            AC.AttackAniTrigger();
+        }
+
+
+        public void AttackCollision()
+        {
             Collider[] colliders = Physics.OverlapSphere(AttackPoint.position, AttackRange, EnemyLayer);
 
-            foreach(Collider col in colliders)
+            foreach (Collider col in colliders)
             {
-                if(col.tag == "Enemy")
+                if (col.tag == "Enemy")
                     Attack(AttackDamage, col.gameObject);
                 if (col.tag == "Breakable")
                     Destroy(col.gameObject); //Placeholder for the scripted destruction of said object
@@ -69,14 +83,12 @@ namespace Albasigma.ARPG
 
             try
             {
-                GetComponent<PlayerInteractionController>().CurrentInteractable.Interact(); 
+                GetComponent<PlayerInteractionController>().CurrentInteractable.Interact();
             }
             catch
             {
                 // nothing to interact with
             }
-
-
         }
 
         public void OnDeath()
@@ -96,6 +108,15 @@ namespace Albasigma.ARPG
             {
                 CardLockOn.localPosition = ReturnPostion; 
             }
+            if(TimeLeftToContinueComboString <= 0)
+            {
+                combo = 0;
+                AC.ComboNumber(combo);
+            }
+            else
+            {
+                TimeLeftToContinueComboString -= Time.deltaTime; 
+            }
         }
 
         private void OnDrawGizmos()
@@ -110,8 +131,20 @@ namespace Albasigma.ARPG
 
         public void Attack(float damage, GameObject entity)
         {
-            entity.GetComponentInParent<ICombatEntity>().TakeDamage(damage); 
-            Debug.Log("Does " + damage + " to " + entity.name); 
+
+            if (combo <= 4)
+            {
+                if (TimeLeftToContinueComboString > 0)
+                {
+                    entity.GetComponentInParent<ICombatEntity>().TakeDamage(damage);
+                    Debug.Log("Does " + damage + " to " + entity.name);
+                    AC.ComboNumber(combo);
+                    combo++;
+                }
+                //Still play animaiton for initial attack
+                TimeLeftToContinueComboString = maxComboWindowTime; 
+            }
+
         }
 
         public void TakeDamage(float damage)
@@ -122,6 +155,10 @@ namespace Albasigma.ARPG
 
                 Debug.Log("Took " + damage);
             }
+            else
+            {
+                Debug.Log("Blocked");
+            }
 
             if(Currenthealth <= 0)
             {
@@ -131,7 +168,9 @@ namespace Albasigma.ARPG
 
         public void Block()
         {
-            Blocking = true; 
+            AC.Block(); 
+            Blocking = true;
+            Debug.Log("Blocking");
             //Give bonus stats OR make direct damage immune
         }
 
