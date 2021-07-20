@@ -30,9 +30,9 @@ namespace Albasigma.ARPG
 
         Vector3 ReturnPostion;
 
-        PlayerControls Controls;
+        public PlayerControls Controls;
 
-        public bool Blocking;
+        public bool Blocking, Attacking;
 
         public float AttackRange;
         public Transform AttackPoint;
@@ -65,6 +65,16 @@ namespace Albasigma.ARPG
         private void AttackInteract_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             AC.AttackAniTrigger();
+            
+
+            try
+            {
+                GetComponent<PlayerInteractionController>().CurrentInteractable.Interact();
+            }
+            catch
+            {
+                //Nothing to interact with
+            }
         }
 
 
@@ -78,17 +88,8 @@ namespace Albasigma.ARPG
                     Attack(AttackDamage, col.gameObject);
                 if (col.tag == "Breakable")
                     Destroy(col.gameObject); //Placeholder for the scripted destruction of said object
-
             }
 
-            try
-            {
-                GetComponent<PlayerInteractionController>().CurrentInteractable.Interact();
-            }
-            catch
-            {
-                // nothing to interact with
-            }
         }
 
         public void OnDeath()

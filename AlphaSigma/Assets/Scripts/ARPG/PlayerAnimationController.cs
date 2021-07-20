@@ -17,7 +17,10 @@ namespace Albasigma.ARPG{
 
         public void AttackAniTrigger()
         {
-            ani.SetTrigger("Attack");
+            if (!GetComponent<PlayerInteractionController>().InInteractableInRange)
+            {
+                ani.SetTrigger("Attack");
+            }
         }
 
         public void ComboNumber(int HitNum)

@@ -86,13 +86,18 @@ namespace Albasigma.ARPG
 
         private void Movement_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
+            StopMovement(); 
+        }
+
+        public void StopMovement()
+        {
             MovementForce = Vector3.zero;
-            AC.StopRunning(); 
+            AC.StopRunning();
         }
 
         private void Jump_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (!GetComponent<PlayerCombat>().Blocking)
+            if (!GetComponent<PlayerCombat>().Blocking && !GetComponent<PlayerCombat>().Attacking)
             {
                 if ((grounded && moveState != MoveState.Jumping) || (!grounded && jumpcounter < 2 && moveState != MoveState.Jumping))
                 {
@@ -121,7 +126,7 @@ namespace Albasigma.ARPG
 
         private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (!GetComponent<PlayerCombat>().Blocking)
+            if (!GetComponent<PlayerCombat>().Blocking && !GetComponent<PlayerCombat>().Attacking)
             {
                 targetAngle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
                 angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -137,6 +142,10 @@ namespace Albasigma.ARPG
                 {
                     AC.StartRunning();
                 }
+            }
+            else
+            {
+                StopMovement(); 
             }
         }
 

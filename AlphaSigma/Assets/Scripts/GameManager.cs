@@ -45,10 +45,17 @@ namespace Albasigma
         private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             Paused = !Paused;
+
             if (!Paused)
             {
+                Time.timeScale = 1; 
                 pauseUI.GetComponentInChildren<CurrentDeckOfCardsUI>().SaveDeck(); 
             }
+            else
+            {
+                Time.timeScale = 0; 
+            }
+
             pauseUI.gameObject.SetActive(Paused);
         }
 

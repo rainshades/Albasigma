@@ -10,10 +10,13 @@ namespace Albasigma.ARPG
         public void Interact();
     } 
 
-    public class ShopMono : MonoBehaviour, IInteractable
+    public class ShopObject : MonoBehaviour, IInteractable
     {
         public ShopSO Shop;
-        public ShopItem CurrentShopItem; 
+        public ShopItem CurrentShopItem;
+
+        [SerializeField]
+        string ConversationBlockName; 
 
         public void Interact()
         {
@@ -22,6 +25,8 @@ namespace Albasigma.ARPG
 
         private void OpenStore()
         {
+            GetComponent<Conversation>().PlayConversation(ConversationBlockName);
+
             Debug.Log("Open Shop");
         }
     }

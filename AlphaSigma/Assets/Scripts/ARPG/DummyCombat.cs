@@ -8,15 +8,19 @@ namespace Albasigma.ARPG
     public class DummyCombat : MonoBehaviour, ICombatEntity
     {
         public float Currenthealth, MaxHealth, AttackRange, baseAttackCooldown;
-        float currentAttackCooldown = 0; 
+        protected float currentAttackCooldown = 0; 
         public int expPrize, drivePrize, moneyPrize;
         
         public Transform AttackPoint;
-        LayerMask PlayerLayer;
+        [SerializeField]
+        protected LayerMask PlayerLayer;
+
+        public SpriteRenderer HealthBar; 
 
         private void Awake()
         {
-            PlayerLayer = GetComponent<DummyMovement>().PlayerLayer;
+            if(TryGetComponent(out DummyMovement dummy))
+               PlayerLayer = dummy.PlayerLayer;
         }
 
         public void OnDeath()
@@ -50,6 +54,8 @@ namespace Albasigma.ARPG
             {
                 GetComponent<DummyMovement>().agent.isStopped = false;
             }
+
+            HealthBar.transform.localScale = new Vector3(Currenthealth / MaxHealth, 1, 1); 
         }
 
         public void Attack(float damage, GameObject entity)

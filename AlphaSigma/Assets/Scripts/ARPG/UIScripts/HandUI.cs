@@ -10,7 +10,7 @@ namespace Albasigma.UI
         public Transform SpellSummonPosition; 
         //This will be part of the parent Player object later on
 
-        PlayerControls inputs; 
+        public PlayerControls inputs; 
 
         DeckOfCards Deck;
 

@@ -9,7 +9,8 @@ namespace Albasigma.ARPG
         public LayerMask InteractableLayers;
         public float interactionRange;
         public IInteractable CurrentInteractable;
-        SpriteRenderer InInteractableInRange;
+        SpriteRenderer InInteractableInRangeSprite;
+        public bool InInteractableInRange; 
 
         private void OnDrawGizmos()
         {
@@ -19,28 +20,30 @@ namespace Albasigma.ARPG
         private void Awake()
         {
             interactionRange = GetComponent<PlayerCombat>().AttackRange;
-            InInteractableInRange = GetComponentInChildren<SpriteRenderer>(); 
+            InInteractableInRangeSprite = GetComponentInChildren<SpriteRenderer>(); 
         }
 
         private void FixedUpdate()
         {
+            Collider[] col = Physics.OverlapSphere(transform.position, interactionRange, InteractableLayers);
+            InInteractableInRange = col.Length > 0; 
 
-                Collider[] col = Physics.OverlapSphere(transform.position, interactionRange, InteractableLayers);
-
-            if (col.Length > 0)
+            if (InInteractableInRange)
                 CurrentInteractable = col[0].GetComponentInParent<IInteractable>();
+
             else
                 CurrentInteractable = null; 
 
             if (CurrentInteractable != null)
             {
-                InInteractableInRange.gameObject.SetActive(true);
+                InInteractableInRangeSprite.gameObject.SetActive(true);
             }
             else
             {
-                InInteractableInRange.gameObject.SetActive(false);
+                InInteractableInRangeSprite.gameObject.SetActive(false);
             }
         }
+
 
         private void OnTriggerEnter(Collider other)
         {

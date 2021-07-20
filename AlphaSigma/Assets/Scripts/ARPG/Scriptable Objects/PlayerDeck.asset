@@ -20,6 +20,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
   - {fileID: 11400000, guid: 0dd70b2b8191d494badde1d3adcf04a4, type: 2}
   PlayerDeck:
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}

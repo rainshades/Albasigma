@@ -1,16 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 using Albasigma.ARPG;
-using Albasigma.Cards; 
+using Albasigma.Cards;
 
 namespace Albasigma.UI
 {
-    public class CardInfoHolder : MonoBehaviour
-    {
-        public SpellCard Card; 
-    }
 
     public class CurrentDeckOfCardsUI : MonoBehaviour
     {
@@ -28,10 +24,14 @@ namespace Albasigma.UI
         Transform SelectedUI; 
 
         [SerializeField]
-        List<GameObject> Cards = new List<GameObject>();
+        List<GameObject> CardsInDeck = new List<GameObject>();
 
-        int deckSelectedCardIndex = 0;
-        int bagSelectedCardIndex = 0; 
+        [SerializeField]
+        List<GameObject> CardsInBag = new List<GameObject>(); 
+
+        int index = 0;
+
+        bool inBag, inDeck; 
 
         PlayerControls pc;
 
@@ -50,23 +50,40 @@ namespace Albasigma.UI
             CreateCardImages(Deck.PlayerDeck, transform, true);
             CreateCardImages(PlayerBag.bag.CardsInBag, CardsInBagPanel, false);
 
-            SelectedCard = Cards[deckSelectedCardIndex];
+            SelectedCard = CardsInDeck[index];
+            SelectedCard.transform.GetChild(0).gameObject.SetActive(true);
 
-            SelectedUI = transform; 
+            SelectedUI = transform;
+
+            inDeck = true;
+            inBag = false; 
         }
 
         private void SwitchMenu_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (SelectedUI == transform)
+            MenuSwap(); 
+        }
+
+        void MenuSwap()
+        {
+            SelectedCard.transform.GetChild(0).gameObject.SetActive(false);
+            index = 0;
+
+            if (inDeck)
             {
                 SelectedUI = CardsInBagPanel;
-            }
-            else
+                SelectedCard = CardsInBag[index];
+            } // Switching from the deck
+
+            if (inBag)
             {
                 SelectedUI = transform;
-            }
-            SelectedCard = Cards[0];
+                SelectedCard = CardsInDeck[index];
+            }// Switching from the bag
 
+            inDeck = !inDeck;
+            inBag = !inBag;
+            SelectedCard.transform.GetChild(0).gameObject.SetActive(true);
         }
 
         private void MoveToDeck_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -89,7 +106,7 @@ namespace Albasigma.UI
                 Parent.AddComponent<CardInfoHolder>().Card = card; 
 
                 if(isInDeck)
-                    Cards.Add(Parent);
+                    CardsInDeck.Add(Parent);
 
                 GameObject Child = new GameObject();
                 Child.transform.parent = Parent.transform;
@@ -104,85 +121,78 @@ namespace Albasigma.UI
         private void MenuMove_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             Vector2 MoveVector = obj.ReadValue<Vector2>();
-            if(MoveVector.x > 0)
+            SelectedCard.transform.GetChild(0).gameObject.SetActive(false);
+
+            if (MoveVector.x > 0)
             {
-                CycleCardsUp(); 
-            } else if(MoveVector.x < 0) { CycleCardsDown();  }
+
+                CycleCardsUp();
+
+            }
+            else if(MoveVector.x < 0) {
+                CycleCardsDown();
+            }
             
             if(MoveVector.y > 0)
             {
                 GoUpARow(); 
-            } else if(MoveVector.y < 0) { GoDownARow();  }
-        }
+            } else if(MoveVector.y < 0) {
+                GoDownARow(); 
+            }
 
-        private void Update()
-        {
-            if (SelectedUI == transform)
-                SelectedCard = Cards[deckSelectedCardIndex];
-            else
-                SelectedCard = Cards[bagSelectedCardIndex];
+            if (inDeck)
+            {
+                SelectedCard = CardsInDeck[index];
+            }
+
+            if (inBag)
+            {
+                SelectedCard = CardsInBag[index];
+            }
+
+            SelectedCard.transform.GetChild(0).gameObject.SetActive(true);
+
         }
 
         public void CycleCardsUp()
         {
-            SelectedCard.transform.GetChild(0).gameObject.SetActive(false);
-
-            if (SelectedUI == transform)
-                deckSelectedCardIndex++;
-            else
-                bagSelectedCardIndex++;
-
-            SelectedCard.transform.GetChild(0).gameObject.SetActive(true);
+            if(index < SelectedUI.childCount - 1)
+            index++; 
         }
 
         public void CycleCardsDown()
         {
-            SelectedCard.transform.GetChild(0).gameObject.SetActive(false);
-
-            if(SelectedUI == transform)
-            {
-                deckSelectedCardIndex--;
-            }
-            else
-            {
-                bagSelectedCardIndex--;
-            }
-
-            SelectedCard.transform.GetChild(0).gameObject.SetActive(true);
+            if(index > 0)
+            index--; 
         }
 
         public void GoDownARow()
         {
-            SelectedCard.transform.GetChild(0).gameObject.SetActive(false);
-            if(SelectedUI == transform)
-            {
-                deckSelectedCardIndex += 3;
-            }
-            else
-            {
-                bagSelectedCardIndex += 3;
-            }
-            SelectedCard.transform.GetChild(0).gameObject.SetActive(true);
+            if(index + 3 < SelectedUI.childCount -1)
+            index += 3; 
         }
         public void GoUpARow()
         {
-            SelectedCard.transform.GetChild(0).gameObject.SetActive(false);
-
-            if(SelectedUI == transform)
-            {
-                deckSelectedCardIndex -= 3;
-            }
+            if (index - 3 > 0)
+                index -= 3;
             else
-            {
-                bagSelectedCardIndex -= 3;
-            }
-
-            SelectedCard.transform.GetChild(0).gameObject.SetActive(true);
+                index = 0; 
         }
 
         public void MoveCard(Transform newParent)
         {
-            SelectedCard.transform.SetParent(newParent); 
+            SelectedCard.transform.SetParent(newParent);
+            if (inDeck)
+            {
+                CardsInBag.Add(SelectedCard);
+                CardsInDeck.RemoveAt(index);
+            }
+            if (inBag)
+            {
+                CardsInDeck.Add(SelectedCard);
+                CardsInBag.RemoveAt(index);
+            }
+            MenuSwap(); 
         }
 
         public void SaveDeck() //Temp
@@ -197,11 +207,17 @@ namespace Albasigma.UI
 
         private void OnEnable()
         {
+            FindObjectOfType<PlayerCombat>().Controls.Disable();
+            FindObjectOfType<PlayerMovement>().inputs.Disable();
+            FindObjectOfType<HandUI>().inputs.Disable(); 
             pc.Enable(); 
         }
 
         private void OnDisable()
         {
+            FindObjectOfType<PlayerCombat>().Controls.Enable();
+            FindObjectOfType<PlayerMovement>().inputs.Enable();
+            FindObjectOfType<HandUI>().inputs.Enable();
             pc.Disable(); 
         }
     }

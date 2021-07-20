@@ -14,10 +14,19 @@ namespace Albasigma.ARPG
             PC = GetComponentInParent<PlayerCombat>(); 
         }
 
-
         public void OnAttackCollision()
         {
             PC.AttackCollision(); 
+        }
+
+        public void AttackFinished()
+        {
+            GetComponentInParent<PlayerCombat>().Attacking = false; 
+        }
+
+        public void AttackBegin()
+        {
+            GetComponentInParent<PlayerCombat>().Attacking = true;
         }
     }
 }

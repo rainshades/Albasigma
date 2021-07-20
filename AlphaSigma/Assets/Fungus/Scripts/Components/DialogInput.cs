@@ -1,8 +1,12 @@
 // This code is part of the Fungus library (https://github.com/snozbot/fungus)
 // It is released for free under the MIT open source license (https://github.com/snozbot/fungus/blob/master/LICENSE)
 
-﻿using UnityEngine;
+using System.Runtime.InteropServices.ComTypes;
+using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.InputSystem.UI;
 
 namespace Fungus
 {
@@ -44,7 +48,7 @@ namespace Fungus
 
         protected float ignoreClickTimer;
 
-        protected StandaloneInputModule currentStandaloneInputModule;
+        protected InputSystemUIInputModule currentStandaloneInputModule;
 
         protected Writer writer;
 
@@ -71,7 +75,7 @@ namespace Fungus
                 }
             }
         }
-            
+
         protected virtual void Update()
         {
             if (EventSystem.current == null)
@@ -81,46 +85,55 @@ namespace Fungus
 
             if (currentStandaloneInputModule == null)
             {
-                currentStandaloneInputModule = EventSystem.current.GetComponent<StandaloneInputModule>();
+                currentStandaloneInputModule = EventSystem.current.GetComponent<InputSystemUIInputModule>();
             }
 
             if (writer != null && writer.IsWriting)
             {
-                if (Input.GetButtonDown(currentStandaloneInputModule.submitButton) ||
-                    (cancelEnabled && Input.GetButton(currentStandaloneInputModule.cancelButton)))
+                currentStandaloneInputModule.submit.action.performed += ctx => SetNextLineFlag();
+
+                if (cancelEnabled)
                 {
-                    SetNextLineFlag();
+                    currentStandaloneInputModule.cancel.action.performed += ctx => SetNextLineFlag();
                 }
             }
 
             switch (clickMode)
             {
-            case ClickMode.Disabled:
-                break;
-            case ClickMode.ClickAnywhere:
-                if (Input.GetMouseButtonDown(0))
-                {
-                    SetNextLineFlag();
-                }
-                break;
-            case ClickMode.ClickOnDialog:
-                if (dialogClickedFlag)
-                {
-                    SetNextLineFlag();
-                    dialogClickedFlag = false;
-                }
-                break;
+                case ClickMode.Disabled:
+                    break;
+                case ClickMode.ClickAnywhere:
+                    if (Keyboard.current.anyKey.wasPressedThisFrame)
+                    {
+                        SetNextLineFlag();
+                    }
+                    if (Gamepad.all.Count > 0)
+                    {
+                        if (Gamepad.current.buttonSouth.wasPressedThisFrame ||
+                        Gamepad.current.buttonEast.wasPressedThisFrame)
+                        {
+                            SetNextLineFlag();
+                        }
+                    }
+                    break;
+                case ClickMode.ClickOnDialog:
+                    if (dialogClickedFlag)
+                    {
+                        SetNextLineFlag();
+                        dialogClickedFlag = false;
+                    }
+                    break;
             }
 
             if (ignoreClickTimer > 0f)
             {
-                ignoreClickTimer = Mathf.Max (ignoreClickTimer - Time.deltaTime, 0f);
+                ignoreClickTimer = Mathf.Max(ignoreClickTimer - Time.deltaTime, 0f);
             }
 
             if (ignoreMenuClicks)
             {
                 // Ignore input events if a Menu is being displayed
-                if (MenuDialog.ActiveMenuDialog != null && 
+                if (MenuDialog.ActiveMenuDialog != null &&
                     MenuDialog.ActiveMenuDialog.IsActive() &&
                     MenuDialog.ActiveMenuDialog.DisplayedOptionsCount > 0)
                 {
