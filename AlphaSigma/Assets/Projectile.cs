@@ -7,9 +7,7 @@ namespace Albasigma.ARPG
         public Vector3 LaunchDestination;
         public LayerMask HitLayer, IgnoreLayer;
         public float HitRadius;
-        public float damage; 
-
-
+        public float damage;
 
         public void SetProjectile(Vector3 LauchDestination, float hitRadius, float damage, LayerMask HitLayer)
         {
@@ -19,11 +17,6 @@ namespace Albasigma.ARPG
             transform.parent = null;
         }
 
-        private void Awake()
-        {
-            transform.LookAt(LaunchDestination);
-        }
-
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(transform.position, HitRadius); 
@@ -31,7 +24,9 @@ namespace Albasigma.ARPG
 
         private void FixedUpdate()
         {
+            transform.LookAt(LaunchDestination);
             transform.Translate(Vector3.forward * Time.deltaTime);
+            
             Collider[] col = Physics.OverlapSphere(transform.position, HitRadius);
 
             if (col.Length > 0)

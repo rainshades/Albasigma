@@ -11,10 +11,6 @@ namespace Albasigma.ARPG
         [SerializeField]
         LayerMask IgnoreLayer;
 
-        private void Awake()
-        {
-        }
-
         private void Update()
         {
             transform.LookAt(FindObjectOfType<PlayerCombat>().transform); 
@@ -35,8 +31,6 @@ namespace Albasigma.ARPG
             {
                 currentAttackCooldown -= Time.deltaTime;
             }
-
-            HealthBar.transform.localScale = new Vector3(Currenthealth / MaxHealth, 1, 1);
         }
 
         public new void Attack(float damage, GameObject entity)

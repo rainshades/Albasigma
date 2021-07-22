@@ -28,7 +28,12 @@ namespace Albasigma
         public static GameManager Instance { get; set;  }
 
         [SerializeField]
-        PlayerPuaseUI pauseUI; 
+        PlayerPauseUI complexPauseUI;
+
+        [SerializeField]
+        GameObject simplePauseUI; 
+
+        public ArenaManager CurrentArena; 
 
         public bool Paused = false;
 
@@ -49,14 +54,22 @@ namespace Albasigma
             if (!Paused)
             {
                 Time.timeScale = 1; 
-                pauseUI.GetComponentInChildren<CurrentDeckOfCardsUI>().SaveDeck(); 
+                complexPauseUI.GetComponentInChildren<CurrentDeckOfCardsUI>().SaveDeck(); 
             }
             else
             {
                 Time.timeScale = 0; 
             }
 
-            pauseUI.gameObject.SetActive(Paused);
+            if (CurrentArena.AllEnemiesDefeated)
+            {
+
+                complexPauseUI.gameObject.SetActive(Paused);
+            }
+            else
+            {
+                simplePauseUI.gameObject.SetActive(Paused); 
+            }
         }
 
         public void SaveGame()

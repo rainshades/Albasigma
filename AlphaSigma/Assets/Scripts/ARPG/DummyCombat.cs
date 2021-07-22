@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.UI;
+using Albasigma.UI; 
 namespace Albasigma.ARPG
 {
     public class DummyCombat : MonoBehaviour, ICombatEntity
@@ -14,8 +15,6 @@ namespace Albasigma.ARPG
         public Transform AttackPoint;
         [SerializeField]
         protected LayerMask PlayerLayer;
-
-        public SpriteRenderer HealthBar; 
 
         private void Awake()
         {
@@ -55,7 +54,6 @@ namespace Albasigma.ARPG
                 GetComponent<DummyMovement>().agent.isStopped = false;
             }
 
-            HealthBar.transform.localScale = new Vector3(Currenthealth / MaxHealth, 1, 1); 
         }
 
         public void Attack(float damage, GameObject entity)
@@ -76,8 +74,8 @@ namespace Albasigma.ARPG
         public void TakeDamage(float damage)
         {
             Currenthealth -= damage;
-
-            if(Currenthealth <= 0)
+            HealthBar.instance.LastHitEnemy = this; 
+            if (Currenthealth <= 0)
             {
                 OnDeath(); 
             }

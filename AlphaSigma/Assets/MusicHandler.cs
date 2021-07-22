@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Albasigma.ARPG; 
 
 namespace Albasigma
 {
     public class MusicHandler : MonoBehaviour
     {
         [SerializeField]
-        AudioClip backgroundAudio;
+        AudioClip NonCombatTheme;
+        [SerializeField]
+        AudioClip CombatTheme; 
 
         AudioSource Source; 
 
@@ -16,17 +19,16 @@ namespace Albasigma
         void Start()
         {
             Source = GetComponent<AudioSource>();
-            if (backgroundAudio != null)
+            if (!GetComponentInParent<ArenaManager>().AllEnemiesDefeated && NonCombatTheme != null)
             {
-                Source.clip = backgroundAudio;
+                Source.clip = NonCombatTheme;
                 Source.Play();
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
+            else if(GetComponentInParent<ArenaManager>().AllEnemiesDefeated && CombatTheme != null)
+            {
+                Source.clip = CombatTheme;
+                Source.Play(); 
+            }
         }
     }
 }

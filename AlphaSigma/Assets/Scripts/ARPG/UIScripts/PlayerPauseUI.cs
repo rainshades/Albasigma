@@ -7,12 +7,13 @@ using Albasigma.ARPG;
 
 namespace Albasigma.UI
 {
-    public class PlayerPuaseUI : MonoBehaviour
+    public class PlayerPauseUI : MonoBehaviour
     {
         [SerializeField]
         TextMeshProUGUI HealthText, DriveText, CurrencyText;
         PlayerCombat PC;
         BagObject Bag; 
+
         private void Awake()
         {
             PC = FindObjectOfType<PlayerCombat>();
