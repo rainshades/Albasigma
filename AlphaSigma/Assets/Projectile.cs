@@ -24,7 +24,8 @@ namespace Albasigma.ARPG
 
         private void FixedUpdate()
         {
-            transform.LookAt(LaunchDestination);
+            transform.LookAt(LaunchDestination + Vector3.up);
+
             transform.Translate(Vector3.forward * Time.deltaTime);
             
             Collider[] col = Physics.OverlapSphere(transform.position, HitRadius);
@@ -38,9 +39,16 @@ namespace Albasigma.ARPG
                         collider.GetComponent<ICombatEntity>().TakeDamage(damage);
                         Destroy(gameObject);
                     }
+
+                    if(collider.gameObject.tag == "Untagged")
+                    {
+                        Destroy(gameObject);
+                    }
                 }
             }
         }
+
+
 
     }
 }

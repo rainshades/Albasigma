@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine; 
 
 
 namespace Albasigma.ARPG
@@ -28,7 +29,7 @@ namespace Albasigma.ARPG
 
         Collider[] EnemiesInRange;
 
-        Vector3 ReturnPostion;
+        Vector3 CardReturnPostion;
 
         public PlayerControls Controls;
 
@@ -39,6 +40,11 @@ namespace Albasigma.ARPG
         
         public static PlayerCombat Instance { get; set; }
 
+        public GameObject CameraPoint; 
+        bool LockedOn;
+        Vector3 CameraReturnPosition;
+
+
         public void GainExp(int EXP)
         {
             PlayerLevel.Experience += EXP; 
@@ -48,13 +54,52 @@ namespace Albasigma.ARPG
         {
             Instance = this;
             AC = GetComponent<PlayerAnimationController>(); 
-            ReturnPostion = CardLockOn.localPosition;
+            CardReturnPostion = CardLockOn.localPosition;
             Controls = new PlayerControls();
 
             Controls.Player.AttackInteract.performed += AttackInteract_performed;
             Controls.Player.Block.performed += Block_performed;
             Controls.Player.Block.canceled += ctx => Blocking = false;
             Controls.Player.Block.canceled += ctx => AC.StopBlock();
+
+            Controls.Player.LockOn.performed += LockOn_performed;
+        }
+
+        private void LockOn_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+        {
+            CinemachineTargetGroup Group = FindObjectOfType<CinemachineTargetGroup>();
+
+            if (!LockedOn)
+            {
+                try
+                {
+                    CameraReturnPosition = CameraPoint.transform.position;
+                    if(Group.m_Targets.Length == 1)
+                    {
+                        Group.AddMember(EnemiesInRange[0].transform, .5f, 0);
+                    }
+                    LockedOn = true;
+                }
+                catch
+                {
+                    Debug.Log("Nothing in range");
+                }
+            }
+            else
+            {
+                if(Group.m_Targets.Length > 1)
+                {
+                    try
+                    {
+                        Group.RemoveMember(EnemiesInRange[0].transform);
+                    }
+                    catch
+                    {
+                        Group.RemoveMember(Group.m_Targets[1].target);
+                    }
+                }
+                LockedOn = false; 
+            }
         }
 
         private void Block_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -65,7 +110,12 @@ namespace Albasigma.ARPG
         private void AttackInteract_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             AC.AttackAniTrigger();
-            
+
+            if (!GetComponent<PlayerMovement>().grounded)
+            {
+                GetComponent<PlayerMovement>().gravity *= 2.5f; 
+            }
+
 
             try
             {
@@ -107,7 +157,7 @@ namespace Albasigma.ARPG
             }
             else
             {
-                CardLockOn.localPosition = ReturnPostion; 
+                CardLockOn.localPosition = CardReturnPostion; 
             }
             if(TimeLeftToContinueComboString <= 0)
             {

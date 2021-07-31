@@ -109,12 +109,9 @@ namespace Albasigma.ARPG
                     }
                     else if (jumpcounter == 1)
                     {
-                        jumpHeight /= 2;
-
                         JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
-                        moveState = MoveState.Jumping;
                     }
-                    else if (jumpcounter == 2)
+                    else if (jumpcounter >= 2)
                     {
                         gravity = 1.0f;
                         CurrentMovementSpeed *= 1.5f; 

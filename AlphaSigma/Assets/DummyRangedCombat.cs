@@ -41,10 +41,10 @@ namespace Albasigma.ARPG
 
         public void LaunchProjectile(GameObject entity, Vector3 target, float damage)
         {
-            GameObject go = Instantiate(entity, new Vector3(transform.position.x, 1, transform.position.z) + Vector3.forward, Quaternion.identity);
+            GameObject go = Instantiate(entity, AttackPoint.position + Vector3.forward, Quaternion.identity);
 
 
-            go.GetComponent<Projectile>().SetProjectile(target, transform.localScale.z, damage, PlayerLayer);
+            go.GetComponent<Projectile>().SetProjectile(target, 0.5f, damage, PlayerLayer);
             go.GetComponent<Projectile>().IgnoreLayer = IgnoreLayer; 
         }
     }
