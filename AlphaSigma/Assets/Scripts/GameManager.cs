@@ -9,6 +9,10 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Albasigma
 {
+    /// <summary>
+    /// Saves GameData to file
+    /// Data is stored here AND in a scriptable object. 
+    /// </summary>
     public class GameData
     {
         public float playerhealth;
@@ -71,18 +75,17 @@ namespace Albasigma
                 simplePauseUI.gameObject.SetActive(Paused); 
             }
         }
-
+        
         public void SaveGame()
         {
             PlayerMovement movement = FindObjectOfType<PlayerMovement>();
             PlayerCombat combat = movement.GetComponent<PlayerCombat>();
             Vector3 PlayerLocation = movement.transform.position;
-            //Deck and bag are scriptable objects and will not need to be saved to file
+            //Deck and bag will also need to be saved to file
 
             int current_scene = SceneManager.GetActiveScene().buildIndex;
 
             GameData GD = new GameData(combat.Currenthealth, combat.CurrentDrive, current_scene, PlayerLocation);
-
 
             string autosave = Application.persistentDataPath + "/" + filepath + ".json";
             FileStream file = File.Create(autosave);
@@ -91,8 +94,7 @@ namespace Albasigma
             bf.Serialize(file, json);
             file.Close();
 
-            //We need to save the non scriptable objects i.e. the player's drive, health, location (both world location and the scene) to file
-        }
+        } // Saves player data to file. 
 
         public void LoadGame()
         {
@@ -110,28 +112,29 @@ namespace Albasigma
             GameData GD = JsonUtility.FromJson<GameData>(json);
             file.Close(); 
 
-            //Deck and bag are scriptable objects and will not need to be saved to file
+            //Will need to save deckdata to file as the player data is saved to file
 
             return GD; 
-        }
+        } // Loads player data 
 
         public void SetCombatStats(PlayerCombat combat, GameData GD)
         {
             combat.CurrentDrive = GD.playerdrive;
             combat.Currenthealth = GD.playerhealth;
             combat.transform.position = GD.PlayerSaveLocation;
-        }
+        } //Set's the player's combat stats to the ones on file. 
 
         private void OnGameDataLoaded(Scene scene, LoadSceneMode mode)
         {
             PlayerCombat combat = FindObjectOfType<PlayerCombat>();
             SetCombatStats(combat, LoadGameData()); 
-        }
+        }//What happens when the game data is loaded
 
         public void GameOver()
         {
             SceneManager.LoadScene(0);
-        }
+        }//On death loads main menu
+        //Will need to be edited to be a gameover screen
 
         private void OnEnable()
         {

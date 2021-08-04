@@ -113,8 +113,9 @@ namespace Albasigma.ARPG
                     }
                     else if (jumpcounter >= 2)
                     {
-                        gravity = 1.0f;
-                        CurrentMovementSpeed *= 1.5f; 
+                        JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 1.5f;
+                        gravity = 1.5f;
+                        CurrentMovementSpeed *= GetComponent<PlayerCombat>().Stats.FlightSpeed; 
                         AC.GlideTrigger();
                     }
                 }

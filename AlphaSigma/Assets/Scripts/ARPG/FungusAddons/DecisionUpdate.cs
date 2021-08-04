@@ -1,6 +1,9 @@
 ﻿using Fungus;
 using Albasigma.ARPG;
 
+/// <summary>
+/// Decision Tracker Accessor for Fungus. 
+/// </summary>
 namespace Albasigma.FungusAddon
 {
     [CommandInfo("Friendly", "Update Decision", "Makes a bool in the Decision Tracker true")]
@@ -12,8 +15,8 @@ namespace Albasigma.FungusAddon
         public override void Execute()
         {
             base.Execute();
-            Tracker.Decisions[Decision_Number] = true; 
-            Continue(); 
+            Tracker.Decisions[Decision_Number].Done = true;
+            Continue();
         }
-    }
+    }    
 }

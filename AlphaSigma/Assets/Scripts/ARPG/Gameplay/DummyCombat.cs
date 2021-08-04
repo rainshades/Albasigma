@@ -63,7 +63,6 @@ namespace Albasigma.ARPG
             Vector3 KnockbackDirection = (AttackPoint.position - entity.transform.position) * -1; 
             GetComponent<EntityMovement>().KnockbackCalc(entity.GetComponent<EntityMovement>(), 
                 KnockbackDirection); 
-
         }
 
         private void OnDrawGizmos()

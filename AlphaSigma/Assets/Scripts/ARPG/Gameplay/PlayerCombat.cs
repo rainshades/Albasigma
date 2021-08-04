@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine; 
+using Cinemachine;
 
 
 namespace Albasigma.ARPG
 {
+
+
     public class PlayerCombat : MonoBehaviour, ICombatEntity
     {
         [SerializeField]
@@ -16,16 +18,22 @@ namespace Albasigma.ARPG
 
         int combo; 
 
-        PlayerLevelSystem PlayerLevel = new PlayerLevelSystem(); 
 
         public Transform CardLockOn;
         public float LockOnRange;
-        public LayerMask EnemyLayer; 
+        public LayerMask EnemyLayer;
 
-        public float Currenthealth, MaxHealth;
-        public float CurrentDrive, MaxDrive;
+        public PlayerStats Stats;
 
-        public float AttackDamage; 
+        public PlayerLevelSystem PlayerLevel => Stats.PlayerLevel;
+        public float Currenthealth { get => Stats.Currenthealth; set => Stats.Currenthealth = value; }
+        public float MaxHealth => Stats.MaxHealth;
+        public float CurrentDrive { get => Stats.CurrentDrive; set => Stats.CurrentDrive = value; }
+        public float MaxDrive => Stats.MaxDrive;
+
+        public float AttackDamage => Stats.Attack;
+
+        public float AttackRange => Stats.AttackRange;
 
         Collider[] EnemiesInRange;
 
@@ -35,7 +43,6 @@ namespace Albasigma.ARPG
 
         public bool Blocking, Attacking;
 
-        public float AttackRange;
         public Transform AttackPoint;
         
         public static PlayerCombat Instance { get; set; }
@@ -47,7 +54,7 @@ namespace Albasigma.ARPG
 
         public void GainExp(int EXP)
         {
-            PlayerLevel.Experience += EXP; 
+            PlayerLevel.GainExperience(EXP); 
         }
 
         private void Awake()
@@ -113,7 +120,7 @@ namespace Albasigma.ARPG
 
             if (!GetComponent<PlayerMovement>().grounded)
             {
-                GetComponent<PlayerMovement>().gravity *= 2.5f; 
+                GetComponent<PlayerMovement>().gravity *= 5.0f; 
             }
 
 

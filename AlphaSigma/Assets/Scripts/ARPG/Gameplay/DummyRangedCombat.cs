@@ -7,6 +7,9 @@ namespace Albasigma.ARPG
     public class DummyRangedCombat : DummyCombat, ICombatEntity
     {
         public GameObject projectilePrefab;
+        bool recentlyFired;
+
+        public bool RecentlyFired => recentlyFired; 
 
         [SerializeField]
         LayerMask IgnoreLayer;
@@ -27,6 +30,12 @@ namespace Albasigma.ARPG
                 //nothing to attack
             }
 
+            if(currentAttackCooldown <= baseAttackCooldown / 2)
+            {
+                recentlyFired = false; 
+            }
+
+
             if (currentAttackCooldown > 0)
             {
                 currentAttackCooldown -= Time.deltaTime;
@@ -43,9 +52,9 @@ namespace Albasigma.ARPG
         {
             GameObject go = Instantiate(entity, AttackPoint.position + Vector3.forward, Quaternion.identity);
 
-
             go.GetComponent<Projectile>().SetProjectile(target, 0.5f, damage, PlayerLayer);
-            go.GetComponent<Projectile>().IgnoreLayer = IgnoreLayer; 
+            go.GetComponent<Projectile>().IgnoreLayer = IgnoreLayer;
+            recentlyFired = true; 
         }
     }
 }

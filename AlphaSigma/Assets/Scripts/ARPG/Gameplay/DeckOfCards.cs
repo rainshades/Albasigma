@@ -5,6 +5,9 @@ using Albasigma.Cards;
 
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Accessor for the current Deck's SO
+    /// </summary>
     public class DeckOfCards : MonoBehaviour
     {
         public Deck DeckSO;
@@ -13,6 +16,7 @@ namespace Albasigma.ARPG
         {
             if(DeckSO.spellsInHand.Count == 0)
                 DeckSO.DrawHand(); 
+            //Fills the hand which is empty on awake
         }       
     }
 }

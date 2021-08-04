@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fungus; 
 
+/// <summary>
+/// Execute Fungus block for a specific NPC
+/// </summary>
 namespace Albasigma.ARPG
 {
     public class Conversation : MonoBehaviour
@@ -11,7 +14,8 @@ namespace Albasigma.ARPG
 
         private void Awake()
         {
-            flow = FindObjectOfType<Flowchart>(); //If there are multiple Flowcharts this will need to be changed
+            flow = FindObjectOfType<Flowchart>();//Selects Fungus Block
+            //If there are multiple Flowcharts this will need to be changed
         }
 
         public void PlayConversation(string blockname)
@@ -19,7 +23,7 @@ namespace Albasigma.ARPG
             if (!flow.HasExecutingBlocks())
             {
                 flow.ExecuteBlock(blockname);
-            }
+            }//Executes Fungus Block 
         }
     }
 }

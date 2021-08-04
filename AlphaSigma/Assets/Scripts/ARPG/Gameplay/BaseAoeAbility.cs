@@ -8,6 +8,8 @@ namespace Albasigma.ARPG
     public interface IAreaOfEffectSpell
     {
         public void inSpellArea(int Damage);
+        //What happens when something is in the spell AOE
+        //Can be used for damage, but can also be used to apply abilities/status conditions in the AOE as well using int to signify the condition type
     }
 
     public class BaseAoeAbility  : MonoBehaviour, IAreaOfEffectSpell
@@ -35,11 +37,12 @@ namespace Albasigma.ARPG
             {
                 //nothing in collider
             }
-        }
+        }//At base. Anything in the collider takes damage 
 
         private void Awake()
         {
-            transform.localScale = new Vector3(AreaOfEffect, AreaOfEffect, AreaOfEffect);     
+            transform.localScale = new Vector3(AreaOfEffect, AreaOfEffect, AreaOfEffect);  
+            //This base AOE is a sphere.
         }
 
         private void OnDrawGizmos()
@@ -53,11 +56,12 @@ namespace Albasigma.ARPG
             {
                 currentDamageTick = DamageTick;
                 inSpellArea(5); 
-            }
+            } // Spell damage happens over tick
             else
             {
                 DamageTick -= Time.deltaTime; 
-            }
+            }// Decreases tick based on framerate
+            //This may be better handled with a coroutine
         }
 
 

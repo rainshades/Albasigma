@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Fungus;
 using Albasigma.UI;
-using Albasigma.Cards; 
+using Albasigma.Cards;
+
+/// <summary>
+/// A Fungus add on that opens the store UI 
+/// </summary>
 
 namespace Albasigma.FungusAddon
 {
