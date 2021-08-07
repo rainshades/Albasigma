@@ -12,7 +12,6 @@ namespace Albasigma.ARPG
     /// If this is a boss area
     /// If this is an instance
     /// </summary>
-   
 
     public class ArenaManager : MonoBehaviour
     {
@@ -24,6 +23,8 @@ namespace Albasigma.ARPG
 
         private void Start()
         {
+            MusicHandler.ArenaManager = this; 
+
             GameManager.Instance.CurrentArena = this; 
             for(int i = 0; i < transform.childCount; i++)
             {
@@ -33,9 +34,16 @@ namespace Albasigma.ARPG
                 }
             }
         }
-        private void OnEnable()
+
+        private void Update()
         {
-            
+            for(int i = 0; i < Enemies.Count; i++)
+            {
+                if(Enemies[i] == null)
+                {
+                    Enemies.RemoveAt(i); 
+                }
+            }
         }
     }
 }

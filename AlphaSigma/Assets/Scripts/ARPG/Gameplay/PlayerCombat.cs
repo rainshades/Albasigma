@@ -6,10 +6,11 @@ using Cinemachine;
 
 namespace Albasigma.ARPG
 {
-
-
     public class PlayerCombat : MonoBehaviour, ICombatEntity
     {
+        [SerializeField]
+        SkillList Skills; 
+
         [SerializeField]
         float maxComboWindowTime;
         float TimeLeftToContinueComboString = 0;
@@ -17,7 +18,6 @@ namespace Albasigma.ARPG
         PlayerAnimationController AC; 
 
         int combo; 
-
 
         public Transform CardLockOn;
         public float LockOnRange;
@@ -50,7 +50,7 @@ namespace Albasigma.ARPG
         public GameObject CameraPoint; 
         bool LockedOn;
         Vector3 CameraReturnPosition;
-
+        public bool groundPound; 
 
         public void GainExp(int EXP)
         {
@@ -120,8 +120,9 @@ namespace Albasigma.ARPG
 
             if (!GetComponent<PlayerMovement>().grounded)
             {
-                GetComponent<PlayerMovement>().gravity *= 5.0f; 
-            }
+                GetComponent<PlayerMovement>().gravity *= 5.0f;
+                groundPound = true; 
+            }//Ground Pound
 
 
             try
@@ -146,6 +147,25 @@ namespace Albasigma.ARPG
                 if (col.tag == "Breakable")
                     Destroy(col.gameObject); //Placeholder for the scripted destruction of said object
             }
+        }
+
+        public void FinishingAttackCollision()
+        {
+            Collider[] colliders = Physics.OverlapSphere(AttackPoint.position, AttackRange, EnemyLayer);
+
+            foreach (Collider col in colliders)
+            {
+                if (col.tag == "Enemy")
+                {
+                    Attack(AttackDamage, col.gameObject); 
+                    Vector3 KnockbackDirection = (AttackPoint.position - col.transform.position) * -1;
+                    GetComponent<EntityMovement>().KnockbackCalc(col.GetComponent<EntityMovement>(),
+                        KnockbackDirection);
+                }
+
+                if (col.tag == "Breakable")
+                    Destroy(col.gameObject); //Placeholder for the scripted destruction of said object
+            }
 
         }
 
@@ -161,20 +181,21 @@ namespace Albasigma.ARPG
             if(EnemiesInRange.Length > 0)
             {
                 CardLockOn.position = EnemiesInRange[0].transform.position;
-            }
+            } // Card autolocks to the closest enemy
             else
             {
                 CardLockOn.localPosition = CardReturnPostion; 
-            }
+            }//if nothing in range it just goes forward
+
             if(TimeLeftToContinueComboString <= 0)
             {
                 combo = 0;
                 AC.ComboNumber(combo);
-            }
+            }//resets combo
             else
             {
                 TimeLeftToContinueComboString -= Time.deltaTime; 
-            }
+            }//Counts down combo 
         }
 
         private void OnDrawGizmos()
@@ -222,7 +243,8 @@ namespace Albasigma.ARPG
             {
                 OnDeath(); 
             }
-        }
+        }//Player takes damage. If the player has 0 or less health they die.
+        //Blocking keeps player from taking damage
 
         public void Block()
         {

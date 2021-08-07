@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Players save at these interactable spots
+    /// </summary>
     public class SavePoint : MonoBehaviour, IInteractable
     {
         public GameObject SaveText; 
@@ -17,6 +20,6 @@ namespace Albasigma.ARPG
         {
             GameManager.Instance.SaveGame();
             SaveText.GetComponent<Animator>().Play("SaveGame");
-        }
+        }//Uses GameManager Save()
     }
 }

@@ -2,6 +2,10 @@
 
 namespace Albasigma.ARPG
 {
+
+    /// <summary>
+    /// Practice Projectile
+    /// </summary>
     public class Projectile : MonoBehaviour
     {
         public Vector3 LaunchDestination;
@@ -15,7 +19,7 @@ namespace Albasigma.ARPG
             IgnoreLayer = transform.gameObject.layer;
 
             transform.parent = null;
-        }
+        } // MonoBehaviours can't have constructors so this is the best of a bad situation 
 
         private void OnDrawGizmos()
         {
@@ -24,7 +28,7 @@ namespace Albasigma.ARPG
 
         private void FixedUpdate()
         {
-            transform.LookAt(LaunchDestination + Vector3.up);
+            transform.LookAt(LaunchDestination + Vector3.up);//Orients the projectiles towards it's destination 
 
             transform.Translate(Vector3.forward * Time.deltaTime);
             
@@ -38,17 +42,14 @@ namespace Albasigma.ARPG
                     {
                         collider.GetComponent<ICombatEntity>().TakeDamage(damage);
                         Destroy(gameObject);
-                    }
+                    }//Player takes damage if they aren't blocking and then the object is destroyed
 
                     if(collider.gameObject.tag == "Untagged")
                     {
                         Destroy(gameObject);
-                    }
+                    }//Destroy when it hits anything else
                 }
             }
         }
-
-
-
     }
 }

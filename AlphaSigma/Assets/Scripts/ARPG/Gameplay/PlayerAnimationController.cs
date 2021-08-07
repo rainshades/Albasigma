@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Albasigma.ARPG{
+    /// <summary>
+    /// Methods for the player animations 
+    /// </summary>
     public class PlayerAnimationController : MonoBehaviour
     {
         Animator ani;
 
         public bool isRunning { get => ani.GetBool("Running"); }
+
+        public Animator animator => ani; 
 
         private void Awake()
         {
@@ -21,6 +26,11 @@ namespace Albasigma.ARPG{
             {
                 ani.SetTrigger("Attack");
             }
+        }
+
+        public void UpFromLedge()
+        {
+            ani.SetTrigger("UpFromLedge");
         }
 
         public void ComboNumber(int HitNum)

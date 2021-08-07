@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17e6aa540af0d54c9d15968b050c986, type: 3}
   m_Name: DecisionTracker
   m_EditorClassIdentifier: 
-  Decisions: 
+  Decisions:
+  - name: 
+    Done: 0
+  - name: 
+    Done: 0

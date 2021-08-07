@@ -5,9 +5,11 @@ using UnityEngine.AI;
 
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Ranged movement for the combat dummy
+    /// </summary>
     public class DummyRangedCombatMovement : MonoBehaviour, IEnemyAIDetection
     {
-
         GameObject Target;
         bool canRunAway; 
         bool PlayerInRange;
@@ -39,7 +41,8 @@ namespace Albasigma.ARPG
             Target = col[0].gameObject;
             Detected.gameObject.SetActive(true);
             canRunAway = Vector3.Distance(transform.position, Target.transform.position) < 4 && !GetComponent<DummyRangedCombat>().RecentlyFired;
-        }
+                //Trying to give the player a little time to hit the dummy before it runs backwards
+        }//On detection makes player a target and decides whether or not it wants to run away
 
         private void FixedUpdate()
         {
@@ -56,7 +59,8 @@ namespace Albasigma.ARPG
             if (canRunAway)
             {
                 agent.Move(Vector3.back * Time.deltaTime * 2.5f);
-            }
+            }//if it hasn't fired recently it runs away
+            
         }
     }
 }

@@ -8,10 +8,18 @@ namespace Albasigma.ARPG
 
     public enum MoveState { Idle, Jumping, Falling, Running }
 
+    /// <summary>
+    /// Handles Player movement options 
+    /// </summary>
     public class PlayerMovement : EntityMovement
     {
+        [SerializeField]
+        SkillList Skills;
+
         public PlayerControls inputs;
-        public PlayerAnimationController AC; 
+        public PlayerAnimationController AC;
+
+        public PlayerCombat combat; 
 
         [SerializeField]
         GameObject PlayerGFX;
@@ -21,7 +29,21 @@ namespace Albasigma.ARPG
         
         Vector3 MovementAngle;
 
-        int jumpcounter = 0; 
+        int jumpcounter = 0;
+        //Meant to convey jump status
+        //Jump 1 = Innitial Jump
+        //Jump 2 = Secondary Jump
+        //Jump 3 = Flight
+
+        [SerializeField]
+        GameObject PlayerLedgePoint;
+
+        bool OnLedge;
+
+        Vector3 LedgeBoxSize = new Vector3(0.25f, 0.25f, 0.25f);
+
+        Ledge activeLedge; 
+                
 
         private void Awake()
         {
@@ -29,13 +51,19 @@ namespace Albasigma.ARPG
 
             baseJumpHeight = jumpHeight;
 
-            AC = GetComponent<PlayerAnimationController>(); 
+            AC = GetComponent<PlayerAnimationController>();
+            combat = GetComponent<PlayerCombat>();
 
             inputs.Player.Jump.started += Jump_performed;
             inputs.Player.Jump.canceled += ctx => moveState = MoveState.Falling; 
             inputs.Player.Movement.started += Movement_performed;
             inputs.Player.Movement.performed += Movement_performed;
             inputs.Player.Movement.canceled += Movement_canceled;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireCube(PlayerLedgePoint.transform.position, LedgeBoxSize);
         }
 
         protected override void GravityCheck()
@@ -46,41 +74,61 @@ namespace Albasigma.ARPG
             {
                 JumpForce.x = 0;
                 JumpForce.z = 0; 
-            }
+            }//No nock back resets the jumpforce movement 
             if(!grounded && JumpForce.y <= 0)
             {
                 JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * -1;
-            }
+            }//Jump innertia 
 
             if(moveState != MoveState.Jumping && !grounded)
             {
                 JumpForce.y -= gravity * Time.deltaTime; 
-            }
+            }//Falling
 
             if(grounded && moveState != MoveState.Running)
             {
                 moveState = MoveState.Idle; 
-            }
+            }//Movestate reset
 
             if (grounded)
             {
+                if (combat.groundPound)
+                {
+                    GameObject go = Instantiate(Skills.Skills[3].Effect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
+                    go.transform.SetParent(null);
+                    combat.groundPound = false; 
+                }
+
                 gravity = baseGravity;
                 jumpcounter = 0;
                 jumpHeight = baseJumpHeight;
                 CurrentMovementSpeed = baseMovementSpeed; 
             }
 
-            AC.isGrounded(grounded); 
+            AC.isGrounded(grounded); //GroundCheck
         }
 
         protected override void KnockBack(Vector3 Direction)
         {
             base.KnockBack(Direction);
-            if (!GetComponent<PlayerCombat>().Blocking)
+            if (!combat.Blocking)
             {
                 JumpForce = Direction * KnockbackForce * 4;
                 JumpForce.y = KnockbackForce * 1.5f;
-            }
+            }//If a player is not blocking an attack they get knocked back
+        }
+
+        private void Update()
+        {
+            if (LedgeCheck())
+            {
+                if (!AC.animator.GetCurrentAnimatorStateInfo(0).IsName("LedgeGrab"))
+                    AC.animator.Play("LedgeGrab");
+                
+                StopMovement();
+                JumpForce = Vector3.zero;
+                gravity = 0; 
+            }//ledge grab 
         }
 
 
@@ -97,7 +145,7 @@ namespace Albasigma.ARPG
 
         private void Jump_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (!GetComponent<PlayerCombat>().Blocking && !GetComponent<PlayerCombat>().Attacking)
+            if (!combat.Blocking && !combat.Attacking)
             {
                 if ((grounded && moveState != MoveState.Jumping) || (!grounded && jumpcounter < 2 && moveState != MoveState.Jumping))
                 {
@@ -106,30 +154,35 @@ namespace Albasigma.ARPG
                     {
                         JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
                         moveState = MoveState.Jumping;
-                    }
+                    }//first jump
                     else if (jumpcounter == 1)
                     {
                         JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
-                    }
+                    }//second jump
                     else if (jumpcounter >= 2)
                     {
-                        JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 1.5f;
-                        gravity = 1.5f;
-                        CurrentMovementSpeed *= GetComponent<PlayerCombat>().Stats.FlightSpeed; 
+                        CurrentMovementSpeed *= combat.Stats.FlightSpeed; 
                         AC.GlideTrigger();
-                    }
+                    }//flight
                 }
             }
-        }
+
+            if (LedgeCheck())
+            {
+                AC.UpFromLedge();
+            }
+        }//Jump Y-Movement
 
         private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (!GetComponent<PlayerCombat>().Blocking && !GetComponent<PlayerCombat>().Attacking)
+            if (!combat.Blocking && !combat.Attacking && !LedgeCheck())
             {
                 targetAngle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
-                angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+                //Calculating the forward angle by using the tangent of the Camera y-axis 
+                angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); 
+                //Smoothing the angle 
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
+                //Rotates the character towards the smoothed angle 
                 MovementForce = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
                 MovementAngle = new Vector3(obj.ReadValue<Vector2>().x, 0, obj.ReadValue<Vector2>().y);
@@ -141,11 +194,38 @@ namespace Albasigma.ARPG
                     AC.StartRunning();
                 }
             }
+            else if (LedgeCheck())
+            {
+                AC.UpFromLedge();
+            }
             else
             {
                 StopMovement(); 
             }
+        }//Move X-, Z-Movement
+
+        protected override bool LedgeCheck()
+        {
+            bool hitledge = false; 
+            Collider[] colliders = Physics.OverlapBox(PlayerLedgePoint.transform.position, LedgeBoxSize / 2);
+            foreach(Collider col in colliders)
+            {
+                hitledge = col.tag == "Ledge";
+                if (hitledge)
+                {
+                    activeLedge = col.GetComponent<Ledge>();
+                   // transform.position = activeLedge.NewPos; 
+                }
+            }
+
+            return hitledge; 
         }
+
+
+        public void CLimbUpFromLedge()
+        {
+            transform.position = activeLedge.GetStandUpPos(); 
+        }//sets the position as the climb up 
 
         private void OnEnable()
         {

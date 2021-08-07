@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 namespace Albasigma.UI
 {
+    /// <summary>
+    /// Enemy Health bar UI
+    /// </summary>
     public class HealthBar : MonoBehaviour
     {
         public DummyCombat LastHitEnemy;
@@ -34,11 +37,11 @@ namespace Albasigma.UI
                         ForeGround.rectTransform.sizeDelta = new Vector2(ForeGround.rectTransform.sizeDelta.x, LastHitEnemy.MaxHealth + 50);
                     }
                     ForeGround.transform.localScale = new Vector3(1, LastHitEnemy.Currenthealth / LastHitEnemy.MaxHealth, 1);
-                }
+                }//Sets the LastHitEnemy
                 else
                 {
                     Background.gameObject.SetActive(false);
-                }
+                }//if no enemy hit then hide the healthbar
             }
             catch
             {

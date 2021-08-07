@@ -1,26 +1,28 @@
 ﻿using UnityEngine;
 
-
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Base movement for standard movement objects that use Character Controller
+    /// </summary>
     public class EntityMovement : MonoBehaviour
     {
-        protected MoveState moveState;
+        protected MoveState moveState; //Current movestate
         [HideInInspector]
-        public float CurrentMovementSpeed;
+        public float CurrentMovementSpeed; //Movementspeed after imparements or inhancements
         [SerializeField]
         protected float baseMovementSpeed; 
         protected CharacterController cc;
         
         [SerializeField]
-        protected GameObject BottomPoint;
+        protected GameObject BottomPoint; // Point that determins ground collision
 
         [SerializeField]
         protected LayerMask GroundedLayer;
 
-        public float gravity;
+        public float gravity; //Gravity after imparements or inhacements
         protected float baseGravity;  
-        protected Vector3 JumpForce; 
+        protected Vector3 JumpForce; //Force used to interact with the Y-axis
         public bool grounded = true;
 
         [SerializeField]
@@ -33,7 +35,7 @@ namespace Albasigma.ARPG
         public float KnockbackTimer;
         protected float KnockbackCounter;
 
-        protected Vector3 MovementForce = Vector3.zero;
+        protected Vector3 MovementForce = Vector3.zero;//Force used to interact with the X-,Z-Axis
 
         private void Start()
         {
@@ -50,7 +52,7 @@ namespace Albasigma.ARPG
             {
                 BottomPoint = Instantiate(new GameObject(), transform);
                 BottomPoint.transform.localPosition = Vector3.zero;
-            }
+            } // Creates a bottom point if one is not currently asigned at the base of the entity object 
         }
 
 
@@ -74,21 +76,30 @@ namespace Albasigma.ARPG
             target.KnockBack(direction);
         }
 
+        protected virtual bool LedgeCheck()
+        {
+            return false; 
+        }
+
 
         private void FixedUpdate()
         {
             GravityCheck();
+            LedgeCheck();
 
-            cc.Move(JumpForce * Time.deltaTime * 2.0f);
+            cc.Move(JumpForce * Time.deltaTime * 2.0f);//Player verticle movement
 
             if (KnockbackCounter <= 0)
             {
                 cc.Move(MovementForce * CurrentMovementSpeed * Time.deltaTime);
+                //Player moves when able
+                //Things that would impair player movement at the moment
+                //Knockback
             }
             else
             {
                 KnockbackCounter -= Time.deltaTime; 
-            }
+            }//when Knockback is greater than 
         }
 
     }

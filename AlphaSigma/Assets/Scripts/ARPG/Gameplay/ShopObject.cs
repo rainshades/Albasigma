@@ -5,11 +5,17 @@ using Albasigma.Cards;
 
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Signifies the player can interact with the object
+    /// </summary>
     public interface IInteractable
     {
-        public void Interact();
+        public void Interact();//When the player interacts with this object
     } 
 
+    /// <summary>
+    /// Contains the individual shop
+    /// </summary>
     public class ShopObject : MonoBehaviour, IInteractable
     {
         public ShopSO Shop;
@@ -21,7 +27,7 @@ namespace Albasigma.ARPG
         public void Interact()
         {
             OpenStore(); 
-        }
+        }// opens shop when player interacts
 
         private void OpenStore()
         {

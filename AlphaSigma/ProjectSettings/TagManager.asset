@@ -8,6 +8,8 @@ TagManager:
   - Shop
   - Breakable
   - Door
+  - Ledge
+  - GroundPound
   layers:
   - Default
   - TransparentFX

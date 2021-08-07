@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.UI;
 using Albasigma.UI; 
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Handles Combat for the melee dummy
+    /// </summary>
     public class DummyCombat : MonoBehaviour, ICombatEntity
     {
+        //Dummy Stats
         public float Currenthealth, MaxHealth, AttackRange, baseAttackCooldown;
         protected float currentAttackCooldown = 0; 
         public int expPrize, drivePrize, moneyPrize;
@@ -29,7 +29,7 @@ namespace Albasigma.ARPG
             PlayerCombat.Instance.gameObject.GetComponent<BagObject>().bag.currency += moneyPrize; 
 
             Destroy(gameObject);
-        }
+        }//Grants prizes upon death 
 
         private void Update()
         {

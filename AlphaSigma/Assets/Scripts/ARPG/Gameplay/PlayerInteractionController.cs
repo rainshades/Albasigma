@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Handles how player interacts with Iinteractalbes and 
+    /// other game objects (i.e. Doors/teleporters)
+    /// </summary>
     public class PlayerInteractionController : MonoBehaviour
     {
         public LayerMask InteractableLayers;

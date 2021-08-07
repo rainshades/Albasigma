@@ -4,15 +4,18 @@ using UnityEngine;
 
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Ranged Combat for the dummy
+    /// </summary>
     public class DummyRangedCombat : DummyCombat, ICombatEntity
     {
         public GameObject projectilePrefab;
-        bool recentlyFired;
+        bool recentlyFired; //Tells movement whether or not it can run away or fire again
 
         public bool RecentlyFired => recentlyFired; 
 
         [SerializeField]
-        LayerMask IgnoreLayer;
+        LayerMask IgnoreLayer; //Layers for the projectile to ignore. 
 
         private void Update()
         {
@@ -21,7 +24,6 @@ namespace Albasigma.ARPG
             Collider[] col = Physics.OverlapSphere(AttackPoint.position, AttackRange, PlayerLayer);
             try
             {
-
                 if (currentAttackCooldown <= 0)
                     Attack(2,col[0].gameObject);
             }
@@ -46,7 +48,7 @@ namespace Albasigma.ARPG
         {
             LaunchProjectile(projectilePrefab, entity.transform.position, damage);
             currentAttackCooldown = baseAttackCooldown;
-        }
+        }//Attacking launches a projectile 
 
         public void LaunchProjectile(GameObject entity, Vector3 target, float damage)
         {
@@ -55,6 +57,6 @@ namespace Albasigma.ARPG
             go.GetComponent<Projectile>().SetProjectile(target, 0.5f, damage, PlayerLayer);
             go.GetComponent<Projectile>().IgnoreLayer = IgnoreLayer;
             recentlyFired = true; 
-        }
+        }//Instantiates a projectile 
     }
 }
