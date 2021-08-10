@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 namespace Albasigma.Cards
 {
+    /// <summary>
+    /// Items that show up in the shop
+    /// </summary>
     [System.Serializable]
     public class ShopItem
     {
@@ -16,7 +19,10 @@ namespace Albasigma.Cards
             this.cost = cost; this.card = card; 
         }
     }
-
+    /// <summary>
+    /// Shops that appear on the overworld that the player interacts with
+    /// using Fungus/Iinteract
+    /// </summary>
     [CreateAssetMenu(fileName = "New Shop", menuName = "NPCShop")]
     public class ShopSO : ScriptableObject
     {
@@ -31,7 +37,8 @@ namespace Albasigma.Cards
            
             Shop.Remove(C); 
             }
-        }
+        }//Adds Item to Bag
+
         public void SellCard(SpellCard C)
         {
             Bag B = FindObjectOfType<BagObject>().bag;
@@ -40,6 +47,6 @@ namespace Albasigma.Cards
             B.CardsInBag.Remove(C);
 
             ShopItem item = new ShopItem(500, C);
-        }
+        }//Removes spell/item for flat fee (temporary: Will add price to each spellCard so it has intrensic value)
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Albasigma.ARPG
 {
-
     /// <summary>
     /// Practice Projectile
     /// </summary>

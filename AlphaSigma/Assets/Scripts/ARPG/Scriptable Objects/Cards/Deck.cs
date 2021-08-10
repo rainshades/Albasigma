@@ -5,6 +5,9 @@ using Albasigma.UI;
 
 namespace Albasigma.Cards
 {
+    /// <summary>
+    /// Contains the All related cards for the deck
+    /// </summary>
     [CreateAssetMenu(fileName = "New Deck", menuName = "Deck")]
     public class Deck : ScriptableObject
     {
@@ -46,14 +49,14 @@ namespace Albasigma.Cards
                 }
             }
             spellsInHand.Add(DrawNewCards); 
-        }
+        }//Draw a hand of 5 cards
 
         public void RefreshHand()
         {
             spellsInHand.Clear();
             DrawHand();
             FindObjectOfType<HandUI>().Reset(); 
-        }
+        }//Dump cards and draw a hand of 5
 
     }
 }

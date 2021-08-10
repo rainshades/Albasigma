@@ -10,12 +10,12 @@ namespace Albasigma.ARPG
     [CreateAssetMenu(fileName = "Player Stats", menuName = "Stats")]
     public class PlayerStats : ScriptableObject
     {
-        public float Currenthealth, MaxHealth;
-        public float CurrentDrive, MaxDrive;
+        public float Currenthealth, MaxHealth;//Constant Scaling
+        public float CurrentDrive, MaxDrive;//Constant Scaling
 
-        public float Attack, Speed, FlightSpeed, Mana;
+        public float Attack, Speed, FlightSpeed, Mana, currentMana;//Slower Scaling
 
-        public float AttackRange;
+        public float AttackRange;//Not Adjustable 
 
         public PlayerLevelSystem PlayerLevel = new PlayerLevelSystem();
     }

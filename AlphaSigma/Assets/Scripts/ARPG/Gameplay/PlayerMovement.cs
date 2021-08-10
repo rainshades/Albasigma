@@ -102,9 +102,20 @@ namespace Albasigma.ARPG
                 gravity = baseGravity;
                 jumpcounter = 0;
                 jumpHeight = baseJumpHeight;
-                CurrentMovementSpeed = baseMovementSpeed; 
+                CurrentMovementSpeed = baseMovementSpeed;
             }
+            else if(OnLedge)
+            {
+                if (!AC.animator.GetCurrentAnimatorStateInfo(0).IsName("LedgeGrab"))
+                {
+                    AC.animator.Play("LedgeGrab");
+                }
 
+               StopMovement();
+               JumpForce = Vector3.zero;
+               gravity = 0;
+            }//ledge grab 
+            
             AC.isGrounded(grounded); //GroundCheck
         }
 
@@ -117,20 +128,6 @@ namespace Albasigma.ARPG
                 JumpForce.y = KnockbackForce * 1.5f;
             }//If a player is not blocking an attack they get knocked back
         }
-
-        private void Update()
-        {
-            if (LedgeCheck())
-            {
-                if (!AC.animator.GetCurrentAnimatorStateInfo(0).IsName("LedgeGrab"))
-                    AC.animator.Play("LedgeGrab");
-                
-                StopMovement();
-                JumpForce = Vector3.zero;
-                gravity = 0; 
-            }//ledge grab 
-        }
-
 
         private void Movement_canceled(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
@@ -167,7 +164,7 @@ namespace Albasigma.ARPG
                 }
             }
 
-            if (LedgeCheck())
+            if (OnLedge)
             {
                 AC.UpFromLedge();
             }
@@ -175,7 +172,7 @@ namespace Albasigma.ARPG
 
         private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (!combat.Blocking && !combat.Attacking && !LedgeCheck())
+            if (!combat.Blocking && !combat.Attacking && !OnLedge)
             {
                 targetAngle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
                 //Calculating the forward angle by using the tangent of the Camera y-axis 
@@ -194,7 +191,7 @@ namespace Albasigma.ARPG
                     AC.StartRunning();
                 }
             }
-            else if (LedgeCheck())
+            else if (OnLedge)
             {
                 AC.UpFromLedge();
             }
@@ -202,29 +199,34 @@ namespace Albasigma.ARPG
             {
                 StopMovement(); 
             }
+
         }//Move X-, Z-Movement
 
         protected override bool LedgeCheck()
         {
-            bool hitledge = false; 
-            Collider[] colliders = Physics.OverlapBox(PlayerLedgePoint.transform.position, LedgeBoxSize / 2);
-            foreach(Collider col in colliders)
+            bool hitledge = false;
+
+            if (!OnLedge)
             {
-                hitledge = col.tag == "Ledge";
-                if (hitledge)
+                Collider[] colliders = Physics.OverlapBox(PlayerLedgePoint.transform.position, LedgeBoxSize / 2);
+                foreach (Collider col in colliders)
                 {
-                    activeLedge = col.GetComponent<Ledge>();
-                   // transform.position = activeLedge.NewPos; 
+                    hitledge = col.tag == "Ledge";
+                    if (hitledge)
+                    {
+                        activeLedge = col.GetComponent<Ledge>();
+                        OnLedge = true; 
+                    }
                 }
             }
-
             return hitledge; 
         }
 
 
         public void CLimbUpFromLedge()
         {
-            transform.position = activeLedge.GetStandUpPos(); 
+            transform.position = activeLedge.GetStandUpPos();
+            OnLedge = false; 
         }//sets the position as the climb up 
 
         private void OnEnable()

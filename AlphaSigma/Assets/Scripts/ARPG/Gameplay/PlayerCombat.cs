@@ -86,7 +86,8 @@ namespace Albasigma.ARPG
                         Group.AddMember(EnemiesInRange[0].transform, .5f, 0);
                     }
                     LockedOn = true;
-                }
+                }//Locks onto the closest enemy at the time
+                //This is also the enemy that will be hit by the next spell
                 catch
                 {
                     Debug.Log("Nothing in range");
@@ -111,19 +112,19 @@ namespace Albasigma.ARPG
 
         private void Block_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
+            if (!GetComponent<PlayerMovement>().grounded)
+            {
+                GetComponent<PlayerMovement>().gravity *= 5.0f;
+                if (Skills.Skills[3].unlocked)
+                    groundPound = true;
+            }//Ground Pound
+
             Block(); 
         }
 
         private void AttackInteract_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             AC.AttackAniTrigger();
-
-            if (!GetComponent<PlayerMovement>().grounded)
-            {
-                GetComponent<PlayerMovement>().gravity *= 5.0f;
-                groundPound = true; 
-            }//Ground Pound
-
 
             try
             {

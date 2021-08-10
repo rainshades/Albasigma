@@ -18,7 +18,9 @@ namespace Albasigma.UI
 
         int LeftCard = 0;
         int CenterCard = 1;
-        int RightCard = 2; 
+        int RightCard = 2;
+
+        public static HandUI instance; 
 
         private void Awake()
         {
@@ -26,6 +28,7 @@ namespace Albasigma.UI
             PAC = FindObjectOfType<PlayerAnimationController>(); 
             Deck = FindObjectOfType<DeckOfCards>();
             //Temporary Repalce with more perminent deck structure
+            instance = this; 
 
             inputs.Hand.Shift.performed += Shift_performed;
             inputs.Hand.PlayCard.performed += PlayCard_performed;

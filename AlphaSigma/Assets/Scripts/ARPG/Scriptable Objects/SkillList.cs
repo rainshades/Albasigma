@@ -18,7 +18,7 @@ namespace Albasigma.ARPG
             public bool unlocked;
             public int ManaCost;
             public GameObject Effect; 
-        }
+        }//Skills cost mana to unlcok 
 
         public List<Skill> Skills = new List<Skill>(); 
     }

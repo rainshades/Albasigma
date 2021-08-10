@@ -15,7 +15,11 @@ MonoBehaviour:
   Ally_1: {fileID: 11400000, guid: 73dd172404b9a964a8ae4b437d5ab445, type: 2}
   Ally_2: {fileID: 11400000, guid: 9f181b608aac7574981deded4362662d, type: 2}
   DrawNewCards: {fileID: 11400000, guid: 0dd70b2b8191d494badde1d3adcf04a4, type: 2}
-  spellsInHand: []
+  spellsInHand:
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 0dd70b2b8191d494badde1d3adcf04a4, type: 2}
   PlayerDeck:
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
@@ -27,4 +31,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
   - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  CompleteDeck: []
+  CompleteDeck:
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}

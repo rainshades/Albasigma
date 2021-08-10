@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b46a8fec36947749a3a7919eb34c7fc, type: 3}
   m_Name: DrawNewHand
   m_EditorClassIdentifier: 
-  spelltime: 2.5
+  spelltime: 0
   Image: {fileID: 21300000, guid: 013d67aa1b7bb28458637dd5eaf24b50, type: 3}
   cost: 0
   castTye: 1
   EffectPrefab: {fileID: 2170368780534547899, guid: 2896a8c29cebdce45a65183710fac986, type: 3}
+  HitLayer:
+    serializedVersion: 2
+    m_Bits: 0
