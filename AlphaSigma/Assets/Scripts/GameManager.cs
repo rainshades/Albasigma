@@ -101,6 +101,24 @@ namespace Albasigma
             SceneManager.sceneLoaded += OnGameDataLoaded; 
         }
 
+        #region For Level Manager
+
+        [SerializeField]
+        GameObject BoxTransitionAnimation;
+
+        public void AreaTransition()//TEMP NEED LEVEL MANAGER
+        {
+            StartCoroutine(AreaBlackout()); 
+        }//Creates a transition from box to box
+
+        IEnumerator AreaBlackout()
+        {
+            BoxTransitionAnimation.SetActive(true);
+            yield return new WaitForSecondsRealtime(1.5f);
+            BoxTransitionAnimation.SetActive(false); 
+        }
+
+        #endregion
 
         public GameData LoadGameData()
         {

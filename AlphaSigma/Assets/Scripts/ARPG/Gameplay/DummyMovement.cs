@@ -39,6 +39,15 @@ namespace Albasigma.ARPG
 
         }
 
+        private void Update()
+        {
+            if (KnockbackCounter > 0)
+            {
+                agent.velocity = JumpForce * Time.deltaTime * KnockbackForce;
+                KnockbackCounter -= Time.deltaTime;
+            }
+        }
+
         private void FixedUpdate()
         {
             PlayerInRange = Physics.CheckSphere(transform.position, DetectionRange, PlayerLayer);
@@ -53,12 +62,6 @@ namespace Albasigma.ARPG
             {
                 LoseDetection();
             }//Deactivation 
-
-            if (KnockbackCounter > 0)
-            {
-                agent.velocity = JumpForce * Time.deltaTime * KnockbackForce;
-                KnockbackCounter -= Time.deltaTime;
-            }
 
             if(Target != null)
             {
@@ -87,7 +90,6 @@ namespace Albasigma.ARPG
             JumpForce.y = KnockbackForce * 1.5f;
             JumpForce.x *= -1;
             JumpForce.z *= -1; 
-
         }
 
         public void LoseDetection()

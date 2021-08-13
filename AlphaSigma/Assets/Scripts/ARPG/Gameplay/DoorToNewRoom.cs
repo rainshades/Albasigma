@@ -9,7 +9,7 @@ namespace Albasigma.ARPG
     /// </summary>
     public class DoorToNewRoom : MonoBehaviour
     {
-        bool open; 
+        bool open; //if the player is allowed to open the door
 
         [SerializeField]
         GameObject TeleportRoom, TeleportSpace; 
@@ -18,6 +18,7 @@ namespace Albasigma.ARPG
 
         public void GoTo(PlayerInteractionController PC)
         {
+            GameManager.Instance.AreaTransition(); 
             transform.parent.gameObject.SetActive(false);
             TeleportRoom.SetActive(true);
 

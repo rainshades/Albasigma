@@ -92,12 +92,7 @@ namespace Albasigma.ARPG
 
             if (grounded)
             {
-                if (combat.groundPound)
-                {
-                    GameObject go = Instantiate(Skills.Skills[3].Effect, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
-                    go.transform.SetParent(null);
-                    combat.groundPound = false; 
-                }
+                combat.FastFall = false;
 
                 gravity = baseGravity;
                 jumpcounter = 0;
@@ -222,8 +217,15 @@ namespace Albasigma.ARPG
             return hitledge; 
         }
 
+        public void Lunge()
+        {
+            if (Skills.Skills[6].unlocked)
+            {
+                cc.Move(Vector3.forward);
+            }
+        }//Lunges the player forward if they've unlocked the ability 
 
-        public void CLimbUpFromLedge()
+        public void ClimbUpFromLedge()
         {
             transform.position = activeLedge.GetStandUpPos();
             OnLedge = false; 

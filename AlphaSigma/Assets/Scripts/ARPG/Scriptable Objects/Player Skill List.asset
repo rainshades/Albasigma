@@ -25,8 +25,8 @@ MonoBehaviour:
     unlocked: 1
     ManaCost: 1
     Effect: {fileID: 0}
-  - name: Ground Pound
-    unlocked: 0
+  - name: Fast Fall
+    unlocked: 1
     ManaCost: 0
     Effect: {fileID: 7350625469768686530, guid: a9d9310bcec775d4cbcf6291c9d0670f, type: 3}
   - name: Heart of Albatross

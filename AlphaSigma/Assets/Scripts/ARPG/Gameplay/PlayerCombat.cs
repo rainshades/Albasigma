@@ -6,6 +6,14 @@ using Cinemachine;
 
 namespace Albasigma.ARPG
 {
+    /// <summary>
+    /// Player combat handler
+    /// References to Player Stats, Skills SO
+    /// Player combat status: Attacking, blocking, taking damage, death, and locking on
+    /// Combat Skills: 
+    ///     Ground Pound
+    ///     In Air Combo
+    /// </summary>
     public class PlayerCombat : MonoBehaviour, ICombatEntity
     {
         [SerializeField]
@@ -50,7 +58,7 @@ namespace Albasigma.ARPG
         public GameObject CameraPoint; 
         bool LockedOn;
         Vector3 CameraReturnPosition;
-        public bool groundPound; 
+        public bool FastFall; 
 
         public void GainExp(int EXP)
         {
@@ -112,11 +120,10 @@ namespace Albasigma.ARPG
 
         private void Block_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (!GetComponent<PlayerMovement>().grounded)
+            if (!GetComponent<PlayerMovement>().grounded && Skills.Skills[3].unlocked)
             {
                 GetComponent<PlayerMovement>().gravity *= 5.0f;
-                if (Skills.Skills[3].unlocked)
-                    groundPound = true;
+                FastFall = true;
             }//Ground Pound
 
             Block(); 
@@ -168,7 +175,7 @@ namespace Albasigma.ARPG
                     Destroy(col.gameObject); //Placeholder for the scripted destruction of said object
             }
 
-        }
+        }//A "combo finisher" that knocks the enemy back and does more damage
 
         public void OnDeath()
         {

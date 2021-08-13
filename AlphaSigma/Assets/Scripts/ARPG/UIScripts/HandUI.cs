@@ -1,8 +1,15 @@
 using Albasigma.ARPG;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Albasigma.UI
 {
+    /// <summary>
+    /// UI for the cards currently in the hand
+    /// Player needs to be able to choose the card they want to Play by rotating the hand up and down
+    /// Max 5 cards in hand
+    /// Can trash the hand and draw 5 new cards
+    /// </summary>
     public class HandUI : MonoBehaviour
     {
         public UICardObject Left, Right, Center;
@@ -32,6 +39,20 @@ namespace Albasigma.UI
 
             inputs.Hand.Shift.performed += Shift_performed;
             inputs.Hand.PlayCard.performed += PlayCard_performed;
+        }
+
+        private void Update()
+        {
+            Vector2 MouseWheel = Mouse.current.scroll.ReadValue();
+            float scroll = MouseWheel.y;
+            if(scroll > 0)
+            {
+                ShiftCardRight();
+            }
+            else if(scroll < 0)
+            {
+                ShiftCardLeft();
+            }
         }
 
         public void Reset()

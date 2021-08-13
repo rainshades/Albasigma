@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99cf3693684edc6498b7b073c6937552, type: 3}
   m_Name: Player Stats
   m_EditorClassIdentifier: 
-  Currenthealth: 86
+  Currenthealth: 88
   MaxHealth: 90
-  CurrentDrive: 50
+  CurrentDrive: 27
   MaxDrive: 50
   Attack: 6
   Speed: 1
@@ -25,5 +25,5 @@ MonoBehaviour:
   PlayerLevel:
     PlayerStatsSO: {fileID: 11400000}
     CurrentLevel: 5
-    Experience: 335
+    Experience: 495
     ExperienceToLevelUp: 000000000a000000190000001e0000002d000000
