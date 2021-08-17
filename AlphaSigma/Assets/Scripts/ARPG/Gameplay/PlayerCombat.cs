@@ -58,7 +58,9 @@ namespace Albasigma.ARPG
         public GameObject CameraPoint; 
         bool LockedOn;
         Vector3 CameraReturnPosition;
-        public bool FastFall; 
+        public bool FastFall;
+
+        CinemachineFreeLook FreeLook; 
 
         public void GainExp(int EXP)
         {
@@ -71,6 +73,8 @@ namespace Albasigma.ARPG
             AC = GetComponent<PlayerAnimationController>(); 
             CardReturnPostion = CardLockOn.localPosition;
             Controls = new PlayerControls();
+
+            FreeLook = FindObjectOfType<CinemachineFreeLook>(); 
 
             Controls.Player.AttackInteract.performed += AttackInteract_performed;
             Controls.Player.Block.performed += Block_performed;
@@ -204,6 +208,7 @@ namespace Albasigma.ARPG
             {
                 TimeLeftToContinueComboString -= Time.deltaTime; 
             }//Counts down combo 
+
         }
 
         private void OnDrawGizmos()

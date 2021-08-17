@@ -1,0 +1,1483 @@
+Using pre-set license
+Built from '2020.2/release' branch; Version is '2020.2.0f1 (3721df5a8b28) revision 3613151'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10  (10.0.0) 64bit' Language: 'en' Physical Memory: 32716 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.2.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker3
+-projectPath
+D:/Albasigma/AlphaSigma
+-logFile
+Logs/AssetImportWorker3.log
+-srvPort
+50864
+Successfully changed project path to: D:/Albasigma/AlphaSigma
+D:/Albasigma/AlphaSigma
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 119.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.2.0f1 (3721df5a8b28)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Albasigma/AlphaSigma/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1650 (ID=0x1f82)
+    Vendor:   
+    VRAM:     3962 MB
+    Driver:   27.21.14.6627
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56256
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003174 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 108.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.482 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.001766 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 114.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.148 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4566 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 202.7 MB.
+System memory in use after: 200.9 MB.
+
+Unloading 191 unused Assets to reduce memory usage. Loaded Objects now: 4998.
+Total: 5.059600 ms (FindLiveObjects: 0.507400 ms CreateObjectMapping: 0.153800 ms MarkObjects: 2.943100 ms  DeleteObjects: 1.454200 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scripts/ARPG/Gameplay/PlayerLevelSystem.cs
+  artifactKey: Guid(0719434121359864fa1ec86659ef815c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ARPG/Gameplay/PlayerLevelSystem.cs using Guid(0719434121359864fa1ec86659ef815c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8052fb3fca518abf2d64e065095a8e98') in 0.039848 seconds
+  Import took 0.075978 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 14.424242 seconds.
+  path: Assets/Scripts/ARPG/Gameplay/PlayerLevelSystem.cs
+  artifactKey: Guid(0719434121359864fa1ec86659ef815c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ARPG/Gameplay/PlayerLevelSystem.cs using Guid(0719434121359864fa1ec86659ef815c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5151b00740f0e4fde9067034780cf520') in 0.002161 seconds
+  Import took 0.318739 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001654 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.349 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.0 MB.
+System memory in use after: 194.3 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5000.
+Total: 5.398900 ms (FindLiveObjects: 0.514600 ms CreateObjectMapping: 0.141300 ms MarkObjects: 3.274400 ms  DeleteObjects: 1.467000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002077 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.346 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.85 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.2 MB.
+System memory in use after: 194.4 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5002.
+Total: 5.044800 ms (FindLiveObjects: 0.490600 ms CreateObjectMapping: 0.139100 ms MarkObjects: 3.020000 ms  DeleteObjects: 1.393800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 80.866282 seconds.
+  path: Assets/Scripts/ARPG/Gameplay/PlayerLevelSystem.cs
+  artifactKey: Guid(0719434121359864fa1ec86659ef815c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ARPG/Gameplay/PlayerLevelSystem.cs using Guid(0719434121359864fa1ec86659ef815c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2f0bf2acc88eea9cd51b17d8ff4bcb1') in 0.008829 seconds
+  Import took 0.658779 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001634 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.358 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.2 MB.
+System memory in use after: 194.4 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5004.
+Total: 5.303400 ms (FindLiveObjects: 0.473900 ms CreateObjectMapping: 0.129500 ms MarkObjects: 3.258500 ms  DeleteObjects: 1.439600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001804 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.312 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.2 MB.
+System memory in use after: 194.5 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5006.
+Total: 5.655600 ms (FindLiveObjects: 0.578300 ms CreateObjectMapping: 0.144300 ms MarkObjects: 3.453000 ms  DeleteObjects: 1.478600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002151 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.95 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.385 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.0 MB.
+System memory in use after: 194.3 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5008.
+Total: 5.754800 ms (FindLiveObjects: 0.539500 ms CreateObjectMapping: 0.170300 ms MarkObjects: 3.483000 ms  DeleteObjects: 1.560300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001742 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.26 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.420 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.84 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.3 MB.
+System memory in use after: 194.5 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5010.
+Total: 7.208000 ms (FindLiveObjects: 0.938400 ms CreateObjectMapping: 0.505200 ms MarkObjects: 3.957700 ms  DeleteObjects: 1.804700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001584 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.90 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.289 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.2 MB.
+System memory in use after: 194.5 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5012.
+Total: 5.161200 ms (FindLiveObjects: 0.508800 ms CreateObjectMapping: 0.137100 ms MarkObjects: 3.141200 ms  DeleteObjects: 1.372500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001805 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.83 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.305 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.3 MB.
+System memory in use after: 194.5 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5014.
+Total: 7.723000 ms (FindLiveObjects: 0.610100 ms CreateObjectMapping: 0.212500 ms MarkObjects: 5.023000 ms  DeleteObjects: 1.875300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001694 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.360 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.93 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.3 MB.
+System memory in use after: 194.5 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5016.
+Total: 5.494600 ms (FindLiveObjects: 0.500600 ms CreateObjectMapping: 0.142500 ms MarkObjects: 3.333800 ms  DeleteObjects: 1.515700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 15447.768248 seconds.
+  path: Assets/Filler Assets/Attack.mp4
+  artifactKey: Guid(4c925766a72d8344e920ac619aa650f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Filler Assets/Attack.mp4 using Guid(4c925766a72d8344e920ac619aa650f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0565e40052196603ec5935541ebf419c') in 0.056699 seconds
+  Import took 0.084726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Filler Assets/Block.mp4
+  artifactKey: Guid(02242e929073a2f45b281619c281b564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Filler Assets/Block.mp4 using Guid(02242e929073a2f45b281619c281b564) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4e66581db1af1ef6cc506021cc9586b') in 0.008258 seconds
+  Import took 0.018697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Filler Assets/Jump.mp4
+  artifactKey: Guid(eb7ca95ce3a46aa4b93d3adc79fc0efe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Filler Assets/Jump.mp4 using Guid(eb7ca95ce3a46aa4b93d3adc79fc0efe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b3e9fc2c454aa845f321b3920ab579c') in 0.007838 seconds
+  Import took 0.035726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.169793 seconds.
+  path: Assets/Filler Assets/kdenlive-renderqueue
+  artifactKey: Guid(652fb727248071a42800de7c58e2a8f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Filler Assets/kdenlive-renderqueue using Guid(652fb727248071a42800de7c58e2a8f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca0547f414e6bd9a47ae875f66b3d701') in 0.007527 seconds
+  Import took 0.025527 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001932 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.356 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 196.1 MB.
+System memory in use after: 194.3 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5018.
+Total: 6.158100 ms (FindLiveObjects: 0.889500 ms CreateObjectMapping: 0.381200 ms MarkObjects: 3.368400 ms  DeleteObjects: 1.517500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 207.135980 seconds.
+  path: Assets/Filler Assets/New Render Texture.renderTexture
+  artifactKey: Guid(b495af87910a0f44c830b502293e100e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Filler Assets/New Render Texture.renderTexture using Guid(b495af87910a0f44c830b502293e100e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3aa739f7ebd1552428d64b321462593') in 0.072444 seconds
+  Import took 0.088946 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.393091 seconds.
+  path: Assets/Filler Assets/New Render Texture.renderTexture
+  artifactKey: Guid(b495af87910a0f44c830b502293e100e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Filler Assets/New Render Texture.renderTexture using Guid(b495af87910a0f44c830b502293e100e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3aa739f7ebd1552428d64b321462593') in 0.007794 seconds
+  Import took 0.016510 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001820 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.77 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.321 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.87 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 198.8 MB.
+System memory in use after: 197.1 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5025.
+Total: 5.355400 ms (FindLiveObjects: 0.510200 ms CreateObjectMapping: 0.148100 ms MarkObjects: 3.330600 ms  DeleteObjects: 1.364300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002139 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.97 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.342 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 198.8 MB.
+System memory in use after: 197.1 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5027.
+Total: 5.728200 ms (FindLiveObjects: 0.561200 ms CreateObjectMapping: 0.143000 ms MarkObjects: 3.478200 ms  DeleteObjects: 1.544100 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 219.537261 seconds.
+  path: Assets/Fungus/EditorResources/Icons/Pro/add.png
+  artifactKey: Guid(4e43c476b4a7a49a08c37378fb01ce99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/Pro/add.png using Guid(4e43c476b4a7a49a08c37378fb01ce99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bcb916cd737d1f6b27b9c183ff9e453') in 0.092734 seconds
+  Import took 0.116092 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Fungus/EditorResources/Icons/Pro/delete.png
+  artifactKey: Guid(29c4d29b1678042a5b3516c732ccc507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/Pro/delete.png using Guid(29c4d29b1678042a5b3516c732ccc507) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63a2d2521d1cf6e74508a38b635456fc') in 0.012408 seconds
+  Import took 0.049692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/Fungus/EditorResources/Icons/Pro/add_small.png
+  artifactKey: Guid(64534dfaa17844231a9a9dd2df89d0db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/Pro/add_small.png using Guid(64534dfaa17844231a9a9dd2df89d0db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '842cf52512c7c726c6a25b8a49252f5c') in 0.012917 seconds
+  Import took 0.021471 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Fungus/EditorResources/Icons/Pro/duplicate.png
+  artifactKey: Guid(2f17490d993c84bd7872ef6588ffba47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/Pro/duplicate.png using Guid(2f17490d993c84bd7872ef6588ffba47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e71e732faa288d0ffd085a824db4828b') in 0.013486 seconds
+  Import took 0.024205 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Fungus/EditorResources/Textures/bullet_point.png
+  artifactKey: Guid(4ef739c68bb234717a60a2bb83ff8602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/bullet_point.png using Guid(4ef739c68bb234717a60a2bb83ff8602) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21e482350167f91ffc57a5aefe5eee6a') in 0.012553 seconds
+  Import took 0.030276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/Fungus/EditorResources/Icons/add.png
+  artifactKey: Guid(24a867d6b4cdda04cb3aa3350f9ec7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/add.png using Guid(24a867d6b4cdda04cb3aa3350f9ec7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e58b18012838d8a1be3e71e21e9facfe') in 0.011876 seconds
+  Import took 0.037264 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Fungus/EditorResources/Icons/add_small.png
+  artifactKey: Guid(288aff1a0e5c14fd3a0039d24149df73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/add_small.png using Guid(288aff1a0e5c14fd3a0039d24149df73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae3aa7b82eec2d4ed843cfc8d280640c') in 0.014434 seconds
+  Import took 0.023452 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Fungus/EditorResources/Icons/down.png
+  artifactKey: Guid(51a973f446c2e664582861480cce6215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/down.png using Guid(51a973f446c2e664582861480cce6215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '727b909b8a1a4795149f8d91e2f72d46') in 0.013307 seconds
+  Import took 0.035273 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Fungus/EditorResources/Textures/choice_node_on.png
+  artifactKey: Guid(cfc05494b71a0446182868aab5f7febf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/choice_node_on.png using Guid(cfc05494b71a0446182868aab5f7febf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8e220486b76a1bfc354f5243392fa12') in 0.014892 seconds
+  Import took 0.023824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Fungus/EditorResources/Icons/add.png
+  artifactKey: Guid(24a867d6b4cdda04cb3aa3350f9ec7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/add.png using Guid(24a867d6b4cdda04cb3aa3350f9ec7d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e58b18012838d8a1be3e71e21e9facfe') in 0.005012 seconds
+  Import took 0.012794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Fungus/EditorResources/Textures/connection_point.png
+  artifactKey: Guid(f08a4c27d7efe4aa6a35348a4e8aec8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/connection_point.png using Guid(f08a4c27d7efe4aa6a35348a4e8aec8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd70a9e3cadcc1f266ca11b677fe95536') in 0.010127 seconds
+  Import took 0.026086 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Fungus/EditorResources/Icons/duplicate.png
+  artifactKey: Guid(c97f334c466215a4f93eff31de3c1591) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/duplicate.png using Guid(c97f334c466215a4f93eff31de3c1591) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '438b8fb7ebf10d137bf257a275dd7f96') in 0.009387 seconds
+  Import took 0.020002 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/Fungus/EditorResources/Icons/Pro/add.png
+  artifactKey: Guid(4e43c476b4a7a49a08c37378fb01ce99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/Pro/add.png using Guid(4e43c476b4a7a49a08c37378fb01ce99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bcb916cd737d1f6b27b9c183ff9e453') in 0.006433 seconds
+  Import took 0.016197 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000317 seconds.
+  path: Assets/Fungus/EditorResources/Textures/command_background.png
+  artifactKey: Guid(a5c9a4271b3de4e4f86eff7f8a1bd768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/command_background.png using Guid(a5c9a4271b3de4e4f86eff7f8a1bd768) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4184ee0059aaef3383c9142440a0bbdc') in 0.010507 seconds
+  Import took 0.019080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/Fungus/EditorResources/Icons/Pro/down.png
+  artifactKey: Guid(5a87a7d3683164a238377d948572805f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/Pro/down.png using Guid(5a87a7d3683164a238377d948572805f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16464317b112b788928f27cbb6c70bae') in 0.008089 seconds
+  Import took 0.016168 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Fungus/EditorResources/Textures/choice_node_off.png
+  artifactKey: Guid(7b6fc04aac74540e39e9502da5312ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/choice_node_off.png using Guid(7b6fc04aac74540e39e9502da5312ce7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e3d105cba77088643163ccbc834c0a7') in 0.010344 seconds
+  Import took 0.019739 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/Fungus/EditorResources/Icons/delete.png
+  artifactKey: Guid(d6fc8a97e8a5b0947a49b780f787e504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Icons/delete.png using Guid(d6fc8a97e8a5b0947a49b780f787e504) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88470bb0bc5e391a0f456c8ac2e78eb1') in 0.008866 seconds
+  Import took 0.031323 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000326 seconds.
+  path: Assets/Fungus/EditorResources/Textures/event_node_on.png
+  artifactKey: Guid(9434488a4efb54da5986eba5d5619baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/event_node_on.png using Guid(9434488a4efb54da5986eba5d5619baf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2482e617b497ce6cede377ce10640a0') in 0.011180 seconds
+  Import took 0.027862 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Fungus/EditorResources/Textures/event_node_off.png
+  artifactKey: Guid(0e16a209826864df7b05f6d3901aae7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/event_node_off.png using Guid(0e16a209826864df7b05f6d3901aae7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afc75c29336751c33dc5bf8f1107b100') in 0.011304 seconds
+  Import took 0.019731 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.039441 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_02/V02/Textures/Female_02_V02_Hair.png
+  artifactKey: Guid(baeeda917e4fb2543a0b9715a0ed97e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_02/V02/Textures/Female_02_V02_Hair.png using Guid(baeeda917e4fb2543a0b9715a0ed97e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33fae317b1096d6d70a334cdaa761373') in 0.074872 seconds
+  Import took 0.097505 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Hair_N.png
+  artifactKey: Guid(edab027aa5f4410469bca66cbee547a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Hair_N.png using Guid(edab027aa5f4410469bca66cbee547a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '023af8a0b3882b3feb24fe28e660835b') in 0.035635 seconds
+  Import took 0.048503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_02/V02/Textures/Female_02_V02_Hair_N.png
+  artifactKey: Guid(42aecebf1b08e834c928bb328ab05490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_02/V02/Textures/Female_02_V02_Hair_N.png using Guid(42aecebf1b08e834c928bb328ab05490) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '880ba071109557a537ab7f25fb627e34') in 0.051836 seconds
+  Import took 0.059871 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Body_N.png
+  artifactKey: Guid(0080e96f6e0adf94881ccc4d4f16e17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Body_N.png using Guid(0080e96f6e0adf94881ccc4d4f16e17f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71e50f759ec8fe7875a82037321e7290') in 0.069441 seconds
+  Import took 0.083938 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Glasses.png
+  artifactKey: Guid(91b2926b601be2c47a14d21bba734961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Glasses.png using Guid(91b2926b601be2c47a14d21bba734961) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efbb5e5c9add7ccb0ead72b503d955a7') in 0.232643 seconds
+  Import took 0.241572 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Hair_N.png
+  artifactKey: Guid(805c754ca67481044b0f1f08314cc456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Hair_N.png using Guid(805c754ca67481044b0f1f08314cc456) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc3daadfc52d48518b61ca147b2a3e5d') in 0.040483 seconds
+  Import took 0.049072 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000298 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Body.png
+  artifactKey: Guid(c70ab5dfcf89a4345a2aa22479f173c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Body.png using Guid(c70ab5dfcf89a4345a2aa22479f173c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6237433b7ea835315e8ee5b0ab88342a') in 0.029683 seconds
+  Import took 0.140665 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Body.png
+  artifactKey: Guid(51762457d5272bd40b9aa4266d3740f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Body.png using Guid(51762457d5272bd40b9aa4266d3740f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23511831d953930d603fbbc8b5bafa00') in 0.047874 seconds
+  Import took 0.055204 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Face.png
+  artifactKey: Guid(fa7bf850d74bf504bb34f821e97904c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Face.png using Guid(fa7bf850d74bf504bb34f821e97904c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '461b2628171df131453ca85a352fbf17') in 0.034078 seconds
+  Import took 0.042409 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Hair.png
+  artifactKey: Guid(cd7b258bc39a33c4796342acd7473b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Hair.png using Guid(cd7b258bc39a33c4796342acd7473b36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e50366d335667101a3de2ef08907bf92') in 0.046449 seconds
+  Import took 0.057080 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Eye.png
+  artifactKey: Guid(3b00904306449de45a20fc2a2abb00da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Eye.png using Guid(3b00904306449de45a20fc2a2abb00da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a055755f88e81b1f0d7304bf4209ca09') in 0.036722 seconds
+  Import took 0.052870 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Face.png
+  artifactKey: Guid(560afa49845620c49a7b9a6630b8a5e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Face.png using Guid(560afa49845620c49a7b9a6630b8a5e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07c263ed0bc9d16e6397863635eedcbc') in 0.054986 seconds
+  Import took 0.063514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Body.png
+  artifactKey: Guid(f5d7209593dfa0345b5c5b8d4cf242a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Body.png using Guid(f5d7209593dfa0345b5c5b8d4cf242a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'abe6b2a95b22c685f3636e38a9cde7cd') in 0.024975 seconds
+  Import took 0.033579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Body.png
+  artifactKey: Guid(815103ee5ab2f6f49954e3505aa72202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Body.png using Guid(815103ee5ab2f6f49954e3505aa72202) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc24f5ff52fd37ccba728fa32c7e2485') in 0.062008 seconds
+  Import took 0.070657 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Hair_N.png
+  artifactKey: Guid(b96efdf030dbbf54baa6456c090a969a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Hair_N.png using Guid(b96efdf030dbbf54baa6456c090a969a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f743e9729e67f11d95d9c83adba476f6') in 0.030583 seconds
+  Import took 0.038116 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Pants.png
+  artifactKey: Guid(f6e95d537e69e114aafbe970f9f88d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Pants.png using Guid(f6e95d537e69e114aafbe970f9f88d48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e99ce8a9db5664856e91075dcd16c662') in 0.033607 seconds
+  Import took 0.042054 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Pants_S.png
+  artifactKey: Guid(1b5ab894a36f8c849ad2470e60f6b145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Pants_S.png using Guid(1b5ab894a36f8c849ad2470e60f6b145) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c78a25196c6a768a2bebcfc967e8956') in 0.027090 seconds
+  Import took 0.035810 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000310 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Hair.png
+  artifactKey: Guid(7a399e3187881c746a8417be3f629cb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Hair.png using Guid(7a399e3187881c746a8417be3f629cb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46ff745a59ef5ebc4640982047188ded') in 0.019716 seconds
+  Import took 0.027638 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Body_N.png
+  artifactKey: Guid(e5c5087cb64090644b72519c5bca78ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Body_N.png using Guid(e5c5087cb64090644b72519c5bca78ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfc32eef8a61c2667c4c7de28e3272af') in 0.057548 seconds
+  Import took 0.066132 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Body_N.png
+  artifactKey: Guid(d4492d4b49538574cb97c2e8d63f9849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Body_N.png using Guid(d4492d4b49538574cb97c2e8d63f9849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '475a5a29c6f4b0760a788b9b306fa65b') in 0.051855 seconds
+  Import took 0.059563 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Face.png
+  artifactKey: Guid(b385dc6aacd8e15409beb8d727f7725a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Face.png using Guid(b385dc6aacd8e15409beb8d727f7725a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed6a83ef7c4080c1cca48a7449b0d356') in 0.026658 seconds
+  Import took 0.048546 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Glasses.png
+  artifactKey: Guid(33ea06d4ca6b0a742be8ad1ebf4e7f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Glasses.png using Guid(33ea06d4ca6b0a742be8ad1ebf4e7f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4170a82b5e2bbd75a92700b7e1d89fa2') in 0.048477 seconds
+  Import took 0.056527 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Face.png
+  artifactKey: Guid(cec08e29b8f7de643be5361fec86aa1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Face.png using Guid(cec08e29b8f7de643be5361fec86aa1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bfa2c26b57a25ca7da08d64c3cf3189') in 0.033240 seconds
+  Import took 0.041302 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Glasses.png
+  artifactKey: Guid(1db9d94e312660644928cba1237e0ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Glasses.png using Guid(1db9d94e312660644928cba1237e0ff8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f73ff603dd67a1e90d09709de424423') in 0.025706 seconds
+  Import took 0.040226 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Hair.png
+  artifactKey: Guid(bd101f82f43b1344c813b9afb56c1f49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Hair.png using Guid(bd101f82f43b1344c813b9afb56c1f49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8f19276ac0468eaede5af5aa7d2eaf4') in 0.029797 seconds
+  Import took 0.071017 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Face.png
+  artifactKey: Guid(856eef55c5649ae42bc2e077c1e87aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Face.png using Guid(856eef55c5649ae42bc2e077c1e87aff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '440270dfa8b649b94b58d7b6bfa76a21') in 0.049141 seconds
+  Import took 0.473516 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Body_N.png
+  artifactKey: Guid(9e1f6cd6861fcb249a49d29af749f2ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Body_N.png using Guid(9e1f6cd6861fcb249a49d29af749f2ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8da790d2350c0f4c8a0d77ff2b777bd') in 0.078983 seconds
+  Import took 0.086576 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Hair.png
+  artifactKey: Guid(5fcae11c71c89374388667475bba0328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Hair.png using Guid(5fcae11c71c89374388667475bba0328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3da508af0b5aa987088de764044f89c9') in 0.037350 seconds
+  Import took 0.047862 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Hair.png
+  artifactKey: Guid(78eb091a1b5eacd4a85216c728298a4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Hair.png using Guid(78eb091a1b5eacd4a85216c728298a4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5fa7790b5e7088ec006827d39d62ebc') in 0.026599 seconds
+  Import took 0.047815 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Face.png
+  artifactKey: Guid(2618a3cc5050b7141851885db6b0827c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Face.png using Guid(2618a3cc5050b7141851885db6b0827c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3268dcbacee5ea34376988e317e719fd') in 0.028380 seconds
+  Import took 0.036441 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Eye.png
+  artifactKey: Guid(3f1d5a475e0f03b46b82831fc3524024) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Eye.png using Guid(3f1d5a475e0f03b46b82831fc3524024) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4882af428f280abef327e7f5f816021') in 0.024818 seconds
+  Import took 0.033413 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Body.png
+  artifactKey: Guid(9f0a1c2e8b4f31f4f8d99a168b0ca080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Body.png using Guid(9f0a1c2e8b4f31f4f8d99a168b0ca080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20c2e08e03408db9f7c425e6300cef1c') in 0.019185 seconds
+  Import took 0.037982 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Body_N.png
+  artifactKey: Guid(13479168a9a77f148b10f554e0ad9f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Body_N.png using Guid(13479168a9a77f148b10f554e0ad9f4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ded823bcb941c3884d42a7802e1a028') in 0.057917 seconds
+  Import took 0.066707 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Eye.png
+  artifactKey: Guid(e14f1c6b1bfe4714095d20eb8af39c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Eye.png using Guid(e14f1c6b1bfe4714095d20eb8af39c37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6cf0304962b64e96f4c698892cd308b') in 0.031849 seconds
+  Import took 0.059756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Eye.png
+  artifactKey: Guid(ba615fbbee76ab641a05a27a00ac245e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Eye.png using Guid(ba615fbbee76ab641a05a27a00ac245e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69669d0249831f6384decfa2503cfb77') in 0.028433 seconds
+  Import took 0.045672 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Body.png
+  artifactKey: Guid(e2e1f996365b1144bba6f5caeee9934d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Body.png using Guid(e2e1f996365b1144bba6f5caeee9934d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a21fe2105ea7858598cf88f3a846f9d') in 0.023879 seconds
+  Import took 0.032603 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Eye.png
+  artifactKey: Guid(c16c2216edd40754ea995bf20ea26a94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V01/Textures/Female_03_V01_Eye.png using Guid(c16c2216edd40754ea995bf20ea26a94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1c2f58b4757c8750e217513b1fc7d2d') in 0.029650 seconds
+  Import took 0.052628 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Eye.png
+  artifactKey: Guid(b7554bea23ee5134985c9cddb85a634a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Eye.png using Guid(b7554bea23ee5134985c9cddb85a634a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9522d77f62419398372b7e7e1fa12534') in 0.041753 seconds
+  Import took 0.050389 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Hair.png
+  artifactKey: Guid(9e710787d7b72f549b91d8db48aa3b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Hair.png using Guid(9e710787d7b72f549b91d8db48aa3b27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a02a2cfd963014eaf7cf5224cd0f98c') in 0.017094 seconds
+  Import took 0.024031 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Hair.png
+  artifactKey: Guid(9a370e28c5f5aac479761a5e562f4fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_03/V02/Textures/Female_03_V02_Hair.png using Guid(9a370e28c5f5aac479761a5e562f4fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02f9cdd3b0e83efcf4da0b09ab8e08dc') in 0.030188 seconds
+  Import took 0.050793 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Shirt.png
+  artifactKey: Guid(13084409e498fb2468dbcd853269abdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Shirt.png using Guid(13084409e498fb2468dbcd853269abdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a124821a4eb4563a96feae32b95c05f') in 0.037305 seconds
+  Import took 0.074937 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Hair_N.png
+  artifactKey: Guid(b364151a150f55640a243ac99d494f21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Hair_N.png using Guid(b364151a150f55640a243ac99d494f21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc919dbcf49fef44538083d3512ea605') in 0.038382 seconds
+  Import took 0.051163 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Hair_N.png
+  artifactKey: Guid(f6d8ea1595a559a4e98180a632965437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Hair_N.png using Guid(f6d8ea1595a559a4e98180a632965437) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd735dfc07e5c751a10dd87d76b557aaf') in 0.031554 seconds
+  Import took 0.039918 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000263 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Hair_N.png
+  artifactKey: Guid(d68b9549fc1c0e548ac25b34d60c4b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V02/Textures/Female_04_V02_Hair_N.png using Guid(d68b9549fc1c0e548ac25b34d60c4b90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2176091ec2aae8125a1e785c5cddce78') in 0.029283 seconds
+  Import took 0.036968 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Hair_N.png
+  artifactKey: Guid(d1632f3df35b45247bb469cf29b947a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Hair_N.png using Guid(d1632f3df35b45247bb469cf29b947a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b44f346ad181eabc340e44d565d6337') in 0.032079 seconds
+  Import took 0.069410 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Hair.png
+  artifactKey: Guid(454318f8e8eee7e4483f7f53a05e0444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Hair.png using Guid(454318f8e8eee7e4483f7f53a05e0444) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '777a2b5d82738c1ea5a051a335704cee') in 0.029306 seconds
+  Import took 0.321702 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Glasses.png
+  artifactKey: Guid(6714c132dcaef30488dc1a70fa65b780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Glasses.png using Guid(6714c132dcaef30488dc1a70fa65b780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '831376c317e10322ea757d9bd43889b9') in 0.154451 seconds
+  Import took 0.194887 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Shirt_N.png
+  artifactKey: Guid(8f9794e8613fafb42a4c50b92c9de08a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Shirt_N.png using Guid(8f9794e8613fafb42a4c50b92c9de08a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '359528b437215da64243643728c0bea2') in 0.074944 seconds
+  Import took 0.082826 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Body_N.png
+  artifactKey: Guid(11a73f9d4ac00504d8d634a3a720f947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Body_N.png using Guid(11a73f9d4ac00504d8d634a3a720f947) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7ec0bd55e87f80699c04f96c0f07dd2') in 0.086265 seconds
+  Import took 0.095303 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Face.png
+  artifactKey: Guid(eebe2e31ec4370e48bd734c78f258836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V02/Textures/Female_05_V02_Face.png using Guid(eebe2e31ec4370e48bd734c78f258836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4381e0fbebc16fef544e8981b3010593') in 0.041589 seconds
+  Import took 0.049353 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Body_N.png
+  artifactKey: Guid(425cb2dec9c52b740a670b61f2f39797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Body_N.png using Guid(425cb2dec9c52b740a670b61f2f39797) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a880a68b0725efc8a7f865051fcb3f6') in 0.053055 seconds
+  Import took 0.069733 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000235 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Pants_N.png
+  artifactKey: Guid(205a7a9402a27d34fa5390e5c13b7cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Pants_N.png using Guid(205a7a9402a27d34fa5390e5c13b7cd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97ead6580131f006aa0a047de44a879b') in 0.064114 seconds
+  Import took 0.072594 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Body_N.png
+  artifactKey: Guid(4826664c9b66d444faf5052ad472b90f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Body_N.png using Guid(4826664c9b66d444faf5052ad472b90f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c724b16341a3f54c9e875697cc620b6') in 0.055197 seconds
+  Import took 0.063724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Body.png
+  artifactKey: Guid(554b8dc09f629bb4e872f1d4c8ee3ce8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Body.png using Guid(554b8dc09f629bb4e872f1d4c8ee3ce8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9c977d61741d9ec5d76fa2c8c072970') in 0.031434 seconds
+  Import took 0.039389 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Face.png
+  artifactKey: Guid(e6b0e61573594da4ab237922ff966cb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_05/V01/Textures/Female_05_V01_Face.png using Guid(e6b0e61573594da4ab237922ff966cb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1080fed9c46fa797afadddd94c6bbfb5') in 0.027006 seconds
+  Import took 0.035480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Eye.png
+  artifactKey: Guid(db1da12d757ac9444a66933494a53bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V01/Textures/Female_06_V01_Eye.png using Guid(db1da12d757ac9444a66933494a53bb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ceb73f8a2260b0b9b08b871910dc3f3') in 0.025403 seconds
+  Import took 0.043932 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Eye.png
+  artifactKey: Guid(f2e21bbc519f60048b55db8bd7cc0282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Eye.png using Guid(f2e21bbc519f60048b55db8bd7cc0282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c8085144d0b30fa9270d10199248a36') in 0.027544 seconds
+  Import took 0.035949 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Hair_N.png
+  artifactKey: Guid(f0ba6c46e266e4c4384c725714ce9aa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_04/V01/Textures/Female_04_V01_Hair_N.png using Guid(f0ba6c46e266e4c4384c725714ce9aa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c55693efb8d0a85ecbd93eff298e1667') in 0.033852 seconds
+  Import took 0.042097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Shirt_S.png
+  artifactKey: Guid(0cdfc87554be1c342a4bd6cc494b0982) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 1/Textures/Female_Outfit_01_Shirt_S.png using Guid(0cdfc87554be1c342a4bd6cc494b0982) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '638007122296629ac559bffc355c9944') in 0.035245 seconds
+  Import took 0.043868 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Body.png
+  artifactKey: Guid(2fb6b7f96f204bd4b88ae3bfb250cad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Models/FBX/Female/Female_06/V02/Textures/Female_06_V02_Body.png using Guid(2fb6b7f96f204bd4b88ae3bfb250cad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ad989015e0b7d79f74d4ebab8333206') in 0.019708 seconds
+  Import took 0.028084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 58.792999 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Pants_N.png
+  artifactKey: Guid(5bb526f5e1f82084ca563e97da46f1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Pants_N.png using Guid(5bb526f5e1f82084ca563e97da46f1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bf7f740c96bcc962369bf24671af42e') in 0.139918 seconds
+  Import took 0.162878 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shoes_02_N.png
+  artifactKey: Guid(35253071cebd2434ca3db6a58fde1c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shoes_02_N.png using Guid(35253071cebd2434ca3db6a58fde1c18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '820e41a8166a03861b76eceeace24393') in 0.086129 seconds
+  Import took 0.095151 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Fungus/EditorResources/Textures/process_node_off.png
+  artifactKey: Guid(ea3a4228e6c214149bfe5c741b56ae0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/process_node_off.png using Guid(ea3a4228e6c214149bfe5c741b56ae0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9883a0375803b7019559ddc96befa306') in 0.015824 seconds
+  Import took 0.041562 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000427 seconds.
+  path: Assets/Fungus/EditorResources/Textures/play_small.png
+  artifactKey: Guid(a48a2b9b06deb469d9da1777b094521b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/play_small.png using Guid(a48a2b9b06deb469d9da1777b094521b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e9900825a26268a5b787d2e38ec2d25') in 0.009983 seconds
+  Import took 0.019012 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Fungus/EditorResources/Textures/play_big.png
+  artifactKey: Guid(bff2ba39f5f4448589e80522ebfcd0a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/EditorResources/Textures/play_big.png using Guid(bff2ba39f5f4448589e80522ebfcd0a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acc68a273257e4861595b2ecfe2e8c71') in 0.013052 seconds
+  Import took 0.021552 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Pants_02_N.png
+  artifactKey: Guid(18834f01123b6b64e8f592e211938f49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Pants_02_N.png using Guid(18834f01123b6b64e8f592e211938f49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '890b42ab6f486be82d7a72fa125e2266') in 0.038550 seconds
+  Import took 0.047097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Fungus/Resources/Sprites/MousePointer.png
+  artifactKey: Guid(502e0c9b755f34db0b90bf78857d8a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Fungus/Resources/Sprites/MousePointer.png using Guid(502e0c9b755f34db0b90bf78857d8a1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e622a2265d725db518816ce748ce768') in 0.021938 seconds
+  Import took 0.029565 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shoes_02_S.png
+  artifactKey: Guid(5cfc10349d3e17147a0fc8f1b28148f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shoes_02_S.png using Guid(5cfc10349d3e17147a0fc8f1b28148f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f551f58fd9a811725f82de2825ba5dd0') in 0.023919 seconds
+  Import took 0.039718 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000274 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shirt_S.png
+  artifactKey: Guid(806c8524d9fe83b4bb6cfe19ba0ba30e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shirt_S.png using Guid(806c8524d9fe83b4bb6cfe19ba0ba30e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee1ad7430782d1d5c32f16bd85e86d10') in 0.047158 seconds
+  Import took 0.054908 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Pants_02_S.png
+  artifactKey: Guid(e381e1dd4e2181445b083418310aa21a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Pants_02_S.png using Guid(e381e1dd4e2181445b083418310aa21a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bad4170510f6e2f0ea596fa70360ef68') in 0.032513 seconds
+  Import took 0.040535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shirt.png
+  artifactKey: Guid(e0749e0213311644cba121fae733e054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shirt.png using Guid(e0749e0213311644cba121fae733e054) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '92311991483fb5a4610e8de005d52e26') in 0.040295 seconds
+  Import took 0.047851 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000381 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shirt_N.png
+  artifactKey: Guid(d95118d7bb06b0d46ad69a79b33847df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shirt_N.png using Guid(d95118d7bb06b0d46ad69a79b33847df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82647f99e63d8f307b2ab1c19bf02dd5') in 0.052826 seconds
+  Import took 0.060393 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Pants_S.png
+  artifactKey: Guid(1f76b26064210da4fa455434e9e61ba8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Pants_S.png using Guid(1f76b26064210da4fa455434e9e61ba8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c77ae8803d8d5d8ef0d848381548d107') in 0.048863 seconds
+  Import took 0.056803 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shirt_02_N.png
+  artifactKey: Guid(63ebe21d0bb197446981c4e4a3bfdde3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shirt_02_N.png using Guid(63ebe21d0bb197446981c4e4a3bfdde3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ebedab9ad59f3c6733b39af6a92f365') in 0.049058 seconds
+  Import took 0.057046 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shoes_S.png
+  artifactKey: Guid(080e12cb444a2774dab3aad5ffdaf3ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shoes_S.png using Guid(080e12cb444a2774dab3aad5ffdaf3ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '508f20e06c17e37063fc504d81d1151c') in 0.039234 seconds
+  Import took 0.047149 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000273 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Pants_N.png
+  artifactKey: Guid(5bb526f5e1f82084ca563e97da46f1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Pants_N.png using Guid(5bb526f5e1f82084ca563e97da46f1eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bf7f740c96bcc962369bf24671af42e') in 0.016477 seconds
+  Import took 0.024258 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shoes_N.png
+  artifactKey: Guid(cd764563a9afe7843848ae4e6e5be7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shoes_N.png using Guid(cd764563a9afe7843848ae4e6e5be7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9169997d900f35335b1ebe8d31a0446') in 0.025457 seconds
+  Import took 0.033580 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shoes.png
+  artifactKey: Guid(ce5eaba85d728a7489ae587035c818cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shoes.png using Guid(ce5eaba85d728a7489ae587035c818cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '65bcf07f3db79bb2563502bc1327c867') in 0.042437 seconds
+  Import took 0.061699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000283 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shoes_02.png
+  artifactKey: Guid(106b74420fdb28344a3f6bdf87840ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shoes_02.png using Guid(106b74420fdb28344a3f6bdf87840ac5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b6db0273f2a71e8947e4cd4a06634af') in 0.023842 seconds
+  Import took 0.032343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000228 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shirt_02.png
+  artifactKey: Guid(6f12c26fdea3ba64b8820fd73ce2977e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Shirt_02.png using Guid(6f12c26fdea3ba64b8820fd73ce2977e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f88d1bc1e61beeab2463c9cb0c549db') in 0.031256 seconds
+  Import took 0.039429 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shoes_N.png
+  artifactKey: Guid(cd764563a9afe7843848ae4e6e5be7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Male Outfit 2/Textures/Male_Outfit_02_Shoes_N.png using Guid(cd764563a9afe7843848ae4e6e5be7b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9169997d900f35335b1ebe8d31a0446') in 0.009659 seconds
+  Import took 0.017061 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Pants_02.png
+  artifactKey: Guid(df58d05fcfb0ef74ca4062a6c4aa5afe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Pants_02.png using Guid(df58d05fcfb0ef74ca4062a6c4aa5afe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd57055793e5385c28810f0593c31c251') in 0.031206 seconds
+  Import took 0.039020 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.120949 seconds.
+  path: Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Pants_02.png
+  artifactKey: Guid(df58d05fcfb0ef74ca4062a6c4aa5afe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Plugins/Wolf3D/RPM Avatar Pack/Outfits/Female Outfit 2/Textures/Outfit_Pants_02.png using Guid(df58d05fcfb0ef74ca4062a6c4aa5afe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd57055793e5385c28810f0593c31c251') in 0.009612 seconds
+  Import took 0.017641 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001818 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.338 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 199.0 MB.
+System memory in use after: 197.2 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5038.
+Total: 5.249400 ms (FindLiveObjects: 0.468200 ms CreateObjectMapping: 0.130900 ms MarkObjects: 3.155500 ms  DeleteObjects: 1.492500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 246.407752 seconds.
+  path: Assets/Filler Assets/New Render Texture.renderTexture
+  artifactKey: Guid(b495af87910a0f44c830b502293e100e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Filler Assets/New Render Texture.renderTexture using Guid(b495af87910a0f44c830b502293e100e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d6ff4425045a278fa9d6d2256f25e9d') in 0.030273 seconds
+  Import took 0.037787 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001965 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.10 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Warning: Annotation not found!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs:593)
+UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/HierarchyListener.cs:21)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+[Library/PackageCache/com.unity.probuilder@4.4.0/Editor/EditorCore/EditorUtility.cs line 593]
+
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.338 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4425 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 199.0 MB.
+System memory in use after: 197.2 MB.
+
+Unloading 42 unused Assets to reduce memory usage. Loaded Objects now: 5040.
+Total: 5.925700 ms (FindLiveObjects: 0.460800 ms CreateObjectMapping: 0.127700 ms MarkObjects: 3.843800 ms  DeleteObjects: 1.491200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 49.213089 seconds.
+  path: Assets/Filler Assets/New Render Texture 1.renderTexture
+  artifactKey: Guid(fe3f415a8cedee445889a00af3fb67b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Filler Assets/New Render Texture 1.renderTexture using Guid(fe3f415a8cedee445889a00af3fb67b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3aeea5b54baddb5fbee642c6c30e0bd') in 0.033195 seconds
+  Import took 0.041538 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 244.477751 seconds.
+  path: Assets/Scripts/ARPG/Scriptable Objects/Player Stats.asset
+  artifactKey: Guid(c8ea77fb48e08f647bfecce8404d0d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ARPG/Scriptable Objects/Player Stats.asset using Guid(c8ea77fb48e08f647bfecce8404d0d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb5171f359f154b18f53b713f70e172d') in 0.009133 seconds
+  Import took 0.016571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000686 seconds.
+  path: Assets/Scripts/ARPG/Scriptable Objects/Player Stats.asset
+  artifactKey: Guid(c8ea77fb48e08f647bfecce8404d0d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ARPG/Scriptable Objects/Player Stats.asset using Guid(c8ea77fb48e08f647bfecce8404d0d75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb5171f359f154b18f53b713f70e172d') in 0.002682 seconds
+  Import took 0.009988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.073340 seconds.
+  path: Assets/Scripts/ARPG/Gameplay/PlayerLevelSystem.cs
+  artifactKey: Guid(0719434121359864fa1ec86659ef815c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/ARPG/Gameplay/PlayerLevelSystem.cs using Guid(0719434121359864fa1ec86659ef815c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da5d1d014d696dbb6f1389d256dc8b9d') in 0.002041 seconds
+  Import took 0.009608 seconds .
+

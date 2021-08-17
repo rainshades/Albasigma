@@ -50,8 +50,14 @@ namespace Albasigma.UI
         private void MenuMove_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             Vector2 indexmover = obj.ReadValue<Vector2>();
-            SelectedItem.transform.GetChild(0).gameObject.SetActive(false);
-
+            try
+            {
+                SelectedItem.transform.GetChild(0).gameObject.SetActive(false);
+            }
+            catch
+            {
+                Debug.Log("empty");
+            }
             if ((indexmover.x > 0 || indexmover.y > 0 ) && index > 0)
             {
                 index--; 

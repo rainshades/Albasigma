@@ -43,15 +43,18 @@ namespace Albasigma.UI
 
         private void Update()
         {
-            Vector2 MouseWheel = Mouse.current.scroll.ReadValue();
-            float scroll = MouseWheel.y;
-            if(scroll > 0)
+            if (Gamepad.all.Count == 0)
             {
-                ShiftCardRight();
-            }
-            else if(scroll < 0)
-            {
-                ShiftCardLeft();
+                Vector2 MouseWheel = Mouse.current.scroll.ReadValue();
+                float scroll = MouseWheel.y;
+                if (scroll > 0)
+                {
+                    ShiftCardRight();
+                }
+                else if (scroll < 0)
+                {
+                    ShiftCardLeft();
+                }
             }
         }
 
