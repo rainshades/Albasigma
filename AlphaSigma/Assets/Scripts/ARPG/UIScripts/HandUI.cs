@@ -115,10 +115,12 @@ namespace Albasigma.UI
         }
         private void Start()
         {
-            //We assume deck must be over 3 (we'll assume it is for now but this is not safe code)
-            Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
-            Center.SetCard(Deck.DeckSO.spellsInHand[CenterCard]);
-            Right.SetCard(Deck.DeckSO.spellsInHand[RightCard]);
+            if (Deck.DeckSO.PlayerDeck.Count > 3)
+            {
+                Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
+                Center.SetCard(Deck.DeckSO.spellsInHand[CenterCard]);
+                Right.SetCard(Deck.DeckSO.spellsInHand[RightCard]);
+            }
         }
 
         private void Shift_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -134,12 +136,17 @@ namespace Albasigma.UI
             }
         }
 
+
+        /// <summary>
+        /// Why did I do this two different ways???
+        /// Standardize this...
+        /// </summary>
+       
         public void ShiftCardLeft()
         {
             LeftCard++;
             CenterCard++;
             RightCard++;
-
 
             try
             {
@@ -193,6 +200,8 @@ namespace Albasigma.UI
 
             Debug.Log("Go Down");
         } //Shifts the card stack down by one
+
+
 
         private void OnEnable()
         {

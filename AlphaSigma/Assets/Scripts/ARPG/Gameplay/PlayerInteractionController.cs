@@ -13,7 +13,6 @@ namespace Albasigma.ARPG
         public LayerMask InteractableLayers;
         public float interactionRange;
         public IInteractable CurrentInteractable;
-        SpriteRenderer InInteractableInRangeSprite;
         public bool InInteractableInRange; 
 
         private void OnDrawGizmos()
@@ -24,7 +23,6 @@ namespace Albasigma.ARPG
         private void Awake()
         {
             interactionRange = GetComponent<PlayerCombat>().AttackRange;
-            InInteractableInRangeSprite = GetComponentInChildren<SpriteRenderer>(); 
         }
 
         private void FixedUpdate()
@@ -37,15 +35,6 @@ namespace Albasigma.ARPG
 
             else
                 CurrentInteractable = null; 
-
-            if (CurrentInteractable != null)
-            {
-                InInteractableInRangeSprite.gameObject.SetActive(true);
-            }
-            else
-            {
-                InInteractableInRangeSprite.gameObject.SetActive(false);
-            }
         }
 
 
@@ -55,6 +44,11 @@ namespace Albasigma.ARPG
             {
                 other.GetComponent<DoorToNewRoom>().GoTo(this); 
             }
+
+            if(other.TryGetComponent(out ThreshHold TH)){
+                TH.ActivateThreshhold(); 
+            }
+
         }
 
     }

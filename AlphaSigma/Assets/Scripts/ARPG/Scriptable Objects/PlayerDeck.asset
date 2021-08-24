@@ -12,38 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ec59d988ee952459ede42098d0bd2e, type: 3}
   m_Name: PlayerDeck
   m_EditorClassIdentifier: 
-  Ally_1: {fileID: 11400000, guid: 73dd172404b9a964a8ae4b437d5ab445, type: 2}
-  Ally_2: {fileID: 11400000, guid: 9f181b608aac7574981deded4362662d, type: 2}
+  Ally_1: {fileID: 0}
+  Ally_2: {fileID: 0}
   DrawNewCards: {fileID: 11400000, guid: 0dd70b2b8191d494badde1d3adcf04a4, type: 2}
   spellsInHand:
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
   - {fileID: 11400000, guid: 0dd70b2b8191d494badde1d3adcf04a4, type: 2}
-  PlayerDeck:
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  CompleteDeck:
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 46c45b9266c2a4e48a0c93b243d4c665, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
-  - {fileID: 11400000, guid: 8286fd018ce48534a92fb6656d6382ba, type: 2}
+  PlayerDeck: []
+  CompleteDeck: []

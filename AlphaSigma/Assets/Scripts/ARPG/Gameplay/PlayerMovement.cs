@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
+using Cinemachine; 
 
 namespace Albasigma.ARPG
 {
@@ -59,6 +60,20 @@ namespace Albasigma.ARPG
             inputs.Player.Movement.started += Movement_performed;
             inputs.Player.Movement.performed += Movement_performed;
             inputs.Player.Movement.canceled += Movement_canceled;
+
+            if(Gamepad.current != null)
+            {
+                CinemachineFreeLook freeLook = FindObjectOfType<CinemachineFreeLook>();
+                
+                freeLook.m_XAxis.m_InputAxisName = "";
+                freeLook.m_YAxis.m_InputAxisName = "";
+            }
+            else
+            {
+                CinemachineFreeLook freeLook = FindObjectOfType<CinemachineFreeLook>();
+                freeLook.m_XAxis.m_InputAxisName = "Mouse X";
+                freeLook.m_YAxis.m_InputAxisName = "Mouse Y";
+            }
         }
 
         private void OnDrawGizmos()
@@ -151,7 +166,8 @@ namespace Albasigma.ARPG
                     {
                         JumpForce.y = Mathf.Sqrt(jumpHeight * gravity) * 2;
                     }//second jump
-                    else if (jumpcounter >= 2)
+                                                    //Flight
+                    else if (jumpcounter >= 2 && Skills.Skills[7].unlocked)
                     {
                         CurrentMovementSpeed *= combat.Stats.FlightSpeed; 
                         AC.GlideTrigger();
@@ -219,6 +235,7 @@ namespace Albasigma.ARPG
 
         public void Lunge()
         {
+                //Lunge
             if (Skills.Skills[6].unlocked)
             {
                 cc.Move(Vector3.forward);
@@ -231,14 +248,24 @@ namespace Albasigma.ARPG
             OnLedge = false; 
         }//sets the position as the climb up 
 
+        public void Enable()
+        {
+            inputs.Enable();
+        }
+
+        public void Disable()
+        {
+            inputs.Disable();
+        }
+
         private void OnEnable()
         {
-            inputs.Enable(); 
+            inputs.Enable();
         }
 
         private void OnDisable()
         {
-            inputs.Disable(); 
+            inputs.Disable();
         }
     }
 }

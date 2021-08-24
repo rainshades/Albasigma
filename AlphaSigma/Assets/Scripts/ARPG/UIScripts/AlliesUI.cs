@@ -16,7 +16,23 @@ namespace Albasigma.UI
         private void Awake()
         {
             Deck = FindObjectOfType<DeckOfCards>();
-            Ally_1.sprite = Deck.DeckSO.Ally_1.AllyImage; Ally_2.sprite = Deck.DeckSO.Ally_2.AllyImage; 
+            try
+            {
+                Ally_1.sprite = Deck.DeckSO.Ally_1.AllyImage; Ally_2.sprite = Deck.DeckSO.Ally_2.AllyImage;
+            }
+            catch
+            {
+                if(Deck.DeckSO.Ally_1 == null)
+                {
+                    Ally_1.gameObject.SetActive(false); 
+                }
+                if (Deck.DeckSO.Ally_2 == null)
+                {
+                    Ally_2.gameObject.SetActive(false);
+                }
+
+                Debug.Log("Not Enough Allies");
+            }
         }
     }
 }

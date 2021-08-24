@@ -20,7 +20,7 @@ namespace Albasigma.ARPG
 
         public void PlayConversation(string blockname)
         {
-            if (!flow.HasExecutingBlocks())
+            if (!flow.HasExecutingBlocks()) 
             {
                 flow.ExecuteBlock(blockname);
             }//Executes Fungus Block 

@@ -25,7 +25,13 @@ namespace Albasigma.ARPG
         public void OnDeath()
         {
             PlayerCombat.Instance.GainExp(expPrize);
+
+            
             PlayerCombat.Instance.CurrentDrive += drivePrize;
+            if(PlayerCombat.Instance.CurrentDrive > PlayerCombat.Instance.MaxDrive)
+            {
+                PlayerCombat.Instance.CurrentDrive = PlayerCombat.Instance.MaxDrive; 
+            }
             PlayerCombat.Instance.gameObject.GetComponent<BagObject>().bag.currency += moneyPrize; 
 
             Destroy(gameObject);

@@ -13,7 +13,7 @@ namespace Albasigma.ARPG
         public int CurrentLevel;
         public int Experience;
         public int ExperienceToLevelUp;
-        public GrowthType growthType;
+        public GrowthType GrowthType { get; set; }
 
         public void GainExperience(int Exp)
         {
@@ -46,7 +46,7 @@ namespace Albasigma.ARPG
                 return 5; 
             }
 
-            return CurrentLevel * 10 + 5;  
+            return Mathf.CeilToInt((Mathf.Pow(CurrentLevel, 1.5f) * 17) / 16);  
         }
 
         void LevelUP()
@@ -63,21 +63,21 @@ namespace Albasigma.ARPG
 
         void LevelStatsAdjustment()
         {
-            if (growthType == GrowthType.Attack)
+            if (GrowthType == GrowthType.Attack)
             {
                 PlayerStatsSO.Attack += 5;
                 PlayerStatsSO.MaxHealth += 20;
                 PlayerStatsSO.MaxDrive += 1;
 
                 PlayerStatsSO.Mana++;
-            } else if(growthType == GrowthType.Drive)
+            } else if(GrowthType == GrowthType.Drive)
             {
                 PlayerStatsSO.Attack += 1;
                 PlayerStatsSO.MaxHealth += 15;
                 PlayerStatsSO.MaxDrive += 5;
 
                 PlayerStatsSO.Mana++;
-            } else if(growthType == GrowthType.Magic)
+            } else if(GrowthType == GrowthType.Magic)
             {
                 PlayerStatsSO.Attack += 1;
                 PlayerStatsSO.MaxHealth += 15;

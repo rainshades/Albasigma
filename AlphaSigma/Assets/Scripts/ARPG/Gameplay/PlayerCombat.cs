@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Fungus; 
 
 
 namespace Albasigma.ARPG
@@ -124,6 +125,7 @@ namespace Albasigma.ARPG
 
         private void Block_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
+                                                            //Fast Falling
             if (!GetComponent<PlayerMovement>().grounded && Skills.Skills[3].unlocked)
             {
                 GetComponent<PlayerMovement>().gravity *= 5.0f;
@@ -135,7 +137,10 @@ namespace Albasigma.ARPG
 
         private void AttackInteract_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            AC.AttackAniTrigger();
+            if (!FindObjectOfType<Flowchart>().HasExecutingBlocks())
+            {
+                AC.AttackAniTrigger();
+            }
 
             try
             {

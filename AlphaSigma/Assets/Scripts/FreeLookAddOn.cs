@@ -33,4 +33,5 @@ namespace Albasigma
             _freeLookComponent.m_YAxis.Value += lookMovement.y * LookSpeed * Time.deltaTime;
         }
     }
+
 }

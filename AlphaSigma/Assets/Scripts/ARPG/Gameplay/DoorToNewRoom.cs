@@ -19,7 +19,7 @@ namespace Albasigma.ARPG
         public void GoTo(PlayerInteractionController PC)
         {
             GameManager.Instance.AreaTransition(); 
-            transform.parent.gameObject.SetActive(false);
+            transform.GetComponentInParent<ArenaManager>().gameObject.SetActive(false);
             TeleportRoom.SetActive(true);
 
             PC.transform.position = TeleportSpace.transform.position;

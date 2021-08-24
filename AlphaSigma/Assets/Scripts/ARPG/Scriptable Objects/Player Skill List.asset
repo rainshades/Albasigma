@@ -18,19 +18,19 @@ MonoBehaviour:
     ManaCost: 1
     Effect: {fileID: 0}
   - name: Health Regen 2
-    unlocked: 1
+    unlocked: 0
     ManaCost: 1
     Effect: {fileID: 0}
   - name: Drive Regen 2
-    unlocked: 1
+    unlocked: 0
     ManaCost: 1
     Effect: {fileID: 0}
   - name: Fast Fall
-    unlocked: 1
+    unlocked: 0
     ManaCost: 0
     Effect: {fileID: 7350625469768686530, guid: a9d9310bcec775d4cbcf6291c9d0670f, type: 3}
   - name: Heart of Albatross
-    unlocked: 1
+    unlocked: 0
     ManaCost: 2
     Effect: {fileID: 0}
   - name: In Air Combo
@@ -38,6 +38,10 @@ MonoBehaviour:
     ManaCost: 2
     Effect: {fileID: 0}
   - name: Lunge
+    unlocked: 0
+    ManaCost: 2
+    Effect: {fileID: 0}
+  - name: Flight
     unlocked: 0
     ManaCost: 2
     Effect: {fileID: 0}
