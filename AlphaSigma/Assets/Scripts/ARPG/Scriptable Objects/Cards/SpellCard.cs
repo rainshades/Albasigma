@@ -31,6 +31,7 @@ namespace Albasigma.Cards
             if (castTye != CastType.projectile)
             {
                 go = Instantiate(EffectPrefab, AttackLocation);
+                go.transform.parent = null; 
             }
             else
             {

@@ -46,7 +46,11 @@ namespace Albasigma.ARPG
             }
 
             if(other.TryGetComponent(out ThreshHold TH)){
-                TH.ActivateThreshhold(); 
+                TH.ActivateThreshhold();
+            }
+            if (other.TryGetComponent(out FungusThreshold TH2))
+            {
+                TH2.ActivateThreshhold();
             }
 
         }

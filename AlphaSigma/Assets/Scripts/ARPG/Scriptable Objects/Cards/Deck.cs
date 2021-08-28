@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Albasigma.UI; 
+using Albasigma.UI;
+using Albasigma.ARPG;
 
 namespace Albasigma.Cards
 {
@@ -9,7 +10,7 @@ namespace Albasigma.Cards
     /// Contains the All related cards for the deck
     /// </summary>
     [CreateAssetMenu(fileName = "New Deck", menuName = "Deck")]
-    public class Deck : ScriptableObject
+    public class Deck : ScriptableObject, IReset
     {
         public AllyCard Ally_1;
         public AllyCard Ally_2;
@@ -55,10 +56,18 @@ namespace Albasigma.Cards
         {
             spellsInHand.Clear();
             DrawHand();
-            FindObjectOfType<HandUI>().Reset(); 
+            HandUI hand = FindObjectOfType<HandUI>();
+            hand.Reset(); 
+            hand.CardSpaceCheck(); 
+
         }//Dump cards and draw a hand of 5
 
-
-
+        public void Reset()
+        {
+            Ally_1 = null; Ally_2 = null;
+            spellsInHand.Clear();
+            PlayerDeck.Clear();
+            CompleteDeck.Clear(); 
+        }
     }
 }

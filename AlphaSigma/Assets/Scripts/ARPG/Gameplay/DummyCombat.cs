@@ -78,6 +78,7 @@ namespace Albasigma.ARPG
 
         public void TakeDamage(float damage)
         {
+            Debug.Log(name + " Took " + damage + " damage");
             Currenthealth -= damage;
             HealthBar.instance.LastHitEnemy = this; 
             if (Currenthealth <= 0)

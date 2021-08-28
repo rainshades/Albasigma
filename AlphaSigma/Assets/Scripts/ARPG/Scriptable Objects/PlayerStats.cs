@@ -7,7 +7,7 @@ namespace Albasigma.ARPG
     /// Holds a serialized version of player's information 
     /// </summary>
     [CreateAssetMenu(fileName = "Player Stats", menuName = "Stats")]
-    public class PlayerStats : ScriptableObject
+    public class PlayerStats : ScriptableObject, IReset
     {
         public float Currenthealth, MaxHealth;//Constant Scaling
         public float CurrentDrive, MaxDrive;//Constant Scaling
@@ -39,6 +39,11 @@ namespace Albasigma.ARPG
         public void FullHeal()
         {
             CurrentDrive = MaxDrive; Currenthealth = MaxHealth; 
+        }
+
+        public void Reset()
+        {
+            PlayerLevel.CurrentLevel = 1; 
         }
 
         [System.Serializable]

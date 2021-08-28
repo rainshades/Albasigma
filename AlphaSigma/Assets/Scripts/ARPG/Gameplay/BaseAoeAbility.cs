@@ -15,7 +15,7 @@ namespace Albasigma.ARPG
     public class BaseAoeAbility  : MonoBehaviour, IAreaOfEffectSpell
     {
         public float AreaOfEffect;
-        public float Damage; 
+        public int Damage; 
         public float DamageTick;
         [SerializeField]
         private float currentDamageTick = 0;
@@ -52,14 +52,14 @@ namespace Albasigma.ARPG
 
         private void Update()
         {
-            if(currentDamageTick == 0)
+            if(currentDamageTick <= 0)
             {
                 currentDamageTick = DamageTick;
-                inSpellArea(5); 
+                inSpellArea(Damage); 
             } // Spell damage happens over tick
             else
             {
-                DamageTick -= Time.deltaTime; 
+                currentDamageTick -= Time.deltaTime; 
             }// Decreases tick based on framerate
             //This may be better handled with a coroutine
         }

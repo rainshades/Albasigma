@@ -9,11 +9,18 @@ namespace Albasigma.ARPG
     /// Things like potions will be handled as spells
     /// </summary>
     [CreateAssetMenu(fileName = "Bag", menuName = "Player Bag")]
-    public class Bag : ScriptableObject
+    public class Bag : ScriptableObject, IReset
     {
         public int currency;
         public List<SpellCard> CardsInBag = new List<SpellCard>();        
 
-        public List<KeyItem> Items = new List<KeyItem>(); 
+        public List<KeyItem> Items = new List<KeyItem>();
+
+        public void Reset()
+        {
+            currency = 0;
+            CardsInBag.Clear();
+            Items.Clear(); 
+        }
     }
 }

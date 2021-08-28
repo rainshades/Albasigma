@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Albasigma.UI;
 using Albasigma.ARPG;
+using Albasigma.Cards;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -17,7 +18,13 @@ namespace Albasigma
     {
         public float playerhealth;
         public float playerdrive;
-        public int PlayerScene; 
+        public int PlayerScene;
+
+        public SkillList SkillsList;
+        public DecisionTracker Tracker;
+        public Bag Bag;
+        public Deck Deck;
+        public PlayerStats Stats; 
 
         public Vector3 PlayerSaveLocation; 
 
@@ -25,8 +32,14 @@ namespace Albasigma
         {
             playerhealth = h; playerdrive = d; PlayerScene = s; PlayerSaveLocation = l;
         }
+
+        public void SetSOData(SkillList skillList, DecisionTracker decisionTracker, Bag bag, Deck deck, PlayerStats playerStats)
+        {
+            SkillsList = skillList; Tracker = decisionTracker; Bag = bag; Deck = deck; Stats = playerStats; 
+        }
     }
 
+    [RequireComponent(typeof(PlayerScriptableObjectsController))]
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance { get; set;  }
@@ -40,6 +53,12 @@ namespace Albasigma
         public ArenaManager CurrentArena; 
 
         public bool Paused = false;
+
+        public SkillList SkillsList;
+        public DecisionTracker Tracker;
+        public Bag Bag;
+        public Deck Deck;
+        public PlayerStats Stats;
 
         public string filepath = "Autosave";
 
@@ -81,11 +100,12 @@ namespace Albasigma
             PlayerMovement movement = FindObjectOfType<PlayerMovement>();
             PlayerCombat combat = movement.GetComponent<PlayerCombat>();
             Vector3 PlayerLocation = movement.transform.position;
-            //Deck and bag will also need to be saved to file
+            PlayerScriptableObjectsController PSOC = GetComponent<PlayerScriptableObjectsController>(); 
 
             int current_scene = SceneManager.GetActiveScene().buildIndex;
 
             GameData GD = new GameData(combat.Currenthealth, combat.CurrentDrive, current_scene, PlayerLocation);
+            GD.SetSOData(SkillsList, Tracker, Bag, Deck, Stats);
 
             string autosave = Application.persistentDataPath + "/" + filepath + ".json";
             FileStream file = File.Create(autosave);
@@ -128,6 +148,11 @@ namespace Albasigma
             string json = (string)bf.Deserialize(file);
 
             GameData GD = JsonUtility.FromJson<GameData>(json);
+            SkillsList = GD.SkillsList;
+            Tracker = GD.Tracker;
+            Bag = GD.Bag;
+            Deck = GD.Deck;
+            Stats = GD.Stats;
             file.Close(); 
 
             //Will need to save deckdata to file as the player data is saved to file

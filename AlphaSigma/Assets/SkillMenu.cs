@@ -88,7 +88,7 @@ namespace Albasigma.UI
             pc.Enable(); 
 
             ContentPanel = transform.GetChild(1).GetChild(0).GetChild(0);
-            foreach(SkillList.Skill skill in PlayerSkill.Skills)
+            foreach(Skill skill in PlayerSkill.Skills)
             {
                 SkillUIObject go = Instantiate(SkillMenuPrefab, ContentPanel).GetComponent<SkillUIObject>();
 

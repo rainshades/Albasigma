@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b46a8fec36947749a3a7919eb34c7fc, type: 3}
   m_Name: Example
   m_EditorClassIdentifier: 
-  spelltime: 3
+  spelltime: 4
   Image: {fileID: 21300000, guid: 82708ac01918f7b4380d0607b09a4e81, type: 3}
   cost: 5
-  castTye: 3
+  castTye: 4
   EffectPrefab: {fileID: 8857833734463985669, guid: e60d16414c1a5374e9b7101c7e38d068, type: 3}
+  HitLayer:
+    serializedVersion: 2
+    m_Bits: 0

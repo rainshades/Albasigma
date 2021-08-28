@@ -74,31 +74,7 @@ namespace Albasigma.UI
                 Deck.DeckSO.spellsInHand[LeftCard].PlayCard(SpellSummonPosition);
                 Deck.DeckSO.spellsInHand.RemoveAt(LeftCard);
 
-                try
-                {
-                    Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
-                }
-                catch
-                {
-                    Left.SetCard(null);
-                }
-                try
-                {
-                    Center.SetCard(Deck.DeckSO.spellsInHand[CenterCard]);
-                }
-                catch
-                {
-                    Center.SetCard(null);
-                }
-
-                try
-                {
-                    Right.SetCard(Deck.DeckSO.spellsInHand[RightCard]);
-                }
-                catch
-                {
-                    Right.SetCard(null);
-                }
+                CardSpaceCheck(); 
 
                 PAC.CastSpell(); 
 
@@ -137,17 +113,8 @@ namespace Albasigma.UI
         }
 
 
-        /// <summary>
-        /// Why did I do this two different ways???
-        /// Standardize this...
-        /// </summary>
-       
-        public void ShiftCardLeft()
+        public void CardSpaceCheck()
         {
-            LeftCard++;
-            CenterCard++;
-            RightCard++;
-
             try
             {
                 Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
@@ -174,6 +141,22 @@ namespace Albasigma.UI
                 Right.SetCard(null);
             }
 
+        }
+
+
+        /// <summary>
+        /// Why did I do this two different ways???
+        /// Standardize this...
+        /// </summary>
+
+        public void ShiftCardLeft()
+        {
+            LeftCard++;
+            CenterCard++;
+            RightCard++;
+
+            CardSpaceCheck(); 
+
             Debug.Log("Go up");
             } //Shift the card stack up by one
 
@@ -183,20 +166,7 @@ namespace Albasigma.UI
             CenterCard--;
             RightCard--;
 
-            if (LeftCard >= 0)
-                Left.SetCard(Deck.DeckSO.spellsInHand[LeftCard]);
-            else
-                Left.SetCard(null); 
-
-            if (CenterCard >= 0)
-                Center.SetCard(Deck.DeckSO.spellsInHand[CenterCard]);
-            else
-                Center.SetCard(null); 
-
-            if (RightCard >= 0)
-                Right.SetCard(Deck.DeckSO.spellsInHand[RightCard]);
-            else
-                Right.SetCard(null);
+            CardSpaceCheck(); 
 
             Debug.Log("Go Down");
         } //Shifts the card stack down by one

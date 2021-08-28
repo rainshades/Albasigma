@@ -8,7 +8,7 @@ namespace Albasigma.UI {
     public class SkillUIObject : MonoBehaviour
     {
         public Toggle ToggleChild;
-        public SkillList.Skill Skill;
+        public Skill Skill;
 
         public bool Selected;
         public Image SelectedImage; 

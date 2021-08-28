@@ -26,7 +26,7 @@ MonoBehaviour:
     PlayerStatsSO: {fileID: 11400000}
     CurrentLevel: 1
     Experience: 0
-    ExperienceToLevelUp: 5
+    ExperienceToLevelUp: 0
   Base:
     BaseHealth: 40
     BaseDrive: 40

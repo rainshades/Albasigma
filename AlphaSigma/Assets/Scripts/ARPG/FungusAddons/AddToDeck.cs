@@ -4,6 +4,7 @@ using UnityEngine;
 using Fungus;
 using Albasigma.Cards;
 using Albasigma.ARPG;
+using Albasigma.UI;
 
 namespace Albasigma.FungusAddon
 {
@@ -29,17 +30,20 @@ namespace Albasigma.FungusAddon
                 if (Deck.PlayerDeck.Count < 10)
                 {
                     Deck.PlayerDeck.Add(spellCard);
-                    if(Deck.spellsInHand.Count == 0)
-                    {
-                        Deck.RefreshHand(); 
-                        //This will likely only be called at the beginning of the game
-                    }
                 }
                 else
                 {
                     Bag.CardsInBag.Add(spellCard); 
                 }
             }
+
+            if(Deck.spellsInHand.Count == 1)
+            {
+                Deck.RefreshHand();
+                FindObjectOfType<HandUI>().Reset();
+
+            }
+
             Continue(); 
         }
     }

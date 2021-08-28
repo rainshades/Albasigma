@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AreaOfEffect: 1
   Damage: 10
-  DamageTick: 0.5
+  DamageTick: 0.2
   currentDamageTick: 0
   DamageLayer:
     serializedVersion: 2
