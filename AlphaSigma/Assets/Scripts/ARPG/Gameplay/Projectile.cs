@@ -11,10 +11,19 @@ namespace Albasigma.ARPG
         public LayerMask HitLayer, IgnoreLayer;
         public float HitRadius;
         public float damage;
+        public float speed; 
 
         public void SetProjectile(Vector3 LauchDestination, float hitRadius, float damage, LayerMask HitLayer)
         {
             LaunchDestination = LauchDestination; HitRadius = hitRadius; this.damage = damage; this.HitLayer = HitLayer;
+            IgnoreLayer = transform.gameObject.layer;
+
+            transform.parent = null;
+        } // MonoBehaviours can't have constructors so this is the best of a bad situation 
+
+        public void SetProjectile(Vector3 LauchDestination, float speed, float hitRadius, float damage, LayerMask HitLayer)
+        {
+            LaunchDestination = LauchDestination; this.speed = speed; HitRadius = hitRadius; this.damage = damage; this.HitLayer = HitLayer;
             IgnoreLayer = transform.gameObject.layer;
 
             transform.parent = null;
@@ -29,7 +38,7 @@ namespace Albasigma.ARPG
         {
             transform.LookAt(LaunchDestination + Vector3.up);//Orients the projectiles towards it's destination 
 
-            transform.Translate(Vector3.forward * Time.deltaTime);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
             
             Collider[] col = Physics.OverlapSphere(transform.position, HitRadius);
 

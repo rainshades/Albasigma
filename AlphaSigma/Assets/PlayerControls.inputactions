@@ -156,14 +156,6 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
-                },
-                {
-                    "name": "LockOn",
-                    "type": "Button",
-                    "id": "77f5ac4e-a31f-4eb9-bf78-6981076417ee",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -290,18 +282,18 @@
                 },
                 {
                     "name": "2D Vector",
-                    "id": "06b835cb-73ff-4363-b8f2-66c340def8e7",
+                    "id": "aa656a5f-35d4-4da9-8326-2d8882ae229e",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardMouse",
+                    "groups": "",
                     "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "e650b5a3-1f1b-42d7-8cf0-b4409cf28521",
+                    "id": "cc3fe2bf-d0d1-48c9-acbf-9cdb31de3315",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
@@ -312,8 +304,30 @@
                 },
                 {
                     "name": "down",
-                    "id": "41d48f0c-d2a4-4725-b218-5b289357db00",
+                    "id": "2a3b956d-12a5-4871-a9e9-b879f487509f",
                     "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "38d5943e-edd9-4d4a-a4a7-fef610945531",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "d2e4b0e2-2390-4200-8b2a-f5b35f22f592",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
@@ -340,17 +354,6 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Pause",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "89622466-d39c-4282-8099-af06dd6a176a",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "GamePad",
-                    "action": "LockOn",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -495,6 +498,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Lock On",
+                    "type": "Button",
+                    "id": "67da23a8-6972-4750-a435-5049cd9be886",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -587,26 +598,15 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "d05ec0c7-168e-43eb-a403-0ff44e3afd24",
-                    "path": "<Keyboard>/a",
+                    "name": "",
+                    "id": "ea67eeed-9c86-41b8-8ae7-020eb5029c2d",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Camera",
+                    "groups": "GamePad",
+                    "action": "Lock On",
                     "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "3c5bf122-7e3c-4dc3-9ccd-945a4e692b77",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Camera",
-                    "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 }
             ]
         }

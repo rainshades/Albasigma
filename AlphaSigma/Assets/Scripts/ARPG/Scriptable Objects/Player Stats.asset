@@ -16,7 +16,7 @@ MonoBehaviour:
   MaxHealth: 40
   CurrentDrive: 40
   MaxDrive: 40
-  Attack: 5
+  Attack: 2
   Speed: 1
   FlightSpeed: 2.5
   Mana: 15
@@ -30,6 +30,6 @@ MonoBehaviour:
   Base:
     BaseHealth: 40
     BaseDrive: 40
-    BaseAttack: 5
+    BaseAttack: 2
     BaseSpeed: 1
     BaseMana: 15

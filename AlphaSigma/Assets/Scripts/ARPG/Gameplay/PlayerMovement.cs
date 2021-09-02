@@ -44,6 +44,14 @@ namespace Albasigma.ARPG
         Vector3 LedgeBoxSize = new Vector3(0.25f, 0.25f, 0.25f);
 
         Ledge activeLedge; 
+
+        bool UsingKeypad { 
+            get
+            {
+                var gamepad = Gamepad.current;
+                return gamepad == null; 
+            } 
+        }
                 
 
         private void Awake()
@@ -61,7 +69,7 @@ namespace Albasigma.ARPG
             inputs.Player.Movement.performed += Movement_performed;
             inputs.Player.Movement.canceled += Movement_canceled;
 
-            if(Gamepad.current != null)
+            if(UsingKeypad)
             {
                 CinemachineFreeLook freeLook = FindObjectOfType<CinemachineFreeLook>();
                 
@@ -79,6 +87,25 @@ namespace Albasigma.ARPG
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireCube(PlayerLedgePoint.transform.position, LedgeBoxSize);
+        }
+
+        private void Update()
+        {
+            if (UsingKeypad)
+            {
+                float horizontal = Input.GetAxisRaw("Horizontal");
+                float vertical = Input.GetAxisRaw("Vertical");
+                Vector2 direction = new Vector3(horizontal, 0f, vertical).normalized;
+                if (direction.magnitude >= 0.1f)
+                {
+                    float targetangle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+                    float Angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnSmoothVelocity, turnSmoothTime);
+
+                    transform.rotation = Quaternion.Euler(0f, Angle, 0f);
+                    Vector3 movedir = Quaternion.Euler(0, targetangle, 0) * Vector3.forward;
+                    cc.Move(movedir * Time.deltaTime * CurrentMovementSpeed);
+                }
+            }
         }
 
         protected override void GravityCheck()
@@ -134,7 +161,7 @@ namespace Albasigma.ARPG
             base.KnockBack(Direction);
             if (!combat.Blocking)
             {
-                JumpForce = Direction * KnockbackForce * 4;
+                JumpForce = Direction * KnockbackForce;
                 JumpForce.y = KnockbackForce * 1.5f;
             }//If a player is not blocking an attack they get knocked back
         }
@@ -181,21 +208,26 @@ namespace Albasigma.ARPG
             }
         }//Jump Y-Movement
 
+        void Movement(Vector3 InputForMovementAngle)
+        {
+            targetAngle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+            //Calculating the forward angle by using the tangent of the Camera y-axis 
+            angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            //Smoothing the angle 
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            //Rotates the character towards the smoothed angle 
+            MovementForce = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            MovementAngle = new Vector3(InputForMovementAngle.x, 0, InputForMovementAngle.y);
+            Vector3 NormalizedMovement = MovementAngle.normalized;
+            MovementAngle = NormalizedMovement;
+        }
+
         private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             if (!combat.Blocking && !combat.Attacking && !OnLedge)
             {
-                targetAngle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
-                //Calculating the forward angle by using the tangent of the Camera y-axis 
-                angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime); 
-                //Smoothing the angle 
-                transform.rotation = Quaternion.Euler(0f, angle, 0f);
-                //Rotates the character towards the smoothed angle 
-                MovementForce = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-
-                MovementAngle = new Vector3(obj.ReadValue<Vector2>().x, 0, obj.ReadValue<Vector2>().y);
-                Vector3 NormalizedMovement = MovementAngle.normalized;
-                MovementAngle = NormalizedMovement;
+                Movement(obj.ReadValue<Vector2>());
 
                 if (!AC.isRunning)
                 {

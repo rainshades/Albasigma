@@ -16,12 +16,13 @@ namespace Albasigma.ARPG
         //Room to teleport to
         //Space to teleport to in that room
 
-        public void GoTo(PlayerInteractionController PC)
+        public IEnumerator GoTo(PlayerInteractionController PC, float time)
         {
-            GameManager.Instance.AreaTransition(); 
-            transform.GetComponentInParent<ArenaManager>().gameObject.SetActive(false);
             TeleportRoom.SetActive(true);
 
+            yield return new WaitForSecondsRealtime(time);
+            transform.GetComponentInParent<ArenaManager>().gameObject.SetActive(false);
+            
             PC.transform.position = TeleportSpace.transform.position;
         }//TeleportsPlayer
     }

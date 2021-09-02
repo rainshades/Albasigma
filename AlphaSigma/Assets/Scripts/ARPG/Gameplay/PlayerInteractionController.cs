@@ -37,12 +37,12 @@ namespace Albasigma.ARPG
                 CurrentInteractable = null; 
         }
 
-
         private void OnTriggerEnter(Collider other)
         {
             if(other.tag == "Door")
             {
-                other.GetComponent<DoorToNewRoom>().GoTo(this); 
+                GameManager.Instance.AreaTransition(3.0f);
+                StartCoroutine(other.GetComponent<DoorToNewRoom>().GoTo(this, 1.5f)); 
             }
 
             if(other.TryGetComponent(out ThreshHold TH)){

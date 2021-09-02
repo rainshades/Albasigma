@@ -36,7 +36,6 @@ namespace Albasigma.ARPG
         protected float KnockbackCounter;
 
         protected Vector3 MovementForce = Vector3.zero;//Force used to interact with the X-,Z-Axis
-
         private void Start()
         {
             CurrentMovementSpeed = baseMovementSpeed;
@@ -81,14 +80,12 @@ namespace Albasigma.ARPG
             return false; 
         }
 
-
         private void FixedUpdate()
         {
             GravityCheck();
             LedgeCheck();
 
             cc.Move(JumpForce * Time.deltaTime * 2.0f);//Player verticle movement
-
             if (KnockbackCounter <= 0)
             {
                 cc.Move(MovementForce * CurrentMovementSpeed * Time.deltaTime);

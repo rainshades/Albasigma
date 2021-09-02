@@ -45,15 +45,21 @@ namespace Albasigma.UI
         private void Update()
         {
             CurrentButton = MenuButtons[index];
-
-            if (Gamepad.current.buttonSouth.wasReleasedThisFrame)
+            try
             {
-                CurrentButton.onClick.Invoke();
+                if (Gamepad.current.buttonSouth.wasReleasedThisFrame)
+                {
+                    CurrentButton.onClick.Invoke();
+                }
+
+                if (Gamepad.current.buttonEast.wasReleasedThisFrame)
+                {
+                    CloseButton.onClick.Invoke();
+                }
             }
-
-            if (Gamepad.current.buttonEast.wasReleasedThisFrame)
+            catch
             {
-                CloseButton.onClick.Invoke();
+                //Gamepad is null
             }
         }
 

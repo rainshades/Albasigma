@@ -82,46 +82,7 @@ namespace Albasigma.ARPG
             Controls.Player.Block.canceled += ctx => Blocking = false;
             Controls.Player.Block.canceled += ctx => AC.StopBlock();
 
-            Controls.Player.LockOn.performed += LockOn_performed;
-        }
-
-        private void LockOn_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-        {
-            CinemachineTargetGroup Group = FindObjectOfType<CinemachineTargetGroup>();
-
-            if (!LockedOn)
-            {
-                try
-                {
-                    CameraReturnPosition = CameraPoint.transform.position;
-                    if(Group.m_Targets.Length == 1)
-                    {
-                        Group.AddMember(EnemiesInRange[0].transform, .5f, 0);
-                    }
-                    LockedOn = true;
-                }//Locks onto the closest enemy at the time
-                //This is also the enemy that will be hit by the next spell
-                catch
-                {
-                    Debug.Log("Nothing in range");
-                }
-            }
-            else
-            {
-                if(Group.m_Targets.Length > 1)
-                {
-                    try
-                    {
-                        Group.RemoveMember(EnemiesInRange[0].transform);
-                    }
-                    catch
-                    {
-                        Group.RemoveMember(Group.m_Targets[1].target);
-                    }
-                }
-                LockedOn = false; 
-            }
-        }
+        } 
 
         private void Block_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {

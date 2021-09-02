@@ -42,10 +42,16 @@ namespace Albasigma.UI
             CurrentSelection.Selected = true; 
 
             ManaText.text = Stats.currentMana + "/" + Stats.Mana;
-
-            if (Gamepad.current.buttonSouth.wasReleasedThisFrame)
+            try
             {
-                SelectSkill(CurrentSelection);
+                if (Gamepad.current.buttonSouth.wasReleasedThisFrame)
+                {
+                    SelectSkill(CurrentSelection);
+                }
+            }
+            catch
+            {
+                //Gamepad is not connected
             }
         }
 

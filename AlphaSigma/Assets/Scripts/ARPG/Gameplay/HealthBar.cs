@@ -31,12 +31,16 @@ namespace Albasigma.UI
                 if (LastHitEnemy != null)
                 {
                     Background.gameObject.SetActive(true);
-                    if(LastHitEnemy.MaxHealth < 600)
+                    if (LastHitEnemy.MaxHealth < 600 && LastHitEnemy.Currenthealth > 0)
                     {
                         Background.rectTransform.sizeDelta = new Vector2(Background.rectTransform.sizeDelta.x, LastHitEnemy.MaxHealth + 50);
                         ForeGround.rectTransform.sizeDelta = new Vector2(ForeGround.rectTransform.sizeDelta.x, LastHitEnemy.MaxHealth + 50);
                     }
-                    ForeGround.transform.localScale = new Vector3(1, LastHitEnemy.Currenthealth / LastHitEnemy.MaxHealth, 1);
+
+                    float healthremaining = LastHitEnemy.Currenthealth > 0 ? LastHitEnemy.Currenthealth / LastHitEnemy.MaxHealth : 0;
+
+                    ForeGround.transform.localScale = new Vector3(1, healthremaining, 1);
+
                 }//Sets the LastHitEnemy
                 else
                 {

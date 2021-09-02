@@ -77,14 +77,13 @@ namespace Albasigma
             if (!Paused)
             {
                 Time.timeScale = 1; 
-                complexPauseUI.GetComponentInChildren<CurrentDeckOfCardsUI>().SaveDeck(); 
             }
             else
             {
                 Time.timeScale = 0; 
             }
 
-            if (CurrentArena.AllEnemiesDefeated)
+            if (CurrentArena.AllEnemiesDefeated && Stats.PlayerLevel.CurrentLevel > 7)
             {
 
                 complexPauseUI.gameObject.SetActive(Paused);
@@ -126,15 +125,15 @@ namespace Albasigma
         [SerializeField]
         GameObject BoxTransitionAnimation;
 
-        public void AreaTransition()//TEMP NEED LEVEL MANAGER
+        public void AreaTransition(float time)//TEMP NEED LEVEL MANAGER
         {
-            StartCoroutine(AreaBlackout()); 
+            StartCoroutine(AreaBlackout(time)); 
         }//Creates a transition from box to box
 
-        IEnumerator AreaBlackout()
+        IEnumerator AreaBlackout(float time)
         {
             BoxTransitionAnimation.SetActive(true);
-            yield return new WaitForSecondsRealtime(1.5f);
+            yield return new WaitForSecondsRealtime(time);
             BoxTransitionAnimation.SetActive(false); 
         }
 

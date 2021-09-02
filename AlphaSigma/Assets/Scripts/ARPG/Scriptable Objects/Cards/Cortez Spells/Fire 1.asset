@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b46a8fec36947749a3a7919eb34c7fc, type: 3}
+  m_Name: Fire 1
+  m_EditorClassIdentifier: 
+  spelltime: 4
+  Image: {fileID: 21300000, guid: f4c38871bc0bd554fa93ef377231a95c, type: 3}
+  cost: 4
+  castTye: 3
+  EffectPrefab: {fileID: 3101641430031343273, guid: b22a54936f1aadc4aa9b507221af2366, type: 3}
+  HitLayer:
+    serializedVersion: 2
+    m_Bits: 8

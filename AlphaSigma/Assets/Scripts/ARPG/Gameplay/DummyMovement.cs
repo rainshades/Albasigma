@@ -22,8 +22,12 @@ namespace Albasigma.ARPG
         SpriteRenderer Detected;
         public NavMeshAgent agent;
 
+        bool walking;
+        AnimatorMethods ani; 
+
         private void Awake()
         {
+            ani = GetComponentInChildren<AnimatorMethods>(); 
             agent = GetComponent<NavMeshAgent>();// agent assignment
         }
 
@@ -54,6 +58,10 @@ namespace Albasigma.ARPG
 
             GravityCheck();
 
+            walking = agent.velocity.magnitude > 0; 
+
+            ani.PlayMoving(walking); 
+
             if (PlayerInRange && KnockbackCounter <= 0)
             {
                 OnDetection();
@@ -80,12 +88,14 @@ namespace Albasigma.ARPG
             Target = col[0].gameObject;
             Detected.gameObject.SetActive(true);
             agent.SetDestination(new Vector3(Target.transform.position.x - 0.5f, Target.transform.position.y, Target.transform.position.z - 1.5f));
+            
             //Destination is meant to stop right in front of the player
         }//Happens when the selected object is detected
 
         protected override void KnockBack(Vector3 Direction)
         {
             base.KnockBack(Direction);
+            walking = false;
             JumpForce = Direction * KnockbackForce * 4;
             JumpForce.y = KnockbackForce * 1.5f;
             JumpForce.x *= -1;

@@ -11,7 +11,8 @@ namespace Albasigma.ARPG
         public float Currenthealth, MaxHealth, AttackRange, baseAttackCooldown;
         protected float currentAttackCooldown = 0; 
         public int expPrize, drivePrize, moneyPrize;
-        
+        public float AttackDamage; 
+
         public Transform AttackPoint;
         [SerializeField]
         protected LayerMask PlayerLayer;
@@ -23,6 +24,11 @@ namespace Albasigma.ARPG
         }
 
         public void OnDeath()
+        {
+            GetComponentInChildren<AnimatorMethods>().PlayDie(); 
+        }
+
+        public void Death()
         {
             PlayerCombat.Instance.GainExp(expPrize);
 
@@ -42,8 +48,8 @@ namespace Albasigma.ARPG
             Collider[] col = Physics.OverlapSphere(AttackPoint.position, AttackRange, PlayerLayer);
             try
             {
-                if(currentAttackCooldown <= 0)
-                    Attack(2, col[0].gameObject);
+                if (currentAttackCooldown <= 0 && col.Length > 0)
+                    GetComponentInChildren<AnimatorMethods>().PlayAttackAni(); 
             }
             catch
             {
@@ -62,13 +68,26 @@ namespace Albasigma.ARPG
 
         }
 
+        public void AttackCollision()
+        {
+            Collider[] colliders = Physics.OverlapSphere(AttackPoint.position, AttackRange, PlayerLayer);
+
+            foreach (Collider col in colliders)
+            {
+                if (col.tag == "Player")
+                    Attack(AttackDamage, col.gameObject);
+                if (col.tag == "Breakable")
+                    Destroy(col.gameObject); //Placeholder for the scripted destruction of said object
+            }
+        }
+
         public void Attack(float damage, GameObject entity)
         {
             entity.GetComponent<ICombatEntity>().TakeDamage(damage);
             currentAttackCooldown = baseAttackCooldown;
             Vector3 KnockbackDirection = (AttackPoint.position - entity.transform.position) * -1; 
-            GetComponent<EntityMovement>().KnockbackCalc(entity.GetComponent<EntityMovement>(), 
-                KnockbackDirection); 
+            entity.GetComponent<EntityMovement>().KnockbackCalc(entity.GetComponent<EntityMovement>(), 
+                KnockbackDirection * 2); 
         }
 
         private void OnDrawGizmos()
@@ -80,7 +99,8 @@ namespace Albasigma.ARPG
         {
             Debug.Log(name + " Took " + damage + " damage");
             Currenthealth -= damage;
-            HealthBar.instance.LastHitEnemy = this; 
+            HealthBar.instance.LastHitEnemy = this;
+            GetComponentInChildren<AnimatorMethods>().PlayHit(); 
             if (Currenthealth <= 0)
             {
                 OnDeath(); 

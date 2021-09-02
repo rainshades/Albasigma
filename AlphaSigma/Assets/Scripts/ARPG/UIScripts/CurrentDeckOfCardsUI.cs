@@ -215,6 +215,7 @@ namespace Albasigma.UI
 
         private void OnDisable()
         {
+            SaveDeck(); 
             FindObjectOfType<PlayerCombat>().Controls.Enable();
             FindObjectOfType<PlayerMovement>().inputs.Enable();
             FindObjectOfType<HandUI>().inputs.Enable();
