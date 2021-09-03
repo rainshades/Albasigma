@@ -69,19 +69,13 @@ namespace Albasigma.ARPG
             inputs.Player.Movement.performed += Movement_performed;
             inputs.Player.Movement.canceled += Movement_canceled;
 
-            if(UsingKeypad)
+            if (UsingKeypad)
             {
-                CinemachineFreeLook freeLook = FindObjectOfType<CinemachineFreeLook>();
-                
-                freeLook.m_XAxis.m_InputAxisName = "";
-                freeLook.m_YAxis.m_InputAxisName = "";
+                CinemachineFreeLook MainCamera = FindObjectOfType<CinemachineFreeLook>();
+                MainCamera.m_XAxis.m_InputAxisName = "Mouse X";
+                MainCamera.m_YAxis.m_InputAxisName = "Mouse Y";
             }
-            else
-            {
-                CinemachineFreeLook freeLook = FindObjectOfType<CinemachineFreeLook>();
-                freeLook.m_XAxis.m_InputAxisName = "Mouse X";
-                freeLook.m_YAxis.m_InputAxisName = "Mouse Y";
-            }
+
         }
 
         private void OnDrawGizmos()
@@ -95,15 +89,25 @@ namespace Albasigma.ARPG
             {
                 float horizontal = Input.GetAxisRaw("Horizontal");
                 float vertical = Input.GetAxisRaw("Vertical");
-                Vector2 direction = new Vector3(horizontal, 0f, vertical).normalized;
+                Vector3 direction = new Vector3(horizontal , 0f, vertical).normalized;
+
                 if (direction.magnitude >= 0.1f)
                 {
-                    float targetangle = Mathf.Atan2(MovementAngle.x, MovementAngle.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
+                    if (!AC.isRunning)
+                    {
+                        AC.StartRunning();
+                    }
+
+                    float targetangle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
                     float Angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetangle, ref turnSmoothVelocity, turnSmoothTime);
 
                     transform.rotation = Quaternion.Euler(0f, Angle, 0f);
                     Vector3 movedir = Quaternion.Euler(0, targetangle, 0) * Vector3.forward;
-                    cc.Move(movedir * Time.deltaTime * CurrentMovementSpeed);
+                    cc.Move(movedir * CurrentMovementSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    AC.StopRunning(); 
                 }
             }
         }
@@ -227,8 +231,10 @@ namespace Albasigma.ARPG
         {
             if (!combat.Blocking && !combat.Attacking && !OnLedge)
             {
-                Movement(obj.ReadValue<Vector2>());
-
+                if (!UsingKeypad)
+                {
+                    Movement(obj.ReadValue<Vector2>());
+                }
                 if (!AC.isRunning)
                 {
                     AC.StartRunning();

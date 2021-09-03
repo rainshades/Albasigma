@@ -178,6 +178,20 @@ namespace Albasigma
         }//On death loads main menu
         //Will need to be edited to be a gameover screen
 
+        public void ExitGame()
+        {
+            Application.Quit(); 
+        }
+
+        public void BackToMainMenu()
+        {
+            SaveGame(); 
+            /*Place a warning that doing this without saving may result in loosing data or data corruption
+             * 
+             */
+            
+        }
+
         private void OnEnable()
         {
             pc.Enable(); 
