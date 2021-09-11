@@ -28,6 +28,14 @@ namespace Albasigma.ARPG{
             }
         }
 
+        public void LedgeGrab()
+        {
+            if (!ani.GetCurrentAnimatorStateInfo(0).IsName("LedgeGrab") && !ani.GetCurrentAnimatorStateInfo(0).IsName("Standing up"))
+            {
+                ani.Play("LedgeGrab");
+            }
+        }
+
         public void UpFromLedge()
         {
             ani.SetTrigger("UpFromLedge");

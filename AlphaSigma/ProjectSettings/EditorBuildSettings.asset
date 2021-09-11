@@ -6,10 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartMenu.unity
+    path: Assets/Scenes/Virticle/StartMenu.unity
     guid: 62b9bd953b2eea0459a3b0e873e4b078
   - enabled: 1
-    path: Assets/Scenes/VS.unity
+    path: Assets/Scenes/Virticle/Dream.unity
     guid: 917e0fbec2624684498cea023f2fa243
+  - enabled: 1
+    path: Assets/Scenes/Virticle/Judge's home.unity
+    guid: 53d737c9b32a1ec46aad96c8b92258cb
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 813c5df55bfaeb84db64b536de980145, type: 2}

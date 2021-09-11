@@ -20,3 +20,6 @@ MonoBehaviour:
   HitLayer:
     serializedVersion: 2
     m_Bits: 8
+  IgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 128

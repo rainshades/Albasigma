@@ -22,6 +22,7 @@ namespace Albasigma.Cards
 
         public GameObject EffectPrefab;
         public LayerMask HitLayer;
+        public LayerMask IgnoreLayer; 
 
         public void PlayCard(Transform AttackLocation)
         {
@@ -37,11 +38,9 @@ namespace Albasigma.Cards
             {
                 
                 go = Instantiate(EffectPrefab, 
-                    new Vector3(PlayerCombat.Instance.transform.position.x,
-                    PlayerCombat.Instance.transform.position.y + 1.0f,
-                    PlayerCombat.Instance.transform.position.z - 1.5f) 
+                    PlayerCombat.Instance.ProjectileSpawnPoint.position
                     ,Quaternion.identity);
-                go.GetComponent<Projectile>().SetProjectile(PlayerCombat.Instance.CardLockOn.position, 0.5f, 2.0f, HitLayer);
+                go.GetComponent<Projectile>().SetProjectile(PlayerCombat.Instance.CardLockOn.position, 2.0f, 1, 2.0f, HitLayer, IgnoreLayer);
             }
 
 

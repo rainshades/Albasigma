@@ -41,7 +41,7 @@ namespace Albasigma.ARPG
         {
             if(other.tag == "Door")
             {
-                GameManager.Instance.AreaTransition(3.0f);
+                GameManager.Instance.AreaTransition();
                 StartCoroutine(other.GetComponent<DoorToNewRoom>().GoTo(this, 1.5f)); 
             }
 

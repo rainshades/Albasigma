@@ -157,7 +157,6 @@ namespace Albasigma.UI
 
             CardSpaceCheck(); 
 
-            Debug.Log("Go up");
             } //Shift the card stack up by one
 
         public void ShiftCardRight()
@@ -167,8 +166,6 @@ namespace Albasigma.UI
             RightCard--;
 
             CardSpaceCheck(); 
-
-            Debug.Log("Go Down");
         } //Shifts the card stack down by one
 
 

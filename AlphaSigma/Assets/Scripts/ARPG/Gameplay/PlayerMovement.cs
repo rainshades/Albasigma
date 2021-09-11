@@ -7,7 +7,7 @@ using Cinemachine;
 namespace Albasigma.ARPG
 {
 
-    public enum MoveState { Idle, Jumping, Falling, Running }
+    public enum MoveState { Idle, Jumping, Falling, Running, OnLedge }
 
     /// <summary>
     /// Handles Player movement options 
@@ -39,11 +39,11 @@ namespace Albasigma.ARPG
         [SerializeField]
         GameObject PlayerLedgePoint;
 
-        bool OnLedge;
-
         Vector3 LedgeBoxSize = new Vector3(0.25f, 0.25f, 0.25f);
 
-        Ledge activeLedge; 
+        Ledge activeLedge;
+
+        bool controlsOn = true; 
 
         bool UsingKeypad { 
             get
@@ -51,8 +51,7 @@ namespace Albasigma.ARPG
                 var gamepad = Gamepad.current;
                 return gamepad == null; 
             } 
-        }
-                
+        }                
 
         private void Awake()
         {
@@ -68,30 +67,40 @@ namespace Albasigma.ARPG
             inputs.Player.Movement.started += Movement_performed;
             inputs.Player.Movement.performed += Movement_performed;
             inputs.Player.Movement.canceled += Movement_canceled;
-
-            if (UsingKeypad)
-            {
-                CinemachineFreeLook MainCamera = FindObjectOfType<CinemachineFreeLook>();
-                MainCamera.m_XAxis.m_InputAxisName = "Mouse X";
-                MainCamera.m_YAxis.m_InputAxisName = "Mouse Y";
-            }
-
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireCube(PlayerLedgePoint.transform.position, LedgeBoxSize);
+            Gizmos.DrawWireCube(BottomPoint.transform.position, distanceGrounded);
         }
 
         private void Update()
         {
-            if (UsingKeypad)
+            if (LedgeCheck())
+            {
+                moveState = MoveState.OnLedge; 
+            }
+            if (moveState == MoveState.OnLedge)
+            {
+                AC.LedgeGrab(); 
+
+                StopMovement();
+                JumpForce = Vector3.zero;
+                gravity = 0;
+            }//ledge grab 
+            else
+            {
+                gravity = baseGravity; 
+            }
+
+            if (UsingKeypad && moveState != MoveState.OnLedge)
             {
                 float horizontal = Input.GetAxisRaw("Horizontal");
                 float vertical = Input.GetAxisRaw("Vertical");
                 Vector3 direction = new Vector3(horizontal , 0f, vertical).normalized;
 
-                if (direction.magnitude >= 0.1f)
+                if (direction.magnitude >= 0.1f && controlsOn)
                 {
                     if (!AC.isRunning)
                     {
@@ -145,18 +154,6 @@ namespace Albasigma.ARPG
                 jumpHeight = baseJumpHeight;
                 CurrentMovementSpeed = baseMovementSpeed;
             }
-            else if(OnLedge)
-            {
-                if (!AC.animator.GetCurrentAnimatorStateInfo(0).IsName("LedgeGrab"))
-                {
-                    AC.animator.Play("LedgeGrab");
-                }
-
-               StopMovement();
-               JumpForce = Vector3.zero;
-               gravity = 0;
-            }//ledge grab 
-            
             AC.isGrounded(grounded); //GroundCheck
         }
 
@@ -205,11 +202,6 @@ namespace Albasigma.ARPG
                     }//flight
                 }
             }
-
-            if (OnLedge)
-            {
-                AC.UpFromLedge();
-            }
         }//Jump Y-Movement
 
         void Movement(Vector3 InputForMovementAngle)
@@ -229,7 +221,7 @@ namespace Albasigma.ARPG
 
         private void Movement_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
-            if (!combat.Blocking && !combat.Attacking && !OnLedge)
+            if (!combat.Blocking && !combat.Attacking && moveState != MoveState.OnLedge)
             {
                 if (!UsingKeypad)
                 {
@@ -240,14 +232,6 @@ namespace Albasigma.ARPG
                     AC.StartRunning();
                 }
             }
-            else if (OnLedge)
-            {
-                AC.UpFromLedge();
-            }
-            else
-            {
-                StopMovement(); 
-            }
 
         }//Move X-, Z-Movement
 
@@ -255,16 +239,16 @@ namespace Albasigma.ARPG
         {
             bool hitledge = false;
 
-            if (!OnLedge)
-            {
+            if (moveState != MoveState.OnLedge)
+            { 
                 Collider[] colliders = Physics.OverlapBox(PlayerLedgePoint.transform.position, LedgeBoxSize / 2);
                 foreach (Collider col in colliders)
                 {
                     hitledge = col.tag == "Ledge";
                     if (hitledge)
                     {
+                        StopMovement(); 
                         activeLedge = col.GetComponent<Ledge>();
-                        OnLedge = true; 
                     }
                 }
             }
@@ -282,18 +266,21 @@ namespace Albasigma.ARPG
 
         public void ClimbUpFromLedge()
         {
+            AC.UpFromLedge(); 
             transform.position = activeLedge.GetStandUpPos();
-            OnLedge = false; 
+            moveState = MoveState.Idle;  
         }//sets the position as the climb up 
 
         public void Enable()
         {
             inputs.Enable();
+            controlsOn = true; 
         }
 
         public void Disable()
         {
             inputs.Disable();
+            controlsOn = false; 
         }
 
         private void OnEnable()

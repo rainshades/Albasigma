@@ -31,7 +31,6 @@ namespace Albasigma.UI
                     Ally_2.gameObject.SetActive(false);
                 }
 
-                Debug.Log("Not Enough Allies");
             }
         }
     }

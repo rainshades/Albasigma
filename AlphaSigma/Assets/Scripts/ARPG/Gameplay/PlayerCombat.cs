@@ -61,7 +61,9 @@ namespace Albasigma.ARPG
         Vector3 CameraReturnPosition;
         public bool FastFall;
 
-        CinemachineFreeLook FreeLook; 
+        CinemachineFreeLook FreeLook;
+
+        public Transform ProjectileSpawnPoint; 
 
         public void GainExp(int EXP)
         {
@@ -195,7 +197,7 @@ namespace Albasigma.ARPG
                 if (TimeLeftToContinueComboString > 0)
                 {
                     entity.GetComponentInParent<ICombatEntity>().TakeDamage(damage);
-                    Debug.Log("Does " + damage + " to " + entity.name);
+//                    Debug.Log("Does " + damage + " to " + entity.name);
                     AC.ComboNumber(combo);
                     combo++;
                 }
@@ -211,11 +213,11 @@ namespace Albasigma.ARPG
             {
                 Currenthealth -= damage;
 
-                Debug.Log("Took " + damage);
+      //          Debug.Log("Took " + damage);
             }
             else
             {
-                Debug.Log("Blocked");
+     //           Debug.Log("Blocked");
             }
 
             if(Currenthealth <= 0)
@@ -229,7 +231,7 @@ namespace Albasigma.ARPG
         {
             AC.Block(); 
             Blocking = true;
-            Debug.Log("Blocking");
+      //      Debug.Log("Blocking");
             //Give bonus stats OR make direct damage immune
         }
 

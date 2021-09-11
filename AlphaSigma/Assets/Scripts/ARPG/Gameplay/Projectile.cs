@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections; 
 
 namespace Albasigma.ARPG
 {
@@ -11,27 +12,43 @@ namespace Albasigma.ARPG
         public LayerMask HitLayer, IgnoreLayer;
         public float HitRadius;
         public float damage;
-        public float speed; 
+        public float speed;
 
-        public void SetProjectile(Vector3 LauchDestination, float hitRadius, float damage, LayerMask HitLayer)
+        public void SetProjectile(Vector3 LauchDestination, float hitRadius, float damage, LayerMask HitLayer, float DestroyTimer)
         {
             LaunchDestination = LauchDestination; HitRadius = hitRadius; this.damage = damage; this.HitLayer = HitLayer;
+            StartCoroutine(DestuctionTimer(DestroyTimer));
             IgnoreLayer = transform.gameObject.layer;
 
             transform.parent = null;
         } // MonoBehaviours can't have constructors so this is the best of a bad situation 
 
-        public void SetProjectile(Vector3 LauchDestination, float speed, float hitRadius, float damage, LayerMask HitLayer)
+        public void SetProjectile(Vector3 LauchDestination, float speed, float hitRadius, float damage, LayerMask HitLayer, float DestroyTimer)
         {
             LaunchDestination = LauchDestination; this.speed = speed; HitRadius = hitRadius; this.damage = damage; this.HitLayer = HitLayer;
+            StartCoroutine(DestuctionTimer(DestroyTimer));
             IgnoreLayer = transform.gameObject.layer;
 
             transform.parent = null;
         } // MonoBehaviours can't have constructors so this is the best of a bad situation 
 
+        public void SetProjectile(Vector3 LauchDestination, float speed, float hitRadius, float damage, LayerMask HitLayer, LayerMask IgnoreLayer, float DestroyTimer)
+        {
+            LaunchDestination = LauchDestination; this.speed = speed; HitRadius = hitRadius; this.damage = damage; this.HitLayer = HitLayer;
+            StartCoroutine(DestuctionTimer(DestroyTimer));
+            this.IgnoreLayer = IgnoreLayer;
+
+            transform.parent = null;
+        } // MonoBehaviours can't have constructors so this is the best of a bad situation 
         private void OnDrawGizmos()
         {
             Gizmos.DrawWireSphere(transform.position, HitRadius); 
+        }
+        
+        IEnumerator DestuctionTimer(float time)
+        {
+            yield return new WaitForSecondsRealtime(time);
+            Destroy(gameObject); 
         }
 
         private void FixedUpdate()
@@ -40,23 +57,19 @@ namespace Albasigma.ARPG
 
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             
-            Collider[] col = Physics.OverlapSphere(transform.position, HitRadius);
+            Collider[] col = Physics.OverlapSphere(transform.position, HitRadius, HitLayer);
 
             if (col.Length > 0)
             {
-                foreach(Collider collider in col)
+                try
                 {
-                    if (collider.gameObject.tag == "Player")
-                    {
-                        collider.GetComponent<ICombatEntity>().TakeDamage(damage);
-                        Destroy(gameObject);
-                    }//Player takes damage if they aren't blocking and then the object is destroyed
-
-                    if(collider.gameObject.tag == "Untagged")
-                    {
-                        Destroy(gameObject);
-                    }//Destroy when it hits anything else
+                    col[0].GetComponent<ICombatEntity>().TakeDamage(damage);
                 }
+                catch
+                {
+                    col[0].GetComponentInParent<ICombatEntity>().TakeDamage(damage); 
+                }
+                Destroy(gameObject); 
             }
         }
     }

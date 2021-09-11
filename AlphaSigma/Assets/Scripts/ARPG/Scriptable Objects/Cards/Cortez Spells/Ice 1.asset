@@ -19,4 +19,7 @@ MonoBehaviour:
   EffectPrefab: {fileID: 0}
   HitLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  IgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 128

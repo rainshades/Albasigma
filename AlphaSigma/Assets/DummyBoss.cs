@@ -45,7 +45,7 @@ namespace Albasigma.ARPG
             agent = GetComponent<NavMeshAgent>();
             ani = GetComponentInChildren<BossAnimatorMethods>(); 
         }
-
+        
         public void Attack(float damage, GameObject entity)
         {
             if (phase_1)
@@ -82,7 +82,7 @@ namespace Albasigma.ARPG
         {
             GameObject go = Instantiate(entity, RangedAttackPoint.transform.position + Vector3.forward, Quaternion.identity);
 
-            go.GetComponent<Projectile>().SetProjectile(target, 2.5f, 0.5f, damage, hitmask);
+            go.GetComponent<Projectile>().SetProjectile(target, 2.5f, 0.5f, damage, hitmask, 2.0f);
             go.GetComponent<Projectile>().IgnoreLayer = IgnoreLayer;
         }//Instantiates a projectile 
 
@@ -96,11 +96,11 @@ namespace Albasigma.ARPG
             agent.speed = 8;            
 
             yield return new WaitForSecondsRealtime(timer);
-            if (transform.position == agent.destination)
-            {
-                attacking = false;
-                charging = false; 
-            }
+            agent.SetDestination(transform.position); 
+
+            attacking = false;
+            charging = false; 
+            
             RangedAttackCount = 0; 
         }
 

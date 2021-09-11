@@ -11,10 +11,12 @@ namespace Albasigma.ARPG
     public class PlayerAnimatorActionAddon : MonoBehaviour
     {
         PlayerCombat PC;
+        PlayerMovement PM; 
 
         private void Awake()
         {
-            PC = GetComponentInParent<PlayerCombat>(); 
+            PC = GetComponentInParent<PlayerCombat>();
+            PM = GetComponentInParent<PlayerMovement>(); 
         }
 
         public void OnAttackCollision()
@@ -24,17 +26,32 @@ namespace Albasigma.ARPG
 
         public void AttackFinished()
         {
-            GetComponentInParent<PlayerCombat>().Attacking = false; 
+            PC.Attacking = false; 
         }//Player is done attacking
 
         public void AttackBegin()
         {
-            GetComponentInParent<PlayerCombat>().Attacking = true;
+           PC.Attacking = true;
         }//Player began attacking
 
         public void LungePlayerForward()
         {
-            GetComponentInParent<PlayerMovement>().Lunge(); 
+            PM.Lunge(); 
+        }
+
+        public void ControlsOff()
+        {
+            PM.Disable(); 
+        }
+
+        public void ControlsOn()
+        {
+            PM.Enable(); 
+        }
+
+        public void ClimpUp()
+        {
+            PM.ClimbUpFromLedge(); 
         }
     }
 }

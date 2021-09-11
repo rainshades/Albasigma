@@ -15,6 +15,7 @@ MonoBehaviour:
   Ally_1: {fileID: 0}
   Ally_2: {fileID: 0}
   DrawNewCards: {fileID: 11400000, guid: 0dd70b2b8191d494badde1d3adcf04a4, type: 2}
-  spellsInHand: []
+  spellsInHand:
+  - {fileID: 11400000, guid: 0dd70b2b8191d494badde1d3adcf04a4, type: 2}
   PlayerDeck: []
   CompleteDeck: []

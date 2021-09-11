@@ -68,28 +68,6 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "06f23994-5675-4aab-a8bb-60c93574d032",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Shift",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "88bc8a5f-ed84-43e7-b752-c70e07224249",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Shift",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
                     "id": "ad9808bb-9168-42ed-b35b-ac7034774bd2",
                     "path": "<Mouse>/rightButton",
@@ -511,7 +489,7 @@
                 },
                 {
                     "name": "2D Vector",
-                    "id": "a8d09d67-00d0-4dd1-93e3-269134c6ac13",
+                    "id": "8f5e5014-55c1-481c-8945-749c5c4e707e",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -522,8 +500,8 @@
                 },
                 {
                     "name": "up",
-                    "id": "e218a948-62e6-4cd7-9583-b13f778c23fb",
-                    "path": "",
+                    "id": "a1172fe8-37d1-449e-9a73-21c88762dadf",
+                    "path": "<Keyboard>/r",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
@@ -533,8 +511,30 @@
                 },
                 {
                     "name": "down",
-                    "id": "d1dfd1f6-fc07-46f2-a684-867dc124b582",
-                    "path": "",
+                    "id": "87b364c9-23ec-4522-8f4b-b06803dd262f",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "af4d0983-b7f4-46b2-a4e8-4d6e8a30351f",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Camera",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "834084da-8e1d-4505-948f-9a758fc41cfd",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
@@ -546,6 +546,17 @@
                     "name": "",
                     "id": "ea67eeed-9c86-41b8-8ae7-020eb5029c2d",
                     "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "GamePad",
+                    "action": "Lock On",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85ab7453-1f25-45b5-9547-c184b8d275a5",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "GamePad",

@@ -33,7 +33,6 @@ namespace Albasigma.UI
             pc = new PlayerControls();
 
             pc.UI.MenuMove.performed += MenuMove_performed;
-
         }
 
         private void Update()

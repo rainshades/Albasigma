@@ -21,7 +21,7 @@ MonoBehaviour:
   FlightSpeed: 2.5
   Mana: 15
   currentMana: 1
-  AttackRange: 1.01
+  AttackRange: 1.68
   PlayerLevel:
     PlayerStatsSO: {fileID: 11400000}
     CurrentLevel: 1

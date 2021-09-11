@@ -63,9 +63,14 @@ namespace Albasigma
         public string filepath = "Autosave";
 
         PlayerControls pc;
+
+        [SerializeField]
+        GameObject BoxTransitionAnimation; //Timeline
+
         private void Awake()
         {
             pc = new PlayerControls();
+            Time.timeScale = 1; 
             Instance = this;
             pc.Player.Pause.performed += Pause_performed;
         }
@@ -122,19 +127,14 @@ namespace Albasigma
 
         #region For Level Manager
 
-        [SerializeField]
-        GameObject BoxTransitionAnimation;
-
-        public void AreaTransition(float time)//TEMP NEED LEVEL MANAGER
+        public void AreaTransition()//TEMP NEED LEVEL MANAGER
         {
-            StartCoroutine(AreaBlackout(time)); 
+            BoxTransitionAnimation.SetActive(true); 
         }//Creates a transition from box to box
 
-        IEnumerator AreaBlackout(float time)
+        public void LoadLevel(int level)
         {
-            BoxTransitionAnimation.SetActive(true);
-            yield return new WaitForSecondsRealtime(time);
-            BoxTransitionAnimation.SetActive(false); 
+            SceneManager.LoadScene(level); 
         }
 
         #endregion
@@ -185,11 +185,11 @@ namespace Albasigma
 
         public void BackToMainMenu()
         {
-            SaveGame(); 
+            //SaveGame();
             /*Place a warning that doing this without saving may result in loosing data or data corruption
              * 
              */
-            
+            GameOver(); 
         }
 
         private void OnEnable()

@@ -26,7 +26,7 @@ namespace Albasigma.ARPG
         public bool grounded = true;
 
         [SerializeField]
-        float distanceGrounded = 0.01f;
+        protected Vector3 distanceGrounded;
 
         protected float angle, targetAngle, turnSmoothVelocity;
         public float turnSmoothTime = 0.1f;
@@ -57,12 +57,12 @@ namespace Albasigma.ARPG
 
         protected virtual void GravityCheck()
         {
-            grounded = Physics.CheckSphere(BottomPoint.transform.position, distanceGrounded, GroundedLayer);
+            grounded = Physics.CheckBox(BottomPoint.transform.position, distanceGrounded, Quaternion.identity, GroundedLayer);
         }
 
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(BottomPoint.transform.position, distanceGrounded);
+            Gizmos.DrawWireCube(BottomPoint.transform.position, distanceGrounded);
         }
 
         protected virtual void KnockBack(Vector3 Direction)
@@ -83,7 +83,6 @@ namespace Albasigma.ARPG
         private void FixedUpdate()
         {
             GravityCheck();
-            LedgeCheck();
 
             cc.Move(JumpForce * Time.deltaTime * 2.0f);//Player verticle movement
             if (KnockbackCounter <= 0)
