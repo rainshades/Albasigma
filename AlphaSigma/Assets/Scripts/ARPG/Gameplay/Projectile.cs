@@ -14,27 +14,18 @@ namespace Albasigma.ARPG
         public float damage;
         public float speed;
 
-        public void SetProjectile(Vector3 LauchDestination, float hitRadius, float damage, LayerMask HitLayer, float DestroyTimer)
+        public void SetProjectile(Vector3 LauchDestination, LayerMask HitLayer, float DestroyTimer)
         {
-            LaunchDestination = LauchDestination; HitRadius = hitRadius; this.damage = damage; this.HitLayer = HitLayer;
+            LaunchDestination = LauchDestination; this.HitLayer = HitLayer;
             StartCoroutine(DestuctionTimer(DestroyTimer));
             IgnoreLayer = transform.gameObject.layer;
 
             transform.parent = null;
         } // MonoBehaviours can't have constructors so this is the best of a bad situation 
 
-        public void SetProjectile(Vector3 LauchDestination, float speed, float hitRadius, float damage, LayerMask HitLayer, float DestroyTimer)
+        public void SetProjectile(Vector3 LauchDestination, LayerMask HitLayer, LayerMask IgnoreLayer, float DestroyTimer)
         {
-            LaunchDestination = LauchDestination; this.speed = speed; HitRadius = hitRadius; this.damage = damage; this.HitLayer = HitLayer;
-            StartCoroutine(DestuctionTimer(DestroyTimer));
-            IgnoreLayer = transform.gameObject.layer;
-
-            transform.parent = null;
-        } // MonoBehaviours can't have constructors so this is the best of a bad situation 
-
-        public void SetProjectile(Vector3 LauchDestination, float speed, float hitRadius, float damage, LayerMask HitLayer, LayerMask IgnoreLayer, float DestroyTimer)
-        {
-            LaunchDestination = LauchDestination; this.speed = speed; HitRadius = hitRadius; this.damage = damage; this.HitLayer = HitLayer;
+            LaunchDestination = LauchDestination; this.HitLayer = HitLayer;
             StartCoroutine(DestuctionTimer(DestroyTimer));
             this.IgnoreLayer = IgnoreLayer;
 

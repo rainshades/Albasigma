@@ -82,8 +82,7 @@ namespace Albasigma.ARPG
         {
             GameObject go = Instantiate(entity, RangedAttackPoint.transform.position + Vector3.forward, Quaternion.identity);
 
-            go.GetComponent<Projectile>().SetProjectile(target, 2.5f, 0.5f, damage, hitmask, 2.0f);
-            go.GetComponent<Projectile>().IgnoreLayer = IgnoreLayer;
+            go.GetComponent<Projectile>().SetProjectile(target,  hitmask, IgnoreLayer, 2.0f);
         }//Instantiates a projectile 
 
         IEnumerator ChargeAttack(float timer)

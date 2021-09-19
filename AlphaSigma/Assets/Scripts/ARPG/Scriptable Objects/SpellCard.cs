@@ -40,7 +40,7 @@ namespace Albasigma.Cards
                 go = Instantiate(EffectPrefab, 
                     PlayerCombat.Instance.ProjectileSpawnPoint.position
                     ,Quaternion.identity);
-                go.GetComponent<Projectile>().SetProjectile(PlayerCombat.Instance.CardLockOn.position, 2.0f, 1, 2.0f, HitLayer, IgnoreLayer);
+                go.GetComponent<Projectile>().SetProjectile(PlayerCombat.Instance.CardLockOn.position, HitLayer, IgnoreLayer, spelltime);
             }
 
 
