@@ -16,7 +16,7 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: d18eca9f643166f4e943193a2508da61, type: 3}
   cost: 2
   castTye: 3
-  EffectPrefab: {fileID: 3101641430031343273, guid: b22a54936f1aadc4aa9b507221af2366, type: 3}
+  EffectPrefab: {fileID: 3101641430031343273, guid: 0f6d667580ab23c498fdcaab53a762d0, type: 3}
   HitLayer:
     serializedVersion: 2
     m_Bits: 8
