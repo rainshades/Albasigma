@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables; 
 
 namespace Albasigma.ARPG
 {
@@ -15,33 +16,35 @@ namespace Albasigma.ARPG
 
     public class ArenaManager : MonoBehaviour
     {
-
         [SerializeField]
-        List<GameObject> Enemies = new List<GameObject>();
+        List<GameObject> BattleSpace = new List<GameObject>();
 
-        public bool AllEnemiesDefeated { get => Enemies.Count == 0;  }
+        public bool AllEnemiesDefeated { get => CurrentBattle == null;  }
+
+        PlayableDirector transitionCanvas;
+
+        public BattleSpace CurrentBattle; 
 
         private void Start()
         {
             MusicHandler.ArenaManager = this; 
-
-            GameManager.Instance.CurrentArena = this; 
+            GameManager.Instance.CurrentArena = this;
             for(int i = 0; i < transform.childCount; i++)
             {
-                if(transform.GetChild(i).tag == "Enemy")
+                if(transform.GetChild(i).tag == "Battle")
                 {
-                    Enemies.Add(transform.GetChild(i).gameObject);
+                    BattleSpace.Add(transform.GetChild(i).gameObject);
                 }
             }
         }
 
         private void Update()
         {
-            for(int i = 0; i < Enemies.Count; i++)
+            for(int i = 0; i < BattleSpace.Count; i++)
             {
-                if(Enemies[i] == null)
+                if(BattleSpace[i] == null)
                 {
-                    Enemies.RemoveAt(i); 
+                    BattleSpace.RemoveAt(i); 
                 }
             }
         }

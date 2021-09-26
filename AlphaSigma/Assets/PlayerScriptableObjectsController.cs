@@ -12,16 +12,18 @@ namespace Albasigma
         [SerializeField]
         GameObject PlayerSet; //The object that holds the player's components
 
+        public SkillList SkillSO;
+        public DecisionTracker Tracker;
+        public Bag Bag;
         public Deck DeckSO;
-        public SkillList SkillSo;
-        public DecisionTracker DecisionTrackerSo;
-        public PlayerStats StatsSO; 
+        public PlayerStats StatsSO;
 
         public void ResetPlayerComponents()
         {
+            Bag.Reset(); 
             DeckSO.Reset();
-            SkillSo.Reset();
-            DecisionTrackerSo.Reset();
+            SkillSO.Reset();
+            Tracker.Reset();
             StatsSO.Reset(); 
         }
     }

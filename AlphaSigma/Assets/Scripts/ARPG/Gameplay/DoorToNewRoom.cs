@@ -18,12 +18,20 @@ namespace Albasigma.ARPG
 
         public IEnumerator GoTo(PlayerInteractionController PC, float time)
         {
+            yield return new WaitForSecondsRealtime(time);
+            
             TeleportRoom.SetActive(true);
 
-            yield return new WaitForSecondsRealtime(time);
             transform.GetComponentInParent<ArenaManager>().gameObject.SetActive(false);
             
             PC.transform.position = TeleportSpace.transform.position;
+            PC.transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y + 180); 
+                        
         }//TeleportsPlayer
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(transform.GetChild(0).position, 1.0f);
+        }
     }
 }

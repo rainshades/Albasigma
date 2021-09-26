@@ -274,7 +274,9 @@ namespace Albasigma.ARPG
         public void Enable()
         {
             inputs.Enable();
-            controlsOn = true; 
+            controlsOn = true;
+            GameManager.Instance.BoxTransitionAnimation.gameObject.SetActive(false);
+
         }
 
         public void Disable()

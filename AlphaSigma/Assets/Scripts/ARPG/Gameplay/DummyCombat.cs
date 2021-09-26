@@ -1,10 +1,12 @@
 using UnityEngine;
 using Albasigma.UI; 
+
 namespace Albasigma.ARPG
 {
     /// <summary>
     /// Handles Combat for the melee dummy
     /// </summary>
+    [RequireComponent(typeof(DummyMovement))]
     public class DummyCombat : MonoBehaviour, ICombatEntity
     {
         //Dummy Stats

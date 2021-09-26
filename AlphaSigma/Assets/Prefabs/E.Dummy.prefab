@@ -155,7 +155,7 @@ MonoBehaviour:
     m_Bits: 64
   gravity: 0.2
   grounded: 1
-  distanceGrounded: 0.2
+  distanceGrounded: {x: 0, y: 0, z: 0}
   turnSmoothTime: 0.1
   KnockbackForce: 1.27
   KnockbackTimer: 0.1

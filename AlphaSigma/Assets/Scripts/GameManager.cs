@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables; 
 using UnityEngine.SceneManagement;
 using Albasigma.UI;
 using Albasigma.ARPG;
@@ -50,22 +51,16 @@ namespace Albasigma
         [SerializeField]
         GameObject simplePauseUI; 
 
+        [HideInInspector]
         public ArenaManager CurrentArena; 
 
         public bool Paused = false;
-
-        public SkillList SkillsList;
-        public DecisionTracker Tracker;
-        public Bag Bag;
-        public Deck Deck;
-        public PlayerStats Stats;
 
         public string filepath = "Autosave";
 
         PlayerControls pc;
 
-        [SerializeField]
-        GameObject BoxTransitionAnimation; //Timeline
+        public PlayableDirector BoxTransitionAnimation; //Timeline
 
         private void Awake()
         {
@@ -78,6 +73,7 @@ namespace Albasigma
         private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
         {
             Paused = !Paused;
+            PlayerScriptableObjectsController Scriptable = GetComponent<PlayerScriptableObjectsController>();
 
             if (!Paused)
             {
@@ -88,7 +84,7 @@ namespace Albasigma
                 Time.timeScale = 0; 
             }
 
-            if (CurrentArena.AllEnemiesDefeated && Stats.PlayerLevel.CurrentLevel > 7)
+            if (CurrentArena.AllEnemiesDefeated && Scriptable.StatsSO.PlayerLevel.CurrentLevel > 7)
             {
 
                 complexPauseUI.gameObject.SetActive(Paused);
@@ -109,7 +105,8 @@ namespace Albasigma
             int current_scene = SceneManager.GetActiveScene().buildIndex;
 
             GameData GD = new GameData(combat.Currenthealth, combat.CurrentDrive, current_scene, PlayerLocation);
-            GD.SetSOData(SkillsList, Tracker, Bag, Deck, Stats);
+            PlayerScriptableObjectsController Scriptable = GetComponent<PlayerScriptableObjectsController>(); 
+            GD.SetSOData(Scriptable.SkillSO, Scriptable.Tracker, Scriptable.Bag, Scriptable.DeckSO, Scriptable.StatsSO);
 
             string autosave = Application.persistentDataPath + "/" + filepath + ".json";
             FileStream file = File.Create(autosave);
@@ -129,7 +126,7 @@ namespace Albasigma
 
         public void AreaTransition()//TEMP NEED LEVEL MANAGER
         {
-            BoxTransitionAnimation.SetActive(true); 
+            BoxTransitionAnimation.gameObject.SetActive(true); 
         }//Creates a transition from box to box
 
         public void LoadLevel(int level)
@@ -147,11 +144,13 @@ namespace Albasigma
             string json = (string)bf.Deserialize(file);
 
             GameData GD = JsonUtility.FromJson<GameData>(json);
-            SkillsList = GD.SkillsList;
-            Tracker = GD.Tracker;
-            Bag = GD.Bag;
-            Deck = GD.Deck;
-            Stats = GD.Stats;
+            PlayerScriptableObjectsController Scriptable = GetComponent<PlayerScriptableObjectsController>();
+
+            Scriptable.SkillSO = GD.SkillsList;
+            Scriptable.Tracker = GD.Tracker;
+            Scriptable.Bag = GD.Bag;
+            Scriptable.DeckSO = GD.Deck;
+            Scriptable.StatsSO = GD.Stats;
             file.Close(); 
 
             //Will need to save deckdata to file as the player data is saved to file

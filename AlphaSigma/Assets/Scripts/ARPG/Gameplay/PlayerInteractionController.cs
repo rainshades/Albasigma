@@ -45,7 +45,7 @@ namespace Albasigma.ARPG
                 StartCoroutine(other.GetComponent<DoorToNewRoom>().GoTo(this, 1.5f)); 
             }
 
-            if(other.TryGetComponent(out ThreshHold TH)){
+            if(other.TryGetComponent(out BoxTransitionThreshHold TH)){
                 TH.ActivateThreshhold();
             }
             if (other.TryGetComponent(out FungusThreshold TH2))

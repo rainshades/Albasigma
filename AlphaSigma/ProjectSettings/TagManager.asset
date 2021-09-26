@@ -10,6 +10,7 @@ TagManager:
   - Door
   - Ledge
   - GroundPound
+  - Battle
   layers:
   - Default
   - TransparentFX

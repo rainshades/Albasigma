@@ -5,7 +5,7 @@ using Albasigma.UI;
 
 namespace Albasigma.Cards
 {
-    public enum CastType { nil, self, single, projectile, AOE }
+    public enum CastType { nil, self, single, projectile, singleUse, AOE }
 
     /// <summary>
     /// How spells/battle items are condecuted in the game so they aren't completely reliable/op
@@ -24,7 +24,7 @@ namespace Albasigma.Cards
         public LayerMask HitLayer;
         public LayerMask IgnoreLayer; 
 
-        public void PlayCard(Transform AttackLocation)
+        public virtual void PlayCard(Transform AttackLocation)
         {
             Debug.Log("Play " + name);
             
