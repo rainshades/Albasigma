@@ -5,6 +5,7 @@ using Albasigma.ARPG;
 
 namespace Albasigma.Cards
 {
+    [CreateAssetMenu(fileName = "Item", menuName = "Usable Item")]
     public class UsableItem : SpellCard
     {
         public enum UseableType {Potion, Protein, Mint}

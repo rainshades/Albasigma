@@ -31,7 +31,13 @@ namespace Albasigma.ARPG
 
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(transform.GetChild(0).position, 1.0f);
+            try {
+                Gizmos.DrawWireSphere(transform.GetChild(0).position, 1.0f);
+            }
+            catch
+            {
+
+            }
         }
     }
 }

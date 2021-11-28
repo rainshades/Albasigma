@@ -10,5 +10,4 @@ namespace Albasigma.Cards
             FindObjectOfType<DeckOfCards>().DeckSO.RefreshHand(); 
         }//Refrehses the current hand
     }
-
 }

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c4d1b9c6bd1d3458cabda98dcb587b, type: 3}
+  m_Name: Potion
+  m_EditorClassIdentifier: 
+  spelltime: 0
+  Image: {fileID: 21300000, guid: a37ec89f5ca17463ea97a831015fd5a1, type: 3}
+  cost: 0
+  castTye: 4
+  EffectPrefab: {fileID: 0}
+  HitLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  IgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  ItemType: 0
+  AmountOffBuff: 5
+  AmountOfItemLeft: 0
+  PlayerStats: {fileID: 11400000, guid: c8ea77fb48e08f647bfecce8404d0d75, type: 2}

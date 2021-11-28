@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5536685d6becf64fa259fdbd36ae799, type: 3}
   m_Name: Bag
   m_EditorClassIdentifier: 
-  currency: 6100
+  currency: 8400
   CardsInBag: []
   Items: []

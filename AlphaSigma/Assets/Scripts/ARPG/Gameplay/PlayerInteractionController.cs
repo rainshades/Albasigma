@@ -42,7 +42,8 @@ namespace Albasigma.ARPG
             if(other.tag == "Door")
             {
                 GameManager.Instance.AreaTransition();
-                StartCoroutine(other.GetComponent<DoorToNewRoom>().GoTo(this, 1.5f)); 
+                if(other.TryGetComponent(out DoorToNewRoom roomDoor))
+                    StartCoroutine(roomDoor.GoTo(this, 1.5f)); 
             }
 
             if(other.TryGetComponent(out BoxTransitionThreshHold TH)){
@@ -51,6 +52,10 @@ namespace Albasigma.ARPG
             if (other.TryGetComponent(out FungusThreshold TH2))
             {
                 TH2.ActivateThreshhold();
+            }
+            if(other.TryGetComponent(out BattleThreshold TH3))
+            {
+                TH3.ActivateThreshhold();
             }
 
         }

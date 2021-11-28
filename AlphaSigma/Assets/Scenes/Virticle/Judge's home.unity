@@ -1190,9 +1190,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerSet: {fileID: 5911682039003053338, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
+  SkillSO: {fileID: 11400000, guid: ddc04b44755fbfe4bb574130bc89ee53, type: 2}
+  Tracker: {fileID: 11400000, guid: 103f8038c8ed70747848b0d6b3a81835, type: 2}
+  Bag: {fileID: 11400000, guid: 52a32611167ea514db1843326c8d54be, type: 2}
   DeckSO: {fileID: 11400000, guid: abaa2c7041c987d46b3390cda57bf4ed, type: 2}
-  SkillSo: {fileID: 11400000, guid: ddc04b44755fbfe4bb574130bc89ee53, type: 2}
-  DecisionTrackerSo: {fileID: 11400000, guid: 103f8038c8ed70747848b0d6b3a81835, type: 2}
   StatsSO: {fileID: 11400000, guid: c8ea77fb48e08f647bfecce8404d0d75, type: 2}
 --- !u!114 &450386364
 MonoBehaviour:
@@ -1210,13 +1211,8 @@ MonoBehaviour:
   simplePauseUI: {fileID: 618097000}
   CurrentArena: {fileID: 1981951803}
   Paused: 0
-  SkillsList: {fileID: 11400000, guid: ddc04b44755fbfe4bb574130bc89ee53, type: 2}
-  Tracker: {fileID: 11400000, guid: 103f8038c8ed70747848b0d6b3a81835, type: 2}
-  Bag: {fileID: 11400000, guid: 52a32611167ea514db1843326c8d54be, type: 2}
-  Deck: {fileID: 11400000, guid: abaa2c7041c987d46b3390cda57bf4ed, type: 2}
-  Stats: {fileID: 11400000, guid: c8ea77fb48e08f647bfecce8404d0d75, type: 2}
   filepath: Autosave
-  BoxTransitionAnimation: {fileID: 0}
+  BoxTransitionAnimation: {fileID: 939152708}
 --- !u!4 &450386365
 Transform:
   m_ObjectHideFlags: 0
@@ -1955,11 +1951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 322714788915894230, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.014867862
+      value: -0.0148678245
       objectReference: {fileID: 0}
     - target: {fileID: 322714788915894230, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.001483217
+      value: 0.0014832132
       objectReference: {fileID: 0}
     - target: {fileID: 1088360385081457051, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1987,15 +1983,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2403049827330670768, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1330106
+      value: 0.13301061
       objectReference: {fileID: 0}
     - target: {fileID: 2403049827330670768, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0148088345
+      value: -0.014808868
       objectReference: {fileID: 0}
     - target: {fileID: 2403049827330670768, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0019876165
+      value: 0.001987621
       objectReference: {fileID: 0}
     - target: {fileID: 2972882826113413995, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2083,31 +2079,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5911682038780253423, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.60043
+      value: 10.795462
       objectReference: {fileID: 0}
     - target: {fileID: 5911682038780253423, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.486
+      value: -15.3991165
       objectReference: {fileID: 0}
     - target: {fileID: 5911682038780253423, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.4706945
+      value: 21.707342
       objectReference: {fileID: 0}
     - target: {fileID: 5911682038780253423, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.991002
+      value: 0.000000005030406
       objectReference: {fileID: 0}
     - target: {fileID: 5911682038780253423, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.13301063
+      value: 6.751721e-10
       objectReference: {fileID: 0}
     - target: {fileID: 5911682038780253423, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.014808836
+      value: 0.99111265
       objectReference: {fileID: 0}
     - target: {fileID: 5911682038780253423, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0019876168
+      value: -0.1330255
       objectReference: {fileID: 0}
     - target: {fileID: 5911682039003053338, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_Name
@@ -2239,19 +2235,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6396778404435489741, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.98585606
+      value: -0.98585606
       objectReference: {fileID: 0}
     - target: {fileID: 6396778404435489741, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16692704
+      value: -0.16692708
       objectReference: {fileID: 0}
     - target: {fileID: 6396778404435489741, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.014731938
+      value: 0.01473181
       objectReference: {fileID: 0}
     - target: {fileID: 6396778404435489741, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0024944397
+      value: -0.0024944192
       objectReference: {fileID: 0}
     - target: {fileID: 6988970422536613114, guid: b426caddc33006b4f946571f18bd0fd8, type: 3}
       propertyPath: m_IsActive
@@ -3970,7 +3966,7 @@ GameObject:
   - component: {fileID: 881590459}
   m_Layer: 0
   m_Name: Door To dream Sequence
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4014,7 +4010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8161df00b8f76d45b6d01d1475c4527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLineObject: {fileID: 939152707}
 --- !u!1 &933633253
 GameObject:
   m_ObjectHideFlags: 1
@@ -4673,7 +4668,7 @@ MonoBehaviour:
   scrollPos: {x: 0, y: 0}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 181
+  blockViewHeight: 180
   zoom: 1
   scrollViewRect:
     serializedVersion: 2
@@ -5483,7 +5478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ff49296b6eedb439808f52b1c153e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemies: []
+  BattleSpace: []
+  CurrentBattle: {fileID: 0}
 --- !u!4 &1981951804
 Transform:
   m_ObjectHideFlags: 0

@@ -61,7 +61,14 @@ namespace Albasigma.ARPG
             }
             else if (phase_2)
             {
-
+                if (RangedAttackCount <= 10 && !attacking)
+                {
+                    StartCoroutine(RangedAttack(attack_cooldown));
+                }
+                else if (!attacking)
+                {
+                    StartCoroutine(ChargeAttack(attack_cooldown));
+                }
             }
         }
 
@@ -105,7 +112,7 @@ namespace Albasigma.ARPG
 
         public void OnDeath()
         {
-            ani.PlayDie(); 
+            Destroy(gameObject); 
         }
 
         public void Death()
@@ -117,7 +124,7 @@ namespace Albasigma.ARPG
         {
             if(currenthealth == 0)
             {
-                OnDeath(); 
+                Death(); 
             }
             else
             {

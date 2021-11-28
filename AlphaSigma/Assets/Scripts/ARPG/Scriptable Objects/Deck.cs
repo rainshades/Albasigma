@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Albasigma.UI;
 using Albasigma.ARPG;
+using System.Linq; 
 
 namespace Albasigma.Cards
 {
@@ -37,6 +38,8 @@ namespace Albasigma.Cards
                 }
             }
 
+            Shuffle();
+
             for (int i = 0; i < 5; i++)
             {
                 try
@@ -57,10 +60,42 @@ namespace Albasigma.Cards
             spellsInHand.Clear();
             DrawHand();
             HandUI hand = FindObjectOfType<HandUI>();
-            hand.Reset(); 
+            hand.Reset();
             hand.CardSpaceCheck(); 
 
         }//Dump cards and draw a hand of 5
+
+        public void Shuffle()
+        {
+            List<SpellCard> TempDeck = CompleteDeck;
+            List<SpellCard> Bucket = new List<SpellCard>();
+            List<int>indexBucket = new List<int>();
+            
+            for(int i = 0; i < TempDeck.Count; i++)
+            {
+                int index = GetShuffleIndex(indexBucket, 0, TempDeck.Count); 
+                Bucket.Add(TempDeck[index]); 
+            }
+
+            CompleteDeck = Bucket; 
+            
+        }
+
+        int GetShuffleIndex(List<int> index, int min, int max)
+        {
+            int random = Random.Range(min, max);
+            if (index.Contains(random))
+            {
+                GetShuffleIndex(index, min, max);
+            }
+            else
+            {
+                index.Add(random);
+            }
+            return random;
+
+        }
+
 
         public void Reset()
         {
